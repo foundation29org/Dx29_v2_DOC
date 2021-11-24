@@ -5,7 +5,7 @@
 .. image:: images/All/Foundation29.png
    :width: 0px
 
-   .. image:: images/All/Foundation29.png
+.. image:: images/All/Foundation29.png
    :width: 100px
    :align: right
    :alt: Foundation29
@@ -23,7 +23,7 @@ Dx29 v2
    pages/1_Architecture/Components
    pages/1_Architecture/Code  
    pages/2_CodeRepositories
-   pages/2_CodeRepositories/Backend
+   pages/2_CodeRepositories/1_Backend
    pages/2_CodeRepositories/Backend/1_Annotations
    pages/2_CodeRepositories/Backend/2_APIGateway
    pages/2_CodeRepositories/Backend/3_Bioentity
@@ -36,9 +36,9 @@ Dx29 v2
    pages/2_CodeRepositories/Backend/10_PhenSimmilarity
    pages/2_CodeRepositories/Backend/11_TermSearch2
    pages/2_CodeRepositories/Backend/12_WebManagement
-   pages/2_CodeRepositories/Frontend
+   pages/2_CodeRepositories/2_Frontend
    pages/2_CodeRepositories/Frontend/1_Dx29Web
-   pages/2_CodeRepositories/Operations
+   pages/2_CodeRepositories/3_Operations
    pages/2_CodeRepositories/Operations/1_PullImagesAndDockerCompose
    pages/2_CodeRepositories/Operations/2_ENVTEST
    pages/2_CodeRepositories/Operations/3_ENVPROD
