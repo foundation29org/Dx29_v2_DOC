@@ -85,7 +85,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../1_Architecture.html">1. Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SystemContext.html">1.1. Level 1: System Context</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Containers.html">1.2. Level 2: Containers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1.3. Level 3: Component</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1.3. Level 3: Component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#backend-containers">1.3.1. Backend containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manage-data-containers">1.3.1.1. Manage data containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#algorithms-and-functionalities-containers">1.3.1.2. Algorithms and functionalities containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expose-algorithms-and-functionalities-container">1.3.1.3. Expose algorithms and functionalities container</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#frontend-containers">1.3.2. Frontend containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#webapp-container">1.3.2.1. Webapp container</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#external-containers">1.3.3. External containers</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Code.html">1.4. Level 4: Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories.html">2. Code repositories and projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/1_Backend.html">2.1. Backend</a></li>
@@ -192,6 +205,83 @@
   <img align="right" width="100px" src="../../_images/Foundation29.png"><div class="section" id="level-3-component">
 <h1>1.3. Level 3: Component<a class="headerlink" href="#level-3-component" title="Permalink to this headline">¶</a></h1>
 <p>Taking into account the division by containers exposed in the previous point, we are now going to study in detail the internal architecture and the components that make up each one of them.</p>
+<div class="section" id="backend-containers">
+<h2>1.3.1. Backend containers<a class="headerlink" href="#backend-containers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="manage-data-containers">
+<h3>1.3.1.1. Manage data containers<a class="headerlink" href="#manage-data-containers" title="Permalink to this headline">¶</a></h3>
+<p>These containers will handle the management of user data, being able to read, save, update and delete this information from the Dx29 blobs and databases.
+In addition, they will also expose the methods for the application to access the files necessary for its configuration.</p>
+<p>How is this information organised?</p>
+<blockquote>
+<div><ul class="simple">
+<li>For the databases:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>SQL database: It is controlled from the frontend directly, but it is important to comment at this point that there is a database of this type that stores the information for the login of the users in Dx29. That is to say, it will only contain the user’s information, not the patient’s information.</li>
+<li>MongoDB databases: We will have several databases where the patient information is stored. For security reasons, personal data will not be stored in the same location as medical information, to prevent them from being related to each other. In other words, Dx29 ensures anonymity.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li>In the blobs, an input will be created for each medical case or medical history where the files that have been attached (uploaded) will be stored, as well as others necessary for the functioning of the application: literals, documents,…</li>
+</ul>
+</div></blockquote>
+<p>Thus:</p>
+<blockquote>
+<div><ul class="simple">
+<li>On one side we will have the components in charge of database management: It will be the microservice of Dx29.MedicalHistory.</li>
+<li>On the other hand, we will have the components in charge of blob management: Dx29.FileStorage, Dx29.Localization and Dx29.Documents microservices.</li>
+</ul>
+</div></blockquote>
+<p>Each microservice will expose within the Kubernetes Cluster the methods to be able to work: <a class="reference external" href="https://restfulapi.net/">REST</a>, and will be programmed in the programming language that optimises the development (This will be detailed later for each of them, but the languages used are: NodeJS, C#, and Python).</p>
+</div>
+<div class="section" id="algorithms-and-functionalities-containers">
+<h3>1.3.1.2. Algorithms and functionalities containers<a class="headerlink" href="#algorithms-and-functionalities-containers" title="Permalink to this headline">¶</a></h3>
+<p>The Dx29 tool provides a list of functionalities for users. The execution of the algorithms or calculations necessary to achieve this will be divided into different components.</p>
+<p>Thus, we will have different components for:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The extraction of information from medical documents, including genotyping.</li>
+<li>The calculation of disease suggestions according to patient data.</li>
+<li>Obtaining information on diseases and symptoms for the user’s language.</li>
+<li>Offering a differential diagnosis based on the phenotypic comparison of the patient with a disease.</li>
+<li>Obtaining more information on a disease such as: documentation, patient groups and clinical trials.</li>
+<li>The search for symptoms and diseases with natural language.</li>
+<li>The ability to send emails.</li>
+</ul>
+</div></blockquote>
+<p>Each of these functionalities will be implemented using one or several microservices that, as before, will expose their methods so that a communication <a class="reference external" href="https://restfulapi.net/">REST</a> can be established. These will also be programmed in the programming language that optimises their development, taking into account that the ones we use are: NodeJS, C# and Python.</p>
+</div>
+<div class="section" id="expose-algorithms-and-functionalities-container">
+<h3>1.3.1.3. Expose algorithms and functionalities container<a class="headerlink" href="#expose-algorithms-and-functionalities-container" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the above, Dx29 offers the possibility for third parties to use its algorithms or calculations outside the environment, i.e. without using the application data or having to use the user interface.</p>
+<p>This has been achieved by implementing a dedicated component: Dx29.APIGateway. It will be in charge of exposing all the methods of the algorithms and functionalities containers.</p>
+<p>Therefore, the communication with this component is established via <a class="reference external" href="https://restfulapi.net/">REST</a>. It is programmed in C#.</p>
+</div>
+</div>
+<div class="section" id="frontend-containers">
+<h2>1.3.2. Frontend containers<a class="headerlink" href="#frontend-containers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="webapp-container">
+<h3>1.3.2.1. Webapp container<a class="headerlink" href="#webapp-container" title="Permalink to this headline">¶</a></h3>
+<p>This container is where you will place the Web application component. That is, the frontend.</p>
+<p>For this, <a class="reference external" href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">Blazor</a> has been used.
+This application communicates with the different microservices to display the relevant information. To use it, it is necessary to be registered, this was implemented using the <a class="reference external" href="https://docs.microsoft.com/en-GB/aspnet/core/security/authentication/identity?view=aspnetcore-6.0&amp;tabs=visual-studio">Identity</a> service that will access the SQL database.</p>
+<p>It will establish communication with the other components also using <a class="reference external" href="https://restfulapi.net/">REST</a>.</p>
+</div>
+</div>
+<div class="section" id="external-containers">
+<h2>1.3.3. External containers<a class="headerlink" href="#external-containers" title="Permalink to this headline">¶</a></h2>
+<p>Finally, as mentioned above, in order to simplify the architecture, implementation, development and maintenance of the application, external services are used.</p>
+<p>All of them will be accessed using <a class="reference external" href="https://restfulapi.net/">REST</a>.</p>
+<p>The list of these is as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://github.com/exomiser/Exomiser">Exomiser</a>. Foundation29 has also implemented its own Kubernetes cluster to manage this resource, therefore, the Dx29 application accesses this which in turn runs Exomiser and performs a management and administration of this job, allowing it to be used asynchronously.</li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 
 
