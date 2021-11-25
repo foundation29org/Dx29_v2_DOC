@@ -13,8 +13,6 @@ Health29 consists of several connected containers. We have divided them accordin
 
 TODO:image
 
-These modules are intercommunicated using a [REST](https://restfulapi.net/) interface, that is, the communication is established according to the [HTTP protocol](https://restfulapi.net/http-methods/). 
-
 The webapp will be the core of the Dx29 application, from where the frontend will be developed and the communications with different services to provide functionalities.
 
 The backend will however be divided into three types of containers: those in charge of managing data (databases and blobs), those that will perform the necessary calculations (algorithms) to expose the functionality to users, and finally there will be a container in charge of exposing the methods of the previous ones so that they can be used independently of Dx29.

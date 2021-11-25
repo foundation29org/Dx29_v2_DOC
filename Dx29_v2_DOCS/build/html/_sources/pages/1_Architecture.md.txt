@@ -6,7 +6,7 @@ Dx29 uses a **microservices-based architecture**.
 
 This architecture, also known by its acronym MSA (Micro Services Architecture), is a form of software development that is based on the independent implementation of each of the application's services. 
 
-This allows us, through the Domain-Driver Design approach, to partition the services so that development, communications, deployment and production can be carried out without dependency, deployment and production can be carried out without the dependency that exists in the monolithic architecture.
+This allows us to partition the services so that development, communications, deployment and production can be carried out without dependency, deployment and production can be carried out without the dependency that exists in the monolithic architecture.
 
 Microservices architecture is an application of distributed programming, which allows the development of open, scalable, transparent and fault-tolerant systems, thus achieving a more continuous production.
 
@@ -21,15 +21,15 @@ The physical Kubernetes cluster can be partitioned into several virtual clusters
 
 Kubernetes divides its architecture into two nodes. Focusing on the "worker nodes", let's describe the main components:
 
->- PODS: These nodes, will be composed of different PODS: Set of containers running sharing the same network stack, volumes and memory. connection between containers. 
->- REPLICA CONTROLLERS: Abstraction mechanism over a set of pods, whose unique functionality is to keep a specific number of pod instances active. They scale up or down these instances and replace them if it is detected that they are not working properly.
--> DEPLOYMENT: Abstraction on top of the Replica Controller, and most commonly used component for the deployment of the pods, provides continuous updates to the pods. Deployment -> Deployment -> Abstraction on top of the Replica Controller, and most used component for pod deployment, provides rolling updates and rollbacks as it keeps a historical record of the versions that keep a historical record of the container versions.
->- SERVICES: Due to the continuous creation and destruction of pods, a mechanism is needed that allows us to define an endpoint, with the objective of interruptively connecting containers that remain in different pods.
->- SECRETS: Mechanism that allows us to define keywords or sensitive words, so that they are not revealed. 
->- VOLUMES: Mechanism that allows us to store persistent information.
+>- **PODS**: These nodes, will be composed of different PODS: Set of containers running sharing the same network stack, volumes and memory. connection between containers. 
+>- **REPLICA CONTROLLERS**: Abstraction mechanism over a set of pods, whose unique functionality is to keep a specific number of pod instances active. They scale up or down these instances and replace them if it is detected that they are not working properly.
+>- **DEPLOYMENT**: Abstraction on top of the Replica Controller, and most commonly used component for the deployment of the pods, provides continuous updates to the pods. Deployment -> Deployment -> Abstraction on top of the Replica Controller, and most used component for pod deployment, provides rolling updates and rollbacks as it keeps a historical record of the versions that keep a historical record of the container versions.
+>- **SERVICES**: Due to the continuous creation and destruction of pods, a mechanism is needed that allows us to define an endpoint, with the objective of interruptively connecting containers that remain in different pods.
+>- **SECRETS**: Mechanism that allows us to define keywords or sensitive words, so that they are not revealed. 
+>- **VOLUMES**: Mechanism that allows us to store persistent information.
 
 
-The containers will be those that contain each of the microservices that have been implemented. To create these containers we use Docker.
+The containers will be those that contain each of the microservices that have been implemented. To create these containers we use **Docker**.
 Docker is an open source software that allows you to virtualise at the operating system level using containers, which allows you to have an additional layer of automation of multiple applications on different operating systems.
 
 Therefore, we need to look at the difference between virtualisation and containers. 
@@ -37,10 +37,10 @@ Therefore, we need to look at the difference between virtualisation and containe
 >-With Docker containers, not all calls to the operating system are emulated. system and this leads to better performance, as it takes advantage of the kernel of the host machine. kernel of the host machine.
 
 The main components are:
->- IMAGE: Template where the application and its different libraries are included, which are used to create the containers.
->- DOCKERFILE: It is a file where the configuration that allows the creation of the images is included. This file indicates the operating system to be executed and the different commands that allow the necessary tools to be installed.
->- Container: These are instances that are produced when executing an image containing the application that we have developed.
->- VOLUMES: They are used to store the information of the containers, so that the data is persistent. data are persistent. When a container is deleted, its data is deleted.
+>- **IMAGE**: Template where the application and its different libraries are included, which are used to create the containers.
+>- **DOCKERFILE**: It is a file where the configuration that allows the creation of the images is included. This file indicates the operating system to be executed and the different commands that allow the necessary tools to be installed.
+>- **Container**: These are instances that are produced when executing an image containing the application that we have developed.
+>- **VOLUMES**: They are used to store the information of the containers, so that the data is persistent. data are persistent. When a container is deleted, its data is deleted.
 
 
 
