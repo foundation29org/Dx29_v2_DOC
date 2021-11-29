@@ -34,6 +34,43 @@ Finally, the Dx29 and Dx29.Azure projects are also added. These two are generic 
 
 In this repository you can also find the **Dx29.Web.Management** project which will be explained later as it is considered a backend of Dx29.
 
+As it has been programmed with C#, the Dx29.Web project must include a configuration file: appsettings.json. This includes the dependencies with other microservices:
+
+|  Key           | Value     |		                                                         |
+|----------------|-----------|---------------------------------------------------------------|
+| FileStorage    | Endpoint  |http://dx29-filestorage/api/v1/                                |
+| BioEntity      | Endpoint  |http://dx29-bioentity/api/v1/                                  |
+| Localization   | Endpoint  |http://dx29-localization/api/v1/                               |
+| TermSearch     | Endpoint  |http://dx29-termsearch2:8080/api/v1/                           |
+| Diagnosis      | Endpoint  |http://dx29-bionet/api/v1/                                     |
+| Management     | Endpoint  |http://dx29-medicalhistory/api/v1/                             |
+| MedicalHistory | Endpoint  |http://dx29-medicalhistory/api/v1/                             |
+| ResourceGroup  | Endpoint  |http://dx29-medicalhistory/api/v1/                             |
+| Annotations    | Endpoint  |http://dx29-annotations/api/v1/                                |
+| Exomiser       | Endpoint  |http://dx29-exomiser.northeurope.cloudapp.azure.com/api/v1/    |
+| Documents      | Endpoint  |http://dx29-documents/api/v1/                                  |
+| Mailing        | Endpoint  |http://dx29-mailing:8080/api/                                  |
+| Legacy         | Endpoint  |http://dx29-legacy:8080/api/                                   |
+| OpenDx29       | Endpoint  |https://dx29.ai/api                                            |
+| PhenSimilarity | Endpoint  |http://dx29-phensimilarity:8080/api/v1/                        |
+
+In addition, this project accesses the user database (SQL) and the blob. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+
+|  Key                 | Value               |		                                                                                |
+|----------------------|---------------------|--------------------------------------------------------------------------------------|
+| ConnectionStrings    | IdentityConnection  |SQL database endpoint and credentials                                                 |
+| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+| SignalR              | ConnectionString    |SignalR connection string & credentials                                               |
+| SignalR              | HubName             |SignalR Hub HubName                                                                   |
+| AppInsights          | Key                 |Secret key for connecting with AppInsights                                            |
+| Account              | Key                 |Secret from SQL database (encrypt)                                                    |
+| Account              | Inx                 |Secret from SQL database (encrypt)                                                    |
+| Records              | Key                 |Secret from SQL database (encrypt)                                                    |
+| Records              | Inx                 |Secret from SQL database (encrypt)                                                    |
+| IdentityServer       | Clients             |"Dx29.Web.UI": {"Profile": "IdentityServerSPA"}                                       |
+| IdentityServer       | Key                 |"Key": {"Type": "File","FilePath": Path certificate,"Password": Password certificate} |
+
+
 ### 1.4.2. Backend
 #### 1.4.2.1. Dx29.Annotations
 The annotation service is used to extract information from medical documents. 
@@ -91,14 +128,40 @@ It offers the following methods for this purpose:
 It is programmed in C#, and two Docker images will result from this project: Annotations and AnnotationsJobs. The first one will contain the extraction functionality, while the second one will be used to manage the asynchronous jobs.
 To configure it, it is necessary to create a ServiceBus, where the asynchronous jobs will be sent. Therefore needs the configuration file with the secrets: keys and values.
 
-And finally, it should be mentioned that it depends on two external services: NCR and TextAnalytics.
-
 The structure of the project is as follows:
 >- **Dx29.Annotations.Web.API**. In this project is the implementation of the controllers that expose the aforementioned methods.
 >- **Dx29.Annotations**. It is this project that contains the logic to perform the relevant operations: services and communication with the external NCR and Text Analytics apis.
 >- **Dx29.Annotations.Worker**. This project manages the Dispatcher required for the asynchronous functionalities. The administration and communication with the ServiceBus is carried out in this project.
 >- **Dx29**, **Dx29.Azure** and **Dx29.Jobs** used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.
 
+As it has been programmed with C#, so the project must include a configuration file: appsettings.json. This includes the dependencies with other microservices:
+
+|  Key           | Value     |		                                                         |
+|----------------|-----------|---------------------------------------------------------------|
+| FileStorage    | Endpoint  |http://dx29-filestorage/api/v1/                                |
+| MedicalHistory | Endpoint  |http://dx29-medicalhistory/api/v1/                             |
+| Segmentation   | Endpoint  |http://dx29-segmentation:8080/api/v1/                          |
+| DocConverter   | Endpoint  |https://f29api.northeurope.cloudapp.azure.com/api/             |
+
+And finally, it should be mentioned that it depends on two external services: NCR and TextAnalytics. In addition, this project accesses the blob and it also uses ServiceBus and SignalR for notification management, and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+
+|  Key                 | Value               |		                                                                                |
+|----------------------|---------------------|--------------------------------------------------------------------------------------|
+| ConnectionStrings    | BlobStorage         |Blob endpoint and credentials                                                         |
+| ServiceBus           | ConnectionString    |Connection string service bus                                                         |
+| ServiceBus           | QueueName           |Queue configured name                                                                 |
+| SignalR              | ConnectionString    |SignalR connection string & credentials                                               |
+| SignalR              | HubName             |SignalR Hub HubName                                                                   |
+| AppInsights          | Key                 |Secret key for connecting with AppInsights                                            |
+| CognitiveServices    | Endpoint            |Endpoint Azure cognitive service configured                                           |
+| CognitiveServices    | Authorization       |Authorization key                                                                     |
+| CognitiveServices    | Region              |Azure cognitive service region configured                                             |
+| NCRAnnotation        | Endpoint            |Endpoint Azure cognitive service configured for NCR                                   |
+| NCRAnnotation        | Authorization       |Authorization key                                                                     |
+| TAHAnnotation        | Endpoint            |Endpoint Azure cognitive service configured  for Text Analytics                       |
+| TAHAnnotation        | Path                |text/analytics/v3.1/entities/health/jobs                                              |
+| TAHAnnotation        | Authorization       |Authorization key                                                                     |
+| TAHAnnotation        | BlackList           |User ids in black list                                                                |
 
 #### 1.4.2.2. Dx29.APIGateway
 Dx29 exposes an API for third parties to use the tool's algorithms independently of the tool. That is, they will be able to run the calculations they need but not access the specific user and patient information stored in the databases or blobs. 
@@ -114,6 +177,8 @@ The structure of the project is as follows:
 >- It also includes the generic projects or considered as a library, as it is programmed in C#: **Dx29** and **Dx29.Data**.
 
 It is important to mention that for now this project includes the code of two microservices that are no longer used (and therefore not necessary): Dx29.Bioenties and Dx29.TASearch. These functionalities have already been migrated to other microservices in use.
+
+This project doesn't have any dependency and doesn't need any secret value.
 
 #### 1.4.2.3. Dx29.Bioentity
 The Bioentity microservice is used to obtain symptom and disease information.
@@ -158,6 +223,8 @@ The structure of the project is as follows:
 >- **Dx29**. Used as library to add the common or more general functionalities used in Dx29 projects programmed in C#.
 
 Please note that it uses Orphanet, Mondo, Omim and HPO files as sources of information. Please note the updates of these files for this project.
+This project doesn't need any secret value.
+
 
 #### 1.4.2.4. Dx29.BioNET
 This microservice contains the Dx29 algorithm for the calculation and suggestion of diseases for a patient from his list of symptoms and/or genes.
@@ -213,6 +280,8 @@ The structure of the project is as follows:
 >- **Dx29**. Used as library to add the common or more general functionalities used in Dx29 projects programmed in C#.
 >- **Dx29.Bioentity**. It uses its own implementation of bioentity methods.
 
+This project doesn't have any dependency and doesn't need any secret value.
+
 
 #### 1.4.2.5. Dx29.Documents
 For the management and administration of documents necessary for the correct functioning of the Dx29 application.
@@ -238,6 +307,13 @@ The structure of the project is as follows:
 >- **Dx29.Documents.Web.API**. In this project is the implementation of the controllers that expose the aforementioned methods.
 >- **Dx29.Documents**. It is this project that contains the logic to perform the relevant operations.
 >- **Dx29** and **Dx29.Azure**. Used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.
+
+This project doesn't need any dependency but it accesses tthe blob. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+
+|  Key                 | Value               |		                                                                                |
+|----------------------|---------------------|--------------------------------------------------------------------------------------|
+| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+
 
 #### 1.4.2.6. Dx29.FileStorage
 For the management and administration of user documents for the correct functioning of the Dx29 application.
@@ -279,6 +355,13 @@ The structure of the project is as follows:
 >- **Dx29.FileStorage**. It is this project that contains the logic to perform the relevant operations.
 >- **Dx29** and **Dx29.Azure**. Used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.
 
+This project doesn't need any dependency but it accesses the blob. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+
+|  Key                 | Value               |		                                                                                |
+|----------------------|---------------------|--------------------------------------------------------------------------------------|
+| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+
+
 #### 1.4.2.7. Dx29.Localization
 For the translation of the Dx29 application into English or Spanish. 
 
@@ -314,6 +397,15 @@ The structure of the project is as follows:
 >- **Dx29.Localization**. It is this project that contains the logic to perform the relevant operations.
 >- **Dx29** and **Dx29.Azure**. Used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.
 
+This project doesn't need any dependency but it accesses the blob. In addition, it uses cognitive service for translations [Microsoft translation](https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview). Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+
+|  Key                 | Value               |		                                                                                |
+|----------------------|---------------------|--------------------------------------------------------------------------------------|
+| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+| CognitiveServices    | Endpoint            |Endpoint Azure cognitive service configured                                           |
+| CognitiveServices    | Authorization       |Authorization key                                                                     |
+| CognitiveServices    | Region              |Azure cognitive service region configured                                             |
 
 #### 1.4.2.8. Dx29.Mailing
 It is used to send emails: with content, subject and attachments, indicating who is sending the email, to whom it is being sent and if there are others in copy.
@@ -328,7 +420,6 @@ It offers the following methods for this purpose in Sendgrid controller (baselin
 >>>- POST body: Html content of the email
 >>>- Result: Data about the events that occur as Twilio SendGrid processes your email, with status code (200 OK).
 
-
 It is programmed in NodeJS, and a Docker image will result from this project.
 The structure of the project is as follows:
 >- The **controllers folder** contains the functionality to work with the previous methods. 
@@ -339,6 +430,13 @@ The structure of the project is as follows:
 >>- index.js: file where the app.js is loaded. It establish the port for connections and listens to requests.
 >>- Config.js: configuration file. It contains the keys and values that can be public.
 >>- App.js: the crossdomain is established.
+
+This project doesn't need any dependency but it uses Sengrid and AppInsights. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+
+|  Key                 | Value               |		                                                                                |
+|----------------------|---------------------|--------------------------------------------------------------------------------------|
+| SendGrid             | APIKey              |Secret Key for connect SendGrid                                                       |
+| AppInsights          | Key                 |Secret key for connecting with AppInsights                                            |
 
 
 #### 1.4.2.9. Dx29.MedicalHistory
@@ -517,6 +615,24 @@ The structure of the project is as follows:
 >- **Dx29.Localization**. It is this project that contains the logic to perform the relevant operations.
 >- **Dx29** and **Dx29.Azure**. Used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.
 
+This project doesn't need any dependency but it accesses the data bases. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+
+|  Key                 | Value               |		                                                                                |
+|----------------------|---------------------|--------------------------------------------------------------------------------------|
+| CaseRecords          | AppName             |Appplication name                                                                     |
+| CaseRecords          | DatabaseName        |Database Name where case records are saved                                            |
+| CaseRecords          | ConnectionString    |Connection string to case records database                                            |
+| MedicalCase          | AppName             |Appplication name                                                                     |
+| MedicalCase          | DatabaseName        |Database Name where medical cases are saved                                           |
+| MedicalCase          | ConnectionString    |Connection string to medical cases database                                           |
+| ResourceGroups       | AppName             |Appplication name                                                                     |
+| ResourceGroups       | DatabaseName        |Database Name where resource groups are saved                                         |
+| ResourceGroups       | ConnectionString    |Connection string to resource groups database                                         |
+| Account              | Key                 |Secret from SQL database (encrypt)                                                    |
+| Account              | Inx                 |Secret from SQL database (encrypt)                                                    |
+| Records              | Key                 |Secret from SQL database (encrypt)                                                    |
+| Records              | Inx                 |Secret from SQL database (encrypt)                                                    |
+
 
 #### 1.4.2.10. Dx29.Segmentation
 It is used to divide a text into paragraphs, lines, sections,... before sending it to the annotation service.
@@ -534,6 +650,7 @@ The structure of the project is as follows:
 >- **WebAPI** folder: With the files to expose the method funcionality.
 >- **Lib** folfer: with the files to tah contains the logic to perform the relevant operations.
 
+This project doesn't have any dependency and doesn't need any secret value.
 
 #### 1.4.2.11. Dx29.TermSearch2
 This microservice allows the searches described in the Dx29 application to be carried out: both for symptoms and diseases. That is, it will be the one called by the search boxes.
@@ -552,6 +669,11 @@ The structure of the project is as follows:
 >- **app.py** file: Is the main file, that access the aforementioned methods.
 >- **WebAPI** folder: With the files to expose the method funcionality.
 >- **Lib** folfer: with the files to tah contains the logic to perform the relevant operations.
+
+
+Please note that it uses diseases-terms-lang.json and symptom-terms-lang.json files as sources of information. Please note the updates of these files for this project.
+This project doesn't need any secret value.
+
 
 #### 1.4.2.12. Dx29.WebManagement
 This project will allow the use of methods in the Dx29 web application or the frontend (Dx29.Web) that require authentication and authorisation. For example, those related to the databases: Medical History.
@@ -772,9 +894,46 @@ This project consists of several subprojects, mainly:
 >- **Dx29.WebManagement**, it contains all the functions and methods necessary to offer the functionalities of Dx29. It has been implemented using [C# - ASP.NET](https://docs.microsoft.com/en-GB/visualstudio/get-started/csharp/tutorial-aspnet-core?view=vs-2022). 
 >- Finally, the **Dx29.Data** and **Dx29.Azure** projects are also added. These two are generic and are used as a library to add the common or more general functionalities used in Dx29 projects programmed in C#.
 
+It has the same dependencies and needs the same secrets as Dx29.Web:
+As it has been programmed with C#, the project must include a configuration file: appsettings.json. This includes the dependencies with other microservices:
+
+|  Key           | Value     |		                                                         |
+|----------------|-----------|---------------------------------------------------------------|
+| FileStorage    | Endpoint  |http://dx29-filestorage/api/v1/                                |
+| BioEntity      | Endpoint  |http://dx29-bioentity/api/v1/                                  |
+| Localization   | Endpoint  |http://dx29-localization/api/v1/                               |
+| TermSearch     | Endpoint  |http://dx29-termsearch2:8080/api/v1/                           |
+| Diagnosis      | Endpoint  |http://dx29-bionet/api/v1/                                     |
+| Management     | Endpoint  |http://dx29-medicalhistory/api/v1/                             |
+| MedicalHistory | Endpoint  |http://dx29-medicalhistory/api/v1/                             |
+| ResourceGroup  | Endpoint  |http://dx29-medicalhistory/api/v1/                             |
+| Annotations    | Endpoint  |http://dx29-annotations/api/v1/                                |
+| Exomiser       | Endpoint  |http://dx29-exomiser.northeurope.cloudapp.azure.com/api/v1/    |
+| Documents      | Endpoint  |http://dx29-documents/api/v1/                                  |
+| Mailing        | Endpoint  |http://dx29-mailing:8080/api/                                  |
+| Legacy         | Endpoint  |http://dx29-legacy:8080/api/                                   |
+| OpenDx29       | Endpoint  |https://dx29.ai/api                                            |
+| PhenSimilarity | Endpoint  |http://dx29-phensimilarity:8080/api/v1/                        |
+
+In addition, this project accesses the user database (SQL) and the blob. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+
+|  Key                 | Value               |		                                                                                |
+|----------------------|---------------------|--------------------------------------------------------------------------------------|
+| ConnectionStrings    | IdentityConnection  |SQL database endpoint and credentials                                                 |
+| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+| SignalR              | ConnectionString    |SignalR connection string & credentials                                               |
+| SignalR              | HubName             |SignalR Hub HubName                                                                   |
+| AppInsights          | Key                 |Secret key for connecting with AppInsights                                            |
+| Account              | Key                 |Secret from SQL database (encrypt)                                                    |
+| Account              | Inx                 |Secret from SQL database (encrypt)                                                    |
+| Records              | Key                 |Secret from SQL database (encrypt)                                                    |
+| Records              | Inx                 |Secret from SQL database (encrypt)                                                    |
+| IdentityServer       | Clients             |"Dx29.Web.UI": {"Profile": "IdentityServerSPA"}                                       |
+| IdentityServer       | Key                 |"Key": {"Type": "File","FilePath": Path certificate,"Password": Password certificate} |
+
 
 ### 1.4.3. External containers
-In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires [Exomiser](https://github.com/exomiser/Exomiser), [F29NCR](https:/f29ncr.northeurope.cloudapp.azure.com) and [F29API](https://f29api.northeurope.cloudapp.azure.com/index.html).
+In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires [Exomiser](https://github.com/exomiser/Exomiser), TODO: Lo vamos a quitar y solo trabajar con Text Analytics: [F29NCR](https:/f29ncr.northeurope.cloudapp.azure.com), [Microsoft translator](https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview) and [F29API](https://f29api.northeurope.cloudapp.azure.com/index.html).
 
 The documentation of each of these projects is not the subject of this manual. It is only necessary to understand that they expose APIs, with the endpoints that have been indicated here, and that their methods will be used, so you only need to understand the type of request, the input and output of each one.
 
