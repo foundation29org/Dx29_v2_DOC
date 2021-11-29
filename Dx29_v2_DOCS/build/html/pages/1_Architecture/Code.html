@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Code repositories and projects" href="../2_CodeRepositories.html" />
+    <link rel="next" title="4. Environments" href="../2_Environments.html" />
     <link rel="prev" title="1.3. Level 3: Component" href="Components.html" /> 
 </head>
 
@@ -101,54 +101,32 @@
 <li class="toctree-l3"><a class="reference internal" href="#dx29-localization">1.4.2.7. Dx29.Localization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dx29-mailing">1.4.2.8. Dx29.Mailing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dx29-medicalhistory">1.4.2.9. Dx29.MedicalHistory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dx29-phensimmilarity">1.4.2.10. Dx29.PhenSimmilarity</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dx29-segmentation">1.4.2.11. Dx29.Segmentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dx29-termsearch2">1.4.2.12. Dx29.TermSearch2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dx29-webmanagement">1.4.2.13. Dx29.WebManagement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dx29-segmentation">1.4.2.10. Dx29.Segmentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dx29-termsearch2">1.4.2.11. Dx29.TermSearch2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dx29-webmanagement">1.4.2.12. Dx29.WebManagement</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#external-containers">1.4.3. External containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operation-containers">1.4.4. Operation containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pull-images-and-docker-compose">1.4.4.1. Pull images and Docker compose.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dx29-envtest-and-dx29-envprod">1.4.4.2. Dx29.ENVTEST and Dx29.ENVPROD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environments">1.4.4.3. Environments</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories.html">2. Code repositories and projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/1_Backend.html">2.1. Backend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/1_Annotations.html">2.1.1. Annotations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/2_APIGateway.html">2.1.2. API Gateway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/3_Bioentity.html">2.1.3. Bioentity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/4_BioNET.html">2.1.4. BioNET</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/5_Documents.html">2.1.5. Documents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/6_FileStorage.html">2.1.6. File storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/7_Localization.html">2.1.7. Localization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/8_Mailing.html">2.1.8. Mailing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/9_MedicalHistory.html">2.1.9. Medical History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/10_PhenSimmilarity.html">2.1.10. PhenSimmilarity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/11_Segmentation.html">2.1.11. Term Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/12_TermSearch2.html">2.1.11. Term Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Backend/13_WebManagement.html">2.1.12. Web Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/2_Frontend.html">2.2. Frontend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Frontend/1_Dx29Web.html">2.2.1. Dx29 Web</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/3_Operations.html">2.3. Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Operations/1_PullImagesAndDockerCompose.html">2.3.1. Pull images script and docker compose</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Operations/2_ENVTEST.html">2.3.2. Environment: TEST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Operations/3_ENVPROD.html">2.3.3 Environment: PROD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_CodeRepositories/Operations/4_Environments.html">2.3.4. Environments: General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_ExternalDependencies.html">3. External dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_ExternalDependencies/1_Exomiser.html">3.1. Exomiser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_Environments.html">4. Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_Environments/1_AKS-DEV.html">4.1. Dev Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_Environments/2_AKS-TEST.html">4.2. Test environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_Environments/3_AKS-PRO.html">4.3. Prod environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_Environments/4_ScriptsCreateAndDeploy.html">4.4. Scripts for create and deploy environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_AzureResources.html">5. Azure resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_AzureResources/1_ContainerRegistry.html">5.1. Container registry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5_AzureResources/2_AKS.html">5.2. Azure kubernetes service (AKS)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../6_BuildAndDeploy.html">6. Build &amp; Deploy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../6_BuildAndDeploy/1_Build.html">6.1. Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../6_BuildAndDeploy/2_Deploy.html">6.2. Deploy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../6_BuildAndDeploy/3_Automation.html">6.3. Automation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../6_BuildAndDeploy/4_Locally.html">6.4. Running and working locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../6_BuildAndDeploy/5_CurrentStatus.html">6.5. Current Status of the environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../7_CodeGuidelines.html">7. Code Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments.html">4. Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments/1_AKS-DEV.html">4.1. Dev Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments/2_AKS-TEST.html">4.2. Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments/3_AKS-PRO.html">4.3. Prod environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments/4_ScriptsCreateAndDeploy.html">4.4. Scripts for create and deploy environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy.html">6. Build &amp; Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/1_Build.html">6.1. Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/2_Deploy.html">6.2. Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/3_Automation.html">6.3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/4_Locally.html">6.4. Running and working locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/5_CurrentStatus.html">6.5. Current Status of the environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_CodeGuidelines.html">7. Code Guidelines</a></li>
 </ul>
 
             
@@ -215,10 +193,29 @@
             
   <img align="right" width="100px" src="../../_images/Foundation29.png"><div class="section" id="level-4-code">
 <h1>1.4. Level 4: Code<a class="headerlink" href="#level-4-code" title="Permalink to this headline">¶</a></h1>
-<p>This section will briefly present the code-level components of the Dx29 application.
-As it consists of several projects that are necessary for its execution, they will be detailed in a more specific way in the following section: <strong>2. Code repositories and projects</strong>.</p>
-<p>In general, with the chosen architecture (this applies to all projects) it will be necessary for each project here to be compiled using Docker, and the created image uploaded to the corresponding Kubernetes cluster. This will be covered in section <strong>6.Build and Deploy</strong>, of this document.</p>
+<p>This section will briefly present the code-level components of the Dx29 application.</p>
 <p>As we have done in the previous section on components, here again the code projects will be presented according to whether they belong to the frontend, backend or external containers.</p>
+<p>In addition, a new classification appears: operations code projects. The latter will contain the projects and code for working with and deploying Dx29 environments. That is to say, they will not be components of the application architecture as such, but they will expose functionalities that allow us to work in a more comfortable, simple and fast way with the application. At this point we are only going to present what they are, later in this document we will detail where they are going to be used, so it is important to mention that they exist and what each of them contains.</p>
+<p>Before going into detail in each of the projects, it is important to note that the deployment of this project has been done in Azure, using AKS, container registry, different databases,…  Thus, each of these projects will generate the corresponding Docker images that will be uploaded to the appropriate container registry (this will depend on the environment) and will also contain files for the Deployment configuration in the AKS (also depends on the environment).
+The operations container will have different elements that will facilitate these tasks and each of the projects will follow the structure:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Folder <strong>src</strong>: The one containing the source code.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>In turn, inside this folder we will find the Docker files to compile the necessary images. These images will then be uploaded to the corresponding azure container registry.</li>
+<li>Here we will also find the secrets folder, which contains the appsettings.secrets.json file, where the keys and values of the secrets needed to use the project are defined.</li>
+<li>Some projects also include the spec folder, which contains the unit tests of the project.</li>
+<li>Finally, the rest of the folders that appear will depend on the programming language used to implement the microservice.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Manifests</strong> folder: which has the necessary files for the deployment in the cluster: Deployment Configuration and Kubernetes Service.</li>
+<li><strong>Azure-pipeline.yaml</strong> file, which will be used for the automatic deployment.</li>
+</ul>
+</div></blockquote>
+<p>In general, with the chosen architecture (this applies to all projects) it will be necessary for each project here to be compiled using Docker, and the created image uploaded to the corresponding Kubernetes cluster. This will be covered in section <strong>Build and Deploy</strong>, of this document.</p>
 <div class="section" id="frontend">
 <h2>1.4.1. Frontend<a class="headerlink" href="#frontend" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="webapp">
@@ -245,9 +242,13 @@ As it consists of several projects that are necessary for its execution, they wi
 <p>The annotation service is used to extract information from medical documents.</p>
 <p>It offers the following methods for this purpose:</p>
 <blockquote>
-<div><p>-Methods for performing extraction operations asynchronously (Text Analytics). Baseline request: <code class="docutils literal notranslate"><span class="pre">/api/v1/Annotations/</span></code></p>
+<div><ul class="simple">
+<li>Methods for performing extraction operations asynchronously (Text Analytics). Baseline request: <code class="docutils literal notranslate"><span class="pre">/api/v1/Annotations/</span></code></li>
+</ul>
 <blockquote>
-<div><p>-Process.</p>
+<div><ul class="simple">
+<li>Process.</li>
+</ul>
 <blockquote>
 <div><ul class="simple">
 <li>To make external queries to Dx29, that is to say, with documents that are not associated to any user profile of the application.</li>
@@ -262,20 +263,36 @@ As it consists of several projects that are necessary for its execution, they wi
 <li>Date: Date when the query is performed</li>
 <li>Status: String indicating the status of the job. Can be: Failed, Succeeded, Running, Preparing, Pending, Created or Unknown.</li>
 <li>CreatedOn: Date when the operation has made.</li>
-<li>LastUpdate
--Process/userId/caseId/reportId.</li>
+<li>LastUpdate</li>
 </ul>
 </div></blockquote>
+</div></blockquote>
 <ul class="simple">
+<li>Process/userId/caseId/reportId.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
 <li>For internal Dx29 queries, i.e. on users, cases and existing reports. This request will query the blobs to perform the relevant operations on the indicated document (For the user and the case, the report with identifier reportId is searched, and processed).</li>
 <li>POST request: <code class="docutils literal notranslate"><span class="pre">/api/v1/Annotations/process/{userId}/{caseId}/{reportId}</span></code></li>
 <li>Body request: Stream document.</li>
-<li>Response: Job status. An object like the one in the request described above is returned.
--Status.</li>
+<li>Response: Job status. An object like the one in the request described above is returned.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Status.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
 <li>To request the status of a given job. The identifier of the job corresponds to the token returned by any of the previous requests.</li>
 <li>GET request: <code class="docutils literal notranslate"><span class="pre">/api/v1/Annotations/status?params=&lt;token&gt;</span></code></li>
-<li>Response: Job status. An object like the one in the request described above is returned.
--Results.</li>
+<li>Response: Job status. An object like the one in the request described above is returned.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Results.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
 <li>To obtain the results of a given job. The job identifier corresponds to the token returned by any of the previous requests.</li>
 <li>GET request: <code class="docutils literal notranslate"><span class="pre">/api/v1/Annotations/results?params=&lt;token&gt;</span></code></li>
 <li>Object with the results of the annotation process:</li>
@@ -312,9 +329,13 @@ As it consists of several projects that are necessary for its execution, they wi
 </div></blockquote>
 </div></blockquote>
 <blockquote>
-<div><p>-Methods to perform extraction operations synchronously (NCR). Baseline request:<code class="docutils literal notranslate"><span class="pre">/api/v1/SyncAnnotations/</span></code></p>
+<div><ul class="simple">
+<li>Methods to perform extraction operations synchronously (NCR). Baseline request:<code class="docutils literal notranslate"><span class="pre">/api/v1/SyncAnnotations/</span></code></li>
+</ul>
 <blockquote>
-<div><p>-Process.</p>
+<div><ul class="simple">
+<li>Process.</li>
+</ul>
 <blockquote>
 <div><ul class="simple">
 <li>To make both external and internal queries to Dx29.</li>
@@ -326,8 +347,8 @@ As it consists of several projects that are necessary for its execution, they wi
 </div></blockquote>
 </div></blockquote>
 <p>It is programmed in C#, and two Docker images will result from this project: Annotations and AnnotationsJobs. The first one will contain the extraction functionality, while the second one will be used to manage the asynchronous jobs.
-To configure it, it is necessary to create a ServiceBus, where the asynchronous jobs will be sent.
-And finally, it should be mentioned that it depends on two external services: NCR and TextAnalytics.</p>
+To configure it, it is necessary to create a ServiceBus, where the asynchronous jobs will be sent. Therefore needs the configuration file with the secrets: keys and values.</p>
+<p>And finally, it should be mentioned that it depends on two external services: NCR and TextAnalytics.</p>
 <p>The structure of the project is as follows:</p>
 <blockquote>
 <div><ul class="simple">
@@ -342,7 +363,7 @@ And finally, it should be mentioned that it depends on two external services: NC
 <h3>1.4.2.2. Dx29.APIGateway<a class="headerlink" href="#dx29-apigateway" title="Permalink to this headline">¶</a></h3>
 <p>Dx29 exposes an API for third parties to use the tool’s algorithms independently of the tool. That is, they will be able to run the calculations they need but not access the specific user and patient information stored in the databases or blobs.</p>
 <p>It therefore offers the methods of the microservices that perform these functions, and simply acts as a link between an external application and the internal microservices located in the application cluster. Thus, the responses obtained in each case will be of the same type as the one described in the specific section for each microservice.
-The difference is that now the base address will be: “http://dx29-api.northeurope.cloudapp.azure.com/api/” and then the controller where the desired requests are located and the path of the request must be specified.
+The difference is that now the base address will be: <code class="docutils literal notranslate"><span class="pre">http://dx29-api.northeurope.cloudapp.azure.com/api/</span> </code> and then the controller where the desired requests are located and the path of the request must be specified.
 The APIs that he explains can be consulted in this <a class="reference external" href="http://dx29-api.northeurope.cloudapp.azure.com/index.html">link</a></p>
 <p>It is programmed in C#, and a Docker image will result from this project.</p>
 <p>The structure of the project is as follows:</p>
@@ -363,7 +384,9 @@ The APIs that he explains can be consulted in this <a class="reference external"
 <li>Conditions Controller: To search for diseases or conditions. Baseline request: <code class="docutils literal notranslate"><span class="pre">api/v1/Conditions/</span></code></li>
 </ul>
 <blockquote>
-<div><p>-Describe.</p>
+<div><ul class="simple">
+<li>Describe.</li>
+</ul>
 <blockquote>
 <div><ul class="simple">
 <li>To obtain information on diseases from a list of IDs and in a given language.</li>
@@ -405,7 +428,9 @@ The APIs that he explains can be consulted in this <a class="reference external"
 <li>Terms Controller: To search for diseases or symptoms regardless of type, i.e. a search for terms in all files.</li>
 </ul>
 <blockquote>
-<div><p>-Describe.</p>
+<div><ul class="simple">
+<li>Describe.</li>
+</ul>
 <blockquote>
 <div><ul class="simple">
 <li>To obtain information on terms from a list of IDs and in a given language.</li>
@@ -424,12 +449,13 @@ The APIs that he explains can be consulted in this <a class="reference external"
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
+<p><strong>TODO: Update with the new methods</strong></p>
 <p>It is programmed in C#, and a Docker image will result from this project.</p>
 <p>The structure of the project is as follows:</p>
 <blockquote>
-<div><p>-<strong>Dx29.Bioentity.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.
--<strong>Dx29.Bioentity</strong>. It is this project that contains the logic to perform the relevant operations.</p>
-<ul class="simple">
+<div><ul class="simple">
+<li><strong>Dx29.Bioentity.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.</li>
+<li><strong>Dx29.Bioentity</strong>. It is this project that contains the logic to perform the relevant operations.</li>
 <li><strong>Dx29</strong>. Used as library to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
 </ul>
 </div></blockquote>
@@ -537,9 +563,9 @@ The APIs that he explains can be consulted in this <a class="reference external"
 <p>It is programmed in C#, and a Docker image will result from this project.</p>
 <p>The structure of the project is as follows:</p>
 <blockquote>
-<div><p>-<strong>Dx29.BioNET.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.
--<strong>Dx29.BioNET</strong>. It is this project that contains the logic to perform the relevant operations.</p>
-<ul class="simple">
+<div><ul class="simple">
+<li><strong>Dx29.BioNET.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.</li>
+<li><strong>Dx29.BioNET</strong>. It is this project that contains the logic to perform the relevant operations.</li>
 <li><strong>Dx29</strong>. Used as library to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
 <li><strong>Dx29.Bioentity</strong>. It uses its own implementation of bioentity methods.</li>
 </ul>
@@ -590,9 +616,9 @@ For now, only the application’s terms and conditions and privacy policy docume
 <p>It is programmed in C#, and a Docker image will result from this project.</p>
 <p>The structure of the project is as follows:</p>
 <blockquote>
-<div><p>-<strong>Dx29.Documents.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.
--<strong>Dx29.Documents</strong>. It is this project that contains the logic to perform the relevant operations.</p>
-<ul class="simple">
+<div><ul class="simple">
+<li><strong>Dx29.Documents.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.</li>
+<li><strong>Dx29.Documents</strong>. It is this project that contains the logic to perform the relevant operations.</li>
 <li><strong>Dx29</strong> and <strong>Dx29.Azure</strong>. Used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
 </ul>
 </div></blockquote>
@@ -600,7 +626,7 @@ For now, only the application’s terms and conditions and privacy policy docume
 <div class="section" id="dx29-filestorage">
 <h3>1.4.2.6. Dx29.FileStorage<a class="headerlink" href="#dx29-filestorage" title="Permalink to this headline">¶</a></h3>
 <p>For the management and administration of user documents for the correct functioning of the Dx29 application.</p>
-<p>This microservice will therefore access the corresponding blob and folder (specific user), and will work on the requested document.</p>
+<p>This microservice will therefore access the corresponding blob and folder (specific user), and will work on the requested document. Therefore needs the configuration file with the secrets: keys and values.</p>
 <p>It offers the following methods for this purpose in FileStorage controller (FileStorage2 controller is obsolete):</p>
 <blockquote>
 <div><ul class="simple">
@@ -673,9 +699,9 @@ For now, only the application’s terms and conditions and privacy policy docume
 <p>It is programmed in C#, and a Docker image will result from this project.</p>
 <p>The structure of the project is as follows:</p>
 <blockquote>
-<div><p>-<strong>Dx29.FileStorage.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.
--<strong>Dx29.FileStorage</strong>. It is this project that contains the logic to perform the relevant operations.</p>
-<ul class="simple">
+<div><ul class="simple">
+<li><strong>Dx29.FileStorage.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.</li>
+<li><strong>Dx29.FileStorage</strong>. It is this project that contains the logic to perform the relevant operations.</li>
 <li><strong>Dx29</strong> and <strong>Dx29.Azure</strong>. Used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
 </ul>
 </div></blockquote>
@@ -757,69 +783,1110 @@ For now, only the application’s terms and conditions and privacy policy docume
 <p>It is programmed in C#, and a Docker image will result from this project.</p>
 <p>The structure of the project is as follows:</p>
 <blockquote>
-<div><p>-<strong>Dx29.Localization.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.
--<strong>Dx29.Localization</strong>. It is this project that contains the logic to perform the relevant operations.</p>
-<ul class="simple">
+<div><ul class="simple">
+<li><strong>Dx29.Localization.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.</li>
+<li><strong>Dx29.Localization</strong>. It is this project that contains the logic to perform the relevant operations.</li>
 <li><strong>Dx29</strong> and <strong>Dx29.Azure</strong>. Used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="dx29-mailing">
 <h3>1.4.2.8. Dx29.Mailing<a class="headerlink" href="#dx29-mailing" title="Permalink to this headline">¶</a></h3>
-<p>Para que sirve:
-Como se utiliza: Métodos que expone
-En que lenguaje esta prorgamado
-Organizacion general del proyecto:
-Si requiere de algun servicio externo.</p>
+<p>It is used to send emails: with content, subject and attachments, indicating who is sending the email, to whom it is being sent and if there are others in copy.</p>
+<p>To perform these tasks it uses the [SendGrid] library (https://www.npmjs.com/package/&#64;sendgrid/mail).</p>
+<p>It offers the following methods for this purpose in Sendgrid controller (baseline request: <code class="docutils literal notranslate"><span class="pre">api/</span></code>)</p>
+<blockquote>
+<div><ul class="simple">
+<li>Send email.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>This method is the one that performs the function of sending an email.</li>
+<li>POST request: <code class="docutils literal notranslate"> <span class="pre">api/sendEmail?params={To:&lt;destination</span> <span class="pre">address,From:&lt;request</span> <span class="pre">address&gt;,Subject:&lt;subject</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">email&gt;,</span> <span class="pre">CC:&lt;copy&gt;,</span> <span class="pre">BCC:&lt;blid</span> <span class="pre">copy&gt;,</span> <span class="pre">ReplyTo:&lt;To</span> <span class="pre">whom</span> <span class="pre">the</span> <span class="pre">email</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">replied</span> <span class="pre">to&gt;}</span></code> (*CC, BCC and ReplyTo are optional)</li>
+<li>Atachments are added in the header of the request: <strong>dx-attachments</strong> header.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST body: Html content of the email</li>
+<li>Result: Data about the events that occur as Twilio SendGrid processes your email, with status code (200 OK).</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>It is programmed in NodeJS, and a Docker image will result from this project.
+The structure of the project is as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <strong>controllers folder</strong> contains the functionality to work with the previous methods.</li>
+<li>In the <strong>routes folder</strong>, all the routes of the API appear. It contains the file index.js that links with the controllers, defining the requests that will be available to the external clients.</li>
+<li>In the <strong>services folder</strong> the functionality is implemented.</li>
+<li>In the <strong>secrets folder</strong> we save the keys and values of some variables that must not be public.</li>
+<li><strong>Some files</strong>:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>index.js: file where the app.js is loaded. It establish the port for connections and listens to requests.</li>
+<li>Config.js: configuration file. It contains the keys and values that can be public.</li>
+<li>App.js: the crossdomain is established.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="dx29-medicalhistory">
 <h3>1.4.2.9. Dx29.MedicalHistory<a class="headerlink" href="#dx29-medicalhistory" title="Permalink to this headline">¶</a></h3>
-<p>Para que sirve:
-Como se utiliza: Métodos que expone
-En que lenguaje esta prorgamado
-Organizacion general del proyecto:
-Si requiere de algun servicio externo.</p>
-</div>
-<div class="section" id="dx29-phensimmilarity">
-<h3>1.4.2.10. Dx29.PhenSimmilarity<a class="headerlink" href="#dx29-phensimmilarity" title="Permalink to this headline">¶</a></h3>
-<p>Para que sirve:
-Como se utiliza: Métodos que expone
-En que lenguaje esta prorgamado
-Organizacion general del proyecto:
-Si requiere de algun servicio externo.</p>
+<p>It is used for the management of the Dx29 databases, i.e. it is the microservice that works with the data of each Dx29 user and patient. Therefore, it is not exposed to third parties but only the Dx29 application will have permissions to work with it. Furthermore, it ensures that only the user of the case (or with whom it has been shared) has access to its information.</p>
+<p>It has access to the databases and therefore needs the configuration file with the secrets: keys and values.</p>
+<p>For this purpose, it offers the following methods organised in different controllers:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Medical cases controller: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCases/</span></code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get by userId:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>To get the cases for an specific user.</li>
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCases/&lt;userId&gt;?includeDeleted=&lt;bool&gt;</span> </code> (includeDeleted is optional, for getting the deleted cases or not. Default value = false)</li>
+<li>Result: List of medical case objects, with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Id</li>
+<li>User id owner</li>
+<li>Status of the case</li>
+<li>Patient info: an object with:Name, Gender, birdthdate and list of diagnosis diseases (string ids).</li>
+<li>Resource groups associated with this case. Dictionary with identfiers of the resource group as keys, and a object data as the value with: Type, Name, last update time and a dictionary with the resources of this group (with resource identifier as key, and string with the state or information as value).</li>
+<li>SharedBy and SharedWith: Who shared it with me and who I shared it with. First with the information of: userId, caseId, Status and last update date. Second with userId, status and last update date.</li>
+<li>Dates of created on and updated on.</li>
+<li>Method ToString() to return the userId and medical case id in string format: userId-id.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Get by userId and caseId:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>To get the specific case for an specific user.</li>
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCases/&lt;userId&gt;/&lt;caseId&gt;?includeDeleted=&lt;bool&gt;</span> </code> (includeDeleted is optional, for getting the deleted cases or not. Default value = false)</li>
+<li>Result: Medical case object like the one in the request of get medical cases from userId.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>New medical case for userId</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Create new medical case for userId</li>
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCases/&lt;userId&gt;</span></code></li>
+<li>Body request: Object with patient information: Name, gender, birthdate and list of diagnosed diseases.</li>
+<li>Result: Medical case object like the one in the request of get medical cases from userId.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Update medical case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Update information of an existing medical case.</li>
+<li>PATCH request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCases/&lt;userId&gt;/&lt;caseId&gt;</span></code></li>
+<li>Body request: Object with patient information: Name, gender, birthdate and list of diagnosed diseases.</li>
+<li>Result: Medical case object like the one in the request of get medical cases from userId.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete by userId:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>To delete all the cases for an specific user.</li>
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCases/&lt;userId&gt;</span></code> (includeDeleted is optional, for getting the deleted cases or not. Default value = false)</li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete medical case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Delete an existing medical case.</li>
+<li>DELETE request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCases/&lt;userId&gt;/&lt;caseId&gt;</span></code></li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Share medical case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Share information of an existing medical case with another user.</li>
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCases/share/&lt;userId&gt;/&lt;caseId&gt;</span></code></li>
+<li>Body request: String. Email of the user we want to share with.</li>
+<li>Result: Medical case object like the one in the request of get medical cases from userId.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Medical cases shared controller: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCaseShared/</span></code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Medical case shared by:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get medical case shared by</li>
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCaseShared/&lt;userId&gt;/&lt;caseId&gt;</span></code></li>
+<li>Result request:</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Share medical case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>To share an specific medical case (caseId) of an user (userId) with another user (email).</li>
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCaseShared/&lt;userId&gt;/&lt;caseId&gt;</span></code></li>
+<li>Body request: Object with the email string and the action (accept, revoke, delete or created)</li>
+<li>Result request: Medical case object like the one in the request of get medical cases from userId.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Stop sharing:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Stop sharing medical case with a user.</li>
+<li>PATCH request: <code class="docutils literal notranslate"><span class="pre">api/v1/MedicalCaseShared/&lt;userId&gt;/&lt;caseId&gt;</span></code></li>
+<li>Body request: Object with the email string and the action (accept, revoke, delete or created)</li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Resource groups controller: <code class="docutils literal notranslate"><span class="pre">api/v1/ResourceGroups/</span></code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get resource group</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get Resource Groups by userId, caseId. Filter by type or name</li>
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/ResourceGroups/&lt;userId&gt;/&lt;caseId&gt;?type=&lt;resource</span> <span class="pre">type&gt;&amp;name=&lt;resource</span> <span class="pre">name&gt;</span></code> (type and name are optionals, if indicated the method will only return the resources that meets this filters).</li>
+<li>Result request: Resource group object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier, name and type of the resource group</li>
+<li>The userId and the caseId associated with this resource group.</li>
+<li>Created on and updated on dates.</li>
+<li>A dictionary with the resources associated with resource identifier as key, and string with the state or information as value.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Get resource group by id</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get Resource Group by Id</li>
+<li>GET request: <code class="docutils literal notranslate"> <span class="pre">api/v1/ResourceGroups/&lt;userId&gt;/&lt;caseId&gt;/&lt;groupId&gt;</span></code></li>
+<li>Result request: Resource group object with the same items of get resource group previous request.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>New resource group:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Create Resource Group</li>
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">api/v1/ResourceGroups/&lt;userId&gt;/&lt;caseId&gt;?type=&lt;resource</span> <span class="pre">type&gt;&amp;name=&lt;resource</span> <span class="pre">name&gt;</span></code></li>
+<li>Body request: A list of resources objects with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier and name of the resource</li>
+<li>Status: undefined, selected, unselected</li>
+<li>Dictionary of strings with the properties of the resource: path, score, error, errorMessage.</li>
+<li>The created on and updated on dates.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Result request: Resource group object with the same items of get resource group previous request.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Update resource group.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Update an existing resource Group</li>
+<li>PUT request: <code class="docutils literal notranslate"><span class="pre">api/v1/ResourceGroups/&lt;userId&gt;/&lt;caseId&gt;?type=&lt;resource</span> <span class="pre">type&gt;&amp;name=&lt;resource</span> <span class="pre">name&gt;</span></code></li>
+<li>Body request: A list of resources objects with the same items as the body request of create new resource.</li>
+<li>Result request: Resource group object with the same items of get resource group previous request.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Delete Reource Group by groupId</li>
+<li>DELETE request: <code class="docutils literal notranslate"> <span class="pre">api/v1/ResourceGroups/&lt;userId&gt;/&lt;caseId&gt;/&lt;groupId&gt;</span></code></li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Resources controller: <code class="docutils literal notranslate"><span class="pre">api/v1/Resources/</span></code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get resources 1</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get Resources by type?, name?, resourceId?</li>
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;?groupType=&lt;group</span> <span class="pre">type&gt;&amp;groupName=&lt;group</span> <span class="pre">name&gt;&amp;resourceId=&lt;resource</span> <span class="pre">id&gt;</span></code> (All queries are optional).</li>
+<li>Result response: A dictionary with resourceGroupId.resourceGroupName as keys and list of resource objects as values with</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier and name of the resource</li>
+<li>Status: undefined, selected, unselected</li>
+<li>Dictionary of strings with the properties of the resource: path, score, error, errorMessage.</li>
+<li>The created on and updated on dates.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Get resources 2.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get Resource by groupId and resourceId</li>
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;/&lt;groupId&gt;/&lt;resourceId&gt;</span></code></li>
+<li>Result response: A resource object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier and name of the resource</li>
+<li>Status: undefined, selected, unselected</li>
+<li>Dictionary of strings with the properties of the resource: path, score, error, errorMessage.</li>
+<li>The created on and updated on dates.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Get resources 3</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get Resource by type, name and resourceId</li>
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;/&lt;groupType&gt;/&lt;groupName&gt;/&lt;resourceId&gt;</span></code></li>
+<li>Result response: A resource object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier and name of the resource</li>
+<li>Status: undefined, selected, unselected</li>
+<li>Dictionary of strings with the properties of the resource: path, score, error, errorMessage.</li>
+<li>The created on and updated on dates.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Upsert resources 1</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Upsert Resources grouped by groupId</li>
+<li>PUT request: <code class="docutils literal notranslate"> <span class="pre">api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;/</span></code></li>
+<li>Body request: A dictionary with resourceGroupId.resourceGroupName as keys and list of resource objects as values with</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier and name of the resource</li>
+<li>Status: undefined, selected, unselected</li>
+<li>Dictionary of strings with the properties of the resource: path, score, error, errorMessage.</li>
+<li>The created on and updated on dates.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Result request: The same object send in body updated.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Upsert resources 2:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Upsert Resources by groupId</li>
+<li>PUT request  <code class="docutils literal notranslate"> <span class="pre">api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;/&lt;resourceGroupId&gt;/</span></code></li>
+<li>Body request: List of resource objects with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier and name of the resource</li>
+<li>Status: undefined, selected, unselected</li>
+<li>Dictionary of strings with the properties of the resource: path, score, error, errorMessage.</li>
+<li>The created on and updated on dates.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Result request: Resource group object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier, name and type of the resource group</li>
+<li>The userId and the caseId associated with this resource group.</li>
+<li>Created on and updated on dates.</li>
+<li>A dictionary with the resources associated with resource identifier as key, and string with the state or information as value.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Upsert resources 3:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Upsert Resources by type, name</li>
+<li>PUT request: <code class="docutils literal notranslate"> <span class="pre">api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;/&lt;groupType&gt;/&gt;groupName&gt;</span></code></li>
+<li>Body request: List of resource objects with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier and name of the resource</li>
+<li>Status: undefined, selected, unselected</li>
+<li>Dictionary of strings with the properties of the resource: path, score, error, errorMessage.</li>
+<li>The created on and updated on dates.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Result request: Resource group object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier, name and type of the resource group</li>
+<li>The userId and the caseId associated with this resource group.</li>
+<li>Created on and updated on dates.</li>
+<li>A dictionary with the resources associated with resource identifier as key, and string with the state or information as value.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Delete resources 1:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Delete Resources by groupId, resourceId</li>
+<li>DELETE request: <code class="docutils literal notranslate"> <span class="pre">api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;/&lt;groupId&gt;?resourceId=&lt;list</span> <span class="pre">of</span> <span class="pre">resource</span> <span class="pre">ids&gt;</span></code></li>
+<li>Result request:Resource group object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier, name and type of the resource group</li>
+<li>The userId and the caseId associated with this resource group.</li>
+<li>Created on and updated on dates.</li>
+<li>A dictionary with the resources associated with resource identifier as key, and string with the state or information as value.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Delete resources 2:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Delete Resources by group type, group name, resourceId</li>
+<li>DELETE request: <code class="docutils literal notranslate"> <span class="pre">api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;/&lt;groupType&gt;/&lt;groupName&gt;?resourceId=&lt;list</span> <span class="pre">of</span> <span class="pre">resource</span> <span class="pre">ids&gt;</span></code></li>
+<li>Result request: Resource group object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier, name and type of the resource group</li>
+<li>The userId and the caseId associated with this resource group.</li>
+<li>Created on and updated on dates.</li>
+<li>A dictionary with the resources associated with resource identifier as key, and string with the state or information as value.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>It is programmed in C#, and a Docker image will result from this project.</p>
+<p>The structure of the project is as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Dx29.Localization.Web.API</strong>. In this project is the implementation of the controllers that expose the aforementioned methods.</li>
+<li><strong>Dx29.Localization</strong>. It is this project that contains the logic to perform the relevant operations.</li>
+<li><strong>Dx29</strong> and <strong>Dx29.Azure</strong>. Used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
+</ul>
+</div></blockquote>
 </div>
 <div class="section" id="dx29-segmentation">
-<h3>1.4.2.11. Dx29.Segmentation<a class="headerlink" href="#dx29-segmentation" title="Permalink to this headline">¶</a></h3>
-<p>Para que sirve:
-Como se utiliza: Métodos que expone
-En que lenguaje esta prorgamado
-Organizacion general del proyecto:
-Si requiere de algun servicio externo.</p>
+<h3>1.4.2.10. Dx29.Segmentation<a class="headerlink" href="#dx29-segmentation" title="Permalink to this headline">¶</a></h3>
+<p>It is used to divide a text into paragraphs, lines, sections,… before sending it to the annotation service.</p>
+<p>For this purpose, it offers the following method:</p>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">document/segmentation?lan=&lt;language&gt;</span></code></li>
+<li>Body request: An object like: <code class="docutils literal notranslate"> <span class="pre">{&quot;Text&quot;:&lt;string&gt;}</span></code></li>
+<li>Result request: An object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>‘language_source’: The language detected in the source document or selected by the query.</li>
+<li>‘segments’: A list of objects with a identifier and source of the segment.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>It is programmed in Python, and a Docker image will result from this project.
+The structure of the project is as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>RunWeb.py</strong> file: Is the main file, that access the aforementioned method.</li>
+<li><strong>WebAPI</strong> folder: With the files to expose the method funcionality.</li>
+<li><strong>Lib</strong> folfer: with the files to tah contains the logic to perform the relevant operations.</li>
+</ul>
+</div></blockquote>
 </div>
 <div class="section" id="dx29-termsearch2">
-<h3>1.4.2.12. Dx29.TermSearch2<a class="headerlink" href="#dx29-termsearch2" title="Permalink to this headline">¶</a></h3>
-<p>Para que sirve:
-Como se utiliza: Métodos que expone
-En que lenguaje esta prorgamado
-Organizacion general del proyecto:
-Si requiere de algun servicio externo.</p>
+<h3>1.4.2.11. Dx29.TermSearch2<a class="headerlink" href="#dx29-termsearch2" title="Permalink to this headline">¶</a></h3>
+<p>This microservice allows the searches described in the Dx29 application to be carried out: both for symptoms and diseases. That is, it will be the one called by the search boxes.</p>
+<p>For this purpose, it offers the following method:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Search symptoms:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/search/symptoms?q={query}&amp;lang={lang}&amp;rows={rows}</span></code></li>
+<li>Result request: List of Terms (objects) with: identifier, name and description strings, and a list of strings with the identifiers of the synonyms.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Search diseases:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/search/diseases?q={query}&amp;lang={lang}&amp;rows={rows}</span></code></li>
+<li>Result request: List of Terms (objects) with: identifier, name and description strings, and a list of strings with the identifiers of the synonyms.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>It is programmed in Python, and a Docker image will result from this project.</p>
+<p>The structure of the project is as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>app.py</strong> file: Is the main file, that access the aforementioned methods.</li>
+<li><strong>WebAPI</strong> folder: With the files to expose the method funcionality.</li>
+<li><strong>Lib</strong> folfer: with the files to tah contains the logic to perform the relevant operations.</li>
+</ul>
+</div></blockquote>
 </div>
 <div class="section" id="dx29-webmanagement">
-<h3>1.4.2.13. Dx29.WebManagement<a class="headerlink" href="#dx29-webmanagement" title="Permalink to this headline">¶</a></h3>
-<p>Para que sirve:
-Como se utiliza: Métodos que expone
-En que lenguaje esta prorgamado
-Organizacion general del proyecto:
-Si requiere de algun servicio externo.</p>
+<h3>1.4.2.12. Dx29.WebManagement<a class="headerlink" href="#dx29-webmanagement" title="Permalink to this headline">¶</a></h3>
+<p>This project will allow the use of methods in the Dx29 web application or the frontend (Dx29.Web) that require authentication and authorisation. For example, those related to the databases: Medical History.
+It will be used on demand, in order to be able to perform automated actions.</p>
+<p>It shall not be exposed for use by third parties. It is an internal management tool for Fundation 29 programmers.</p>
+<p>It will present the following methods organised in different controllers: Requests baseline: <code class="docutils literal notranslate"><span class="pre">management/api/v1/</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li>Analysis controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/DataAnalysis</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get analysis list:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">analysis/{CaseId}</span> </code></li>
+<li>Result request: List of analysis yet executed for a medical case. It uses the Dx29.BioNET service, saving the results in the corresponding medical history blob (the ones to be read with this method) and therefore its result will be the object returned by this microservice.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Get specific analysis:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">management/api/DataAnalysis/analysis/{CaseId}/{resourceId}</span> </code></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Result request: Analysis execution speficic result. Now only the result of the execution of Dx29.BioNET with the identifier of the specified resource will be read, and therefore the result will be only an object with the structure returned by the microservice.</li>
+<li>Process new analysis</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">analysis/{CaseId}</span> </code></li>
+<li>Body request: List of the symptoms identifiers of this case (string).</li>
+<li>Result request: It uses the Dx29.BioNET service, therefore its result will be the object returned by this microservice and the resource identifier asociated that has been created in the databases.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Calculate new analysis.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request:<code class="docutils literal notranslate"><span class="pre">calculateDiagnosis</span> </code></li>
+<li>Body request: The expected body of Dx29.BioNET microservice, with the information of the symptoms and the genes of a medical case.</li>
+<li>Result request:It uses the Dx29.BioNET service and not created any new resource in Dx29 databases, so its result will be the object returned by this microservice and the resource identifier asociated.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Obtain gene information in th format that Dx29.BioNET expects:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">geneInput</span> </code></li>
+<li>Body request: Exomiser JSON result.</li>
+<li>Result request: Genes information in the format that Dx29.BioNET expects as body input.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete a specific analyisis:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>DELETE request: <code class="docutils literal notranslate"><span class="pre">analysis/{CaseId}/{resourceId}</span> </code></li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Get gene report used in a specific analysis:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request:  <code class="docutils literal notranslate"><span class="pre">geneReport/{CaseId}/{resourceId}</span> </code></li>
+<li>Result request: The identifiers if the gene reports used in that analysis.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>File storage controller, exponse the methods for communicate with this microservice.<code class="docutils literal notranslate"><span class="pre">management/api/v1/FileStorage</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Upload multipart files</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">{caseId}</span> </code></li>
+<li>Data request: Content-type in headers (max 128) and string text in body.</li>
+<li>Data validation: This methods thorws error if content is empty or if there’s a file present without form data. If form data is present, this method immediately fails and returns the model error.</li>
+<li>This method doesn’t trust the file name sent by the client. To display the file name, HTML-encode the value.</li>
+<li>Result request: The resource identifier created (string)</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Upload simple file:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">{caseId}/{name}</span></code></li>
+<li>Body request: Content of the file.</li>
+<li>Data validation: this methods throw error if the name is too large (max 128) or file size is zero or file size is too large (2Gb).</li>
+<li>Result request: A file model object with: resource identifier, file name, size, thresold, extension, file type (Medical or Genetic), if is phenotype or of is genotype booleans, and two methods for get file type and file extension.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Get or download a file content 1:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">{caseId}/{resourceId}/{name}</span></code></li>
+<li>Data validation: this methods throws a exception if the name is too large (max 128).</li>
+<li>Result request: A File stream object with the stream, content-type = application/octet-stream, and the file name.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Get or download a file content 2:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">{caseId}/{groupType}/{groupName}/{resourceId}</span></code></li>
+<li>Data validation: this methods throws a exception if resource not found.</li>
+<li>Result request: A File stream object with the stream, content-type = application/octet-stream, and the file name.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete file:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>DELETE request:<code class="docutils literal notranslate"><span class="pre">{caseId}/{name}</span></code></li>
+<li>Data validation: this methods throws a exception if the name is too large (max 128).</li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Some controllers that access data bases and manage the information about different types of resources: Notes, Patients, Reports and Symptoms. And a controller for manage medical cases and resource groups associated with a case: Medical History controller.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Notes controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/Notes</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get all notes for a case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">Notes/all/{caseId}</span> </code></li>
+<li>Result request: List of note objects, with the dentifier, name and content of the note, and the created on and updated on dates.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Get specific note for a case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">get/{caseId}/{noteId}</span> </code></li>
+<li>Result request: A note object, with the dentifier, name and content of the note, and the created on and updated on dates.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Create new note for a case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">create/{caseId}</span> </code></li>
+<li>Body request: A note object, with the name and content of the note.</li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Update note for a case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">update/{caseId}?noteId=&lt;note</span> <span class="pre">identifier&gt;</span> </code></li>
+<li>Body request: A note object, with the name and content of the note.</li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete note for a case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">delete/{caseId}/{noteId}</span></code></li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Patients controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/Patients</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get patients for a medical case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">{caseId}</span></code></li>
+<li>Result request: A patient model object with:</li>
+<li>Identifier</li>
+<li>Status of the case</li>
+<li>Patient info: an object with:Name, Gender, birdthdate and list of diagnosis diseases (string ids).</li>
+<li>The number of symptoms, medical reports and genotype reports.</li>
+<li>SharedWith: who shared it with. With userId, status and last update date.</li>
+<li>Dates of created on and updated on.</li>
+<li>Method IsCaseOwner: if this patient is the owner of the case.</li>
+<li>Methods IsShared and IsSharing: status of sharing this case, and method CanBeShared for determine if this case can be or not shared with others.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Get summary information:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">summary/{caseId}</span></code></li>
+<li>Result request: A patient model object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Symptoms summary: Object with the status and the last update of each symptom of the case.</li>
+<li>Genes summary: Object with the status and the last update of each symptom of the case.</li>
+<li>Reports summary: Object with the status and the last update of each medical report of the case.</li>
+<li>Genotype summary: Object with the status and the last update of each genotype report of the case.</li>
+<li>DataAnalysis summary: Object with the status and the last update of each data analysis execution of the case.</li>
+<li>Last update date.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Create new patient:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: Empty path</li>
+<li>Body request: Create patient model object with: Patient info (name, gender, birthdate and diseases ids), the reports (File model) and the list of symptoms identifiers (string).</li>
+<li>Result request: Patient model object.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Update patient:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>PATCH request: <code class="docutils literal notranslate"><span class="pre">{caseId}</span></code></li>
+<li>Body request: Patient info model object with: name, gender, birthdate and diseases ids.</li>
+<li>Result request: Patient model object.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete patient:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>DELETE request: <code class="docutils literal notranslate"><span class="pre">{caseId}</span></code></li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete all patients for the actual user:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>DELETE request: Empty path</li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Gene reports controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/GeneReports</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get all genotype reports for a case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">all/{caseId}</span></code></li>
+<li>Result request: List of report model objects with: identifier, name, status, Error description (if any error occurs it will be described in this field), Error code (if any error occurs the code will be appear in this field), size, the created on date, and two methods for get the extension of the file and if is ready (Processing on this file is either finished or not.)</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Get specific genotype results:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">results/{caseId}/{resourceId}</span></code></li>
+<li>Result request: List of genotype info objects, with:</li>
+<li>Name</li>
+<li>Whitelisted, with: Name, Color and Text color.</li>
+<li>List of clinVar items, with: Name, Color, Text color and Link.</li>
+<li>Score with: Value, Color and TextColor.</li>
+<li>List of gen info with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Whitelisted, with: Name, Color and Text color.</li>
+<li>List of clinVar items, with: Name, Color, Text color and Link.</li>
+<li>ModeOfInheritance, with: Name, Name short and Link.</li>
+<li>List of Mutation objects with: Name and Link.</li>
+<li>The Chromosome</li>
+<li>VariantEffect with: Name, Color, Text color and Link.</li>
+<li>The ExomiserScore, PhenotypeScore and VariantScore, each one with: Value, Color and TextColor.</li>
+<li>List of Literature items with: Name and Link.</li>
+<li>List of Frequency items with: Name, Value and Link.</li>
+<li>List of PredictedPathogenicityScores_ with: Name and Value.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Get specific genotype results in Exomiser result format:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">exomiser/{caseId}/{resourceId}</span></code></li>
+<li>Result request: Exomiser JSON object.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Process genotype file:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>PUT request: <code class="docutils literal notranslate"><span class="pre">process/{caseId}/</span></code> or only <code class="docutils literal notranslate"><span class="pre">{caseId}</span></code></li>
+<li>Body request: File model object.</li>
+<li>Result request: Job status object of the proccess, with: Name, Toke, Status, Created on and updated on dates, ErrorCode (if any error occurs the code will be appear in this field), Message (describe the execution), Details, and logs object (with date time, status and message).</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete genotype file:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>DELETE request: <code class="docutils literal notranslate"><span class="pre">delete/{caseId}/{reportId}</span></code></li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Manage notifications of Genotype file process:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">Notification</span></code></li>
+<li>Body request: Exomiser notification object with: userId, CaseId, ResourceId and token.</li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Medical reports controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/PhenReports</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get all medical reports for a case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">all/{caseId}</span></code></li>
+<li>Result request: List of report model objects with: identifier, name, status, Error description (if any error occurs it will be described in this field), Error code (if any error occurs the code will be appear in this field), size, the created on date, and two methods for get the extension of the file and if is ready (Processing on this file is either finished or not.)</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Get specific medical results:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">annotations/{caseId}/{reportId}</span></code></li>
+<li>Result request: List of DocAnnotations objects, with: Analyzer string and segment objects: with identifier, text, source, language and list of annotations (Yet described in Dx29.Annotations microservice).</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Process a medical file:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>PUT request:<code class="docutils literal notranslate"><span class="pre">process/{caseId}/</span></code></li>
+<li>Body request: This uses the microservice of Dx29.Annotations, so the body must be the same as the one expected by the microservice to process a file: an object of type FileModel.</li>
+<li>Result request: Job status object of the proccess, with: Name, Toke, Status, Created on and updated on dates, ErrorCode (if any error occurs the code will be appear in this field), Message (describe the execution), Details, and logs object (with date time, status and message).</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete medical file</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>DELETE request: <code class="docutils literal notranslate"><span class="pre">delete/{caseId}/{reportId}</span></code></li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Reports controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/Reports</span> </code>. It includes on the one hand the requests to obtain the results of the medical and genotypic files.
+In addition to this, it adds two new methods:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>To obtain all the files of a case independently of the type (looking for both medical and genetic).</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">{caseId}</span></code></li>
+<li>Result request: List of report model objects with: identifier, name, status, Error description (if any error occurs it will be described in this field), Error code (if any error occurs the code will be appear in this field), size, the created on date, and two methods for get the extension of the file and if is ready (Processing on this file is either finished or not.)</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>To save in a case the files that we want independently of the type (classifying them in medical or genetic automatically).</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>PUT request: <code class="docutils literal notranslate"><span class="pre">{caseId}</span></code></li>
+<li>Body request: File model object.</li>
+<li>Result request: Job status object of the proccess, with: Name, Toke, Status, Created on and updated on dates, ErrorCode (if any error occurs the code will be appear in this field), Message (describe the execution), Details, and logs object (with date time, status and message).</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Symptoms controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/Symptoms</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get symptoms of a case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">{caseId}?name=&lt;group</span> <span class="pre">name&gt;&amp;lang=&lt;language&gt;</span></code>. Resource group name and language are optional.</li>
+<li>Result request:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>If language is null List of symptom objects with:  Identifier, Status, LastUpdate and source of the symptom (Identifier, name and segments). It includes some methods for each symptom too: IsKeySymptom, IsSelected, IsRemoved,IsUnselected, IsUndefined, SelectionOrder, HasDocument, MergLastUpdate and MergeStatus.</li>
+<li>If language is NOT null List of symptom description objects with: The same items as a symptom type object, plus: Name, Desc and the categories (identifier, name).</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Update symptoms of a case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>PUT request: <code class="docutils literal notranslate"><span class="pre">{caseId}</span></code></li>
+<li>Body request: Dictionary with symptom identifier as key and symptom status as value.</li>
+<li>Result request: Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Medical History controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/MedicalHistory</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get a specific medical case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">medicalcase/{caseId}</span> </code></li>
+<li>Result request:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Id</li>
+<li>User id owner</li>
+<li>Status of the case</li>
+<li>Patient info: an object with:Name, Gender, birdthdate and list of diagnosis diseases (string ids).</li>
+<li>Resource groups associated with this case. Dictionary with identfiers of the resource group as keys, and a object data as the value with: Type, Name, last update time and a dictionary with the resources of this group (with resource identifier as key, and string with the state or information as value).</li>
+<li>SharedBy and SharedWith: Who shared it with me and who I shared it with. First with the information of: userId, caseId, Status and last update date. Second with userId, status and last update date.</li>
+<li>Dates of created on and updated on.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Get resource groups for a medical case:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GER request: <code class="docutils literal notranslate"><span class="pre">resourcegroups/{caseId}</span> </code></li>
+<li>Result request: List of Resource group items:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Identifier, name and type of the resource group</li>
+<li>The userId and the caseId associated with this resource group.</li>
+<li>Created on and updated on dates.</li>
+<li>A dictionary with the resources associated with resource identifier as key, and string with the state or information as value.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Users management controllers:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Users controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/Users</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Create user:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: Empty path</li>
+<li>Body request: Create user model object with: mail, password,First name, Last name,Language and role (Patient or Physician).</li>
+<li>Result request:  Ok if all is ok, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Get user by email:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET request: Empty path and email in query</li>
+<li>Result request: string user identifier.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Delete user:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>DELETE request: Empty path and email in query</li>
+<li>Result request: Ok if all is ok, Not found if specified user is not registered, or bad request if any error occurs.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Login controller: <code class="docutils literal notranslate"><span class="pre">management/api/v1/Login</span> </code></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Authenticate</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>POST request: Empty path</li>
+<li>Body request: User model object with: Email and password.</li>
+<li>Result request: string token.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>This project consists of several subprojects, mainly:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Dx29.WebManagement</strong>, it contains all the functions and methods necessary to offer the functionalities of Dx29. It has been implemented using <a class="reference external" href="https://docs.microsoft.com/en-GB/visualstudio/get-started/csharp/tutorial-aspnet-core?view=vs-2022">C# - ASP.NET</a>.</li>
+<li>Finally, the <strong>Dx29.Data</strong> and <strong>Dx29.Azure</strong> projects are also added. These two are generic and are used as a library to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
+</ul>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="external-containers">
 <h2>1.4.3. External containers<a class="headerlink" href="#external-containers" title="Permalink to this headline">¶</a></h2>
-<p>Para que sirve:
-Como se utiliza: Métodos que expone
-En que lenguaje esta prorgamado
-Organizacion general del proyecto:
-Si requiere de algun servicio externo.</p>
+<p>In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires <a class="reference external" href="https://github.com/exomiser/Exomiser">Exomiser</a>, <a class="reference external" href="https:/f29ncr.northeurope.cloudapp.azure.com">F29NCR</a> and <a class="reference external" href="https://f29api.northeurope.cloudapp.azure.com/index.html">F29API</a>.</p>
+<p>The documentation of each of these projects is not the subject of this manual. It is only necessary to understand that they expose APIs, with the endpoints that have been indicated here, and that their methods will be used, so you only need to understand the type of request, the input and output of each one.</p>
+</div>
+<div class="section" id="operation-containers">
+<h2>1.4.4. Operation containers<a class="headerlink" href="#operation-containers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pull-images-and-docker-compose">
+<h3>1.4.4.1. Pull images and Docker compose.<a class="headerlink" href="#pull-images-and-docker-compose" title="Permalink to this headline">¶</a></h3>
+<p>The Dx29.Compose project includes two functionalities:</p>
+<blockquote>
+<div><ol class="simple">
+<li>Obtain the images of an environment from the Dx29 application. To do this you must have permissions in Azure in the Foundation29 subscription (therefore it is internal, for the programmers of the foundation). It is in the <strong>PullImages</strong> folder of the project and is programmed in Python. With its execution, the latest versions of the images of the development environment are downloaded locally (with a few code modifications, changing the endpoints, it can be quickly adapted to download those of another environment).</li>
+<li>This project also includes the <strong>DockerCompose</strong> file. Once the images are downloaded, this can be used to build the local container with the Docker images and ports that Foundation29 developers work with.</li>
+</ol>
+</div></blockquote>
+<p>This project therefore accesses the Azure container registry of a selected environment. This will be covered in more depth in the <strong>Build &amp; Deploy</strong> section of this document.</p>
+</div>
+<div class="section" id="dx29-envtest-and-dx29-envprod">
+<h3>1.4.4.2. Dx29.ENVTEST and Dx29.ENVPROD<a class="headerlink" href="#dx29-envtest-and-dx29-envprod" title="Permalink to this headline">¶</a></h3>
+<p>As will be explained later in the <strong>Build &amp; Deploy</strong> section of this document, the automation of microservices has been implemented in each of the application environments in Azure. So far we have seen that each project has its own manifest files and azure-pipeline.yaml, that will be useful to deploy the development environment to the programmers. To deploy the test and production environments, these two projects will be used, in each of them defining the manifest and the YAML of each microservice that we want to use.</p>
+<p>Again, these projects will access the container registry of the test and production environments, as well as the clusters (AKS). This will be explained later in the <strong>Build &amp; Deploy</strong> section, where we will see the true usefulness and necessity of these.</p>
+<p>At this point, we are going to describe and explain in detail what each of these projects contains.
+Both projects have the following structure in common:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>azure-pipelines.yam</strong> file. It contains the main definition of the pipeline to be executed for automatic deployment. It contains the main definition of the pipeline to be executed for the automatic deployment. In it, the project directories are accessed and reference is made to the different templates for each of the microservices.</li>
+<li><strong>Templates</strong> folder. A template is defined individually for each microservice with the jobs to be performed by the pipeline to compile and deploy that microservice. In other words, the pipelines for each microservice are found here.</li>
+<li><strong>manifests</strong> folder. As in each of the projects, this folder includes the files necessary for the configuration of the deployment and service of the microservice in the corresponding cluster.</li>
+<li><strong>vars</strong> folder. The files with the variables and values necessary for the correct execution of the pipeline will be located in this folder. In both projects there is a file vars_pipeline.yaml where the variables related to the container registry, the virtual machine on which the pipeline will be executed and the name of the images to be compiled and deployed are defined.</li>
+</ul>
+</div></blockquote>
+<p>The main difference comes in the variable folder,</p>
+<blockquote>
+<div><ol class="simple">
+<li>Dx29.ENVTEST. It only contains the file vars_pipeline.yaml, so that the version of the images is configured as an input parameter to the pipeline: in each execution a value is chosen and it is common for all the images to be compiled and deployed in that execution.</li>
+<li>Dx29.ENVPROD. In addition to containing the vars_pipeline.yaml file, it also includes: vars_tag.yaml. The tags or versions of each of the images to be deployed will be defined in this file. This pipeline does not have input parameters but it will read this file and according to what has been specified it will compile and deploy the images in such a way that each microservice can have a different one.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="environments">
+<h3>1.4.4.3. Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h3>
+<p>During the implementation of the application, as we have already seen in the Environments section, three environments have been deployed: DEV, TEST and PROD. The previous projects help us to: generate the images, upload them to the corresponding container registry and deploy them in the cluster already created in the corresponding environment.
+This project shows how these environments have been created in Azure: Creation of the AKS, cluster, Association of a container registry, etc. and also the configuration to expose different IPs with DNS and HTTPs communication and the inclusion of the file with the secrets.</p>
+<p>So, here are presented the different scripts to perform these functions in each of the environments.</p>
+<p>These actions will only be necessary for the creation of new environments, therefore, although they are related to the Build and deploy of the application, they do not influence the designed automation and they will only have to be executed once. For this reason, we have left them as scripts that indicate the commands to be executed on the command line.l</p>
+</div>
 </div>
 </div>
 
@@ -831,7 +1898,7 @@ Si requiere de algun servicio externo.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2_CodeRepositories.html" class="btn btn-neutral float-right" title="2. Code repositories and projects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../2_Environments.html" class="btn btn-neutral float-right" title="4. Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Components.html" class="btn btn-neutral float-left" title="1.3. Level 3: Component" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

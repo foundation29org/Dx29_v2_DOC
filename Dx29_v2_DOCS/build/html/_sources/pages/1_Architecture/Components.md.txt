@@ -64,5 +64,3 @@ The list of these is as follows:
 >- [Exomiser](https://github.com/exomiser/Exomiser). Foundation29 has also implemented its own Kubernetes cluster to manage this resource, therefore, the Dx29 application accesses this which in turn runs Exomiser and performs a management and administration of this job, allowing it to be used asynchronously.
 >- [F29API](https://f29api.northeurope.cloudapp.azure.com/index.html). It exposes different functionalities, in particular the Dx29 application uses the methods of the Documents driver to prepare and configure the inputs to the services for extracting information from the user's documents.
 >- [F29NCR](https:/f29ncr.northeurope.cloudapp.azure.com). As with Exomiser, NCR is used through a Foundation29 resource to manage the jobs of extracting information from user reports as required in the Dx29 application.
-
-

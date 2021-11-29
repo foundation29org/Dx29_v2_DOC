@@ -2,7 +2,7 @@
 
 ## 1.2. Level 2: Containers
 
-Health29 consists of several connected containers. We have divided them according to their functionality and use within the platform.Thus, we will have:
+Dx29 consists of several connected containers. We have divided them according to their functionality and use within the platform.Thus, we will have:
 >- Backend containers:
 >>- Manage data containers
 >>- Algorithms and functionalities containers
