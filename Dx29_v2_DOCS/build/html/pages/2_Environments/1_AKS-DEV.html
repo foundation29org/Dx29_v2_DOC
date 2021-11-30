@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.1. Dev Environment &mdash; Dx29 v2 1.0 documentation</title>
+  <title>2.1. Dev Environment &mdash; Dx29 v2 1.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.2. Test environment" href="2_AKS-TEST.html" />
-    <link rel="prev" title="4. Environments" href="../2_Environments.html" /> 
+    <link rel="next" title="2.2. Test environment" href="2_AKS-TEST.html" />
+    <link rel="prev" title="2. Environments" href="../2_Environments.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,11 +87,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Containers.html">1.2. Level 2: Containers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Components.html">1.3. Level 3: Component</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Code.html">1.4. Level 4: Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments.html">4. Environments</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4.1. Dev Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_AKS-TEST.html">4.2. Test environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_AKS-PRO.html">4.3. Prod environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_ScriptsCreateAndDeploy.html">4.4. Scripts for create and deploy environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments.html">2. Environments</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2.1. Dev Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_AKS-TEST.html">2.2. Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_AKS-PRO.html">2.3. Prod environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_ScriptsCreateAndDeploy.html">2.4. Scripts for create and deploy environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy.html">6. Build &amp; Deploy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/1_Build.html">6.1. Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/2_Deploy.html">6.2. Deploy</a></li>
@@ -144,7 +144,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>4.1. Dev Environment</li>
+      <li>2.1. Dev Environment</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -164,8 +164,77 @@
            <div itemprop="articleBody">
             
   <img align="right" width="100px" src="../../_images/Foundation29.png"><div class="section" id="dev-environment">
-<h1>4.1. Dev Environment<a class="headerlink" href="#dev-environment" title="Permalink to this headline">¶</a></h1>
-</div>
+<h1>2.1. Dev Environment<a class="headerlink" href="#dev-environment" title="Permalink to this headline">¶</a></h1>
+<p>This is where application/system development tasks, such as designing, programming, debugging, etc., take place.</p>
+<p>A development environment is where changes to software code are made. This environment allows developers to work freely on the program without worrying about the impact on end users.
+A development environment enhances developer efficiency and ensures proper software quality. It helps in streamlining workflows, thereby minimizing the chances of errors, and enables effective management. One of the most important uses of a development environment is that it allows developers to ensure various functions of the application/program work as intended before it is released to users. It allows developers to make any change to the program/code in a controlled setting without impacting users.</p>
+<p>The Dx29 application development environment will consist of the following components:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Component</th>
+<th>Azure</th>
+<th>Configuration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure Kubernetes Service</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/aks/">link</a></td>
+<td>One instance for each deployment and service</td>
+<td>To manage and operate the containers orchestrated on Kubernetes, which contain the microservices necessary for the deployment of the Dx29 application in the development environment.</td>
+</tr>
+<tr>
+<td>Container Registry</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/container-registry/">link</a></td>
+<td>List of Docker images for each microservice with versions (tags)</td>
+<td>Azure Container Registry (ACR) is a private registry for container images. A private container registry allows you to securely build and deploy custom code and applications. It is associated with an Azure resource cluster. The Kubernetes cluster is associated with this resource to use the images contained therein for deployments.</td>
+</tr>
+<tr>
+<td>Public IP and DNS</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/aks/static-ip">link</a></td>
+<td>https://dx29dev.northeurope.cloudapp.azure.com/</td>
+<td>To access Dx29 application from development environment</td>
+</tr>
+<tr>
+<td>SQL database</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/azure-sql/database/">link</a></td>
+<td>Information about the user: email, encrypted password, First name, Last name, Language and role: Physician or Patient</td>
+<td>For managing user accounts of Dx29 application in development environment</td>
+</tr>
+<tr>
+<td>CosmosDB databases</td>
+<td><a href="https://docs.microsoft.com/en-gb/azure/cosmos-db/introduction">link</a></td>
+<td>With <a href="https://docs.microsoft.com/en-gb/azure/cosmos-db/choose-api">SQL API</a></td>
+<td>Only one database with three containers: caseRecords, MedicalCases and resourceGroups. As it is a development environment it is not necessary to apply the security criteria of separating these containers into different databases depending on whether they contain personal information or patient medical information.</td>
+</tr>
+<tr>
+<td>Blob storage</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/storage/blobs/">link</a></td>
+<td>One container for the application literals, another for the documents, another for communication with openDx29 and finally a private container for each Dx29 medical case.</td>
+<td>It is organised in different containers for the following functionalities: translation of Dx29 in English or Spanish, access to documents required by the application such as the privacy policy or emails, or access to a user's data in a private and secure way (medical reports, genotypes, results of Dx29 application processes, etc</td>
+</tr>
+<tr>
+<td>Application Insights</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/azure-monitor/app/app-insights-overview">link</a></td>
+<td>-</td>
+<td>For the logging of the Dx29 application</td>
+</tr>
+<tr>
+<td>SignalR</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/azure-signalr/signalr-overview">link</a></td>
+<td>-</td>
+<td>Service for the management of real-time application notifications</td>
+</tr>
+<tr>
+<td>ServiceBus</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/service-bus-messaging/service-bus-messaging-overview">link</a></td>
+<td>Queue</td>
+<td>Dx29 messaging service</td>
+</tr>
+</tbody>
+</table></div>
 
 
            </div>
@@ -175,10 +244,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="2_AKS-TEST.html" class="btn btn-neutral float-right" title="4.2. Test environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="2_AKS-TEST.html" class="btn btn-neutral float-right" title="2.2. Test environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../2_Environments.html" class="btn btn-neutral float-left" title="4. Environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../2_Environments.html" class="btn btn-neutral float-left" title="2. Environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -5,6 +5,15 @@
 .. image:: images/All/Foundation29.png
    :width: 0px
 
+.. image:: images/2_Environments/General/applicationPhases.jpg
+   :width: 0px
+
+.. image:: images/2_Environments/General/gitflow.jpg
+   :width: 0px
+
+.. image:: images/2_Environments/General/azure-kubernetes-service-and-acr.png
+   :width: 0px
+
 .. image:: images/All/Foundation29.png
    :width: 100px
    :align: right
