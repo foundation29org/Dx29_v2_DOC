@@ -4,9 +4,6 @@
 
 # Required
 version: 2
-
-# Pip requirements
-requirements_file: source/requirements.txt
   
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
