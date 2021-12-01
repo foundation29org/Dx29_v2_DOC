@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.3. Automation &mdash; Dx29 v2 1.0 documentation</title>
+  <title>3.3. Automation &mdash; Dx29 v2 1.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.4. Running and working locally" href="4_Locally.html" />
-    <link rel="prev" title="6.2. Deploy" href="2_Deploy.html" /> 
+    <link rel="next" title="3.4. Running and working locally" href="4_Locally.html" />
+    <link rel="prev" title="3.2. Deploy" href="2_Deploy.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,18 +87,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Containers.html">1.2. Level 2: Containers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Components.html">1.3. Level 3: Component</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Code.html">1.4. Level 4: Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments.html">4. Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/1_AKS-DEV.html">4.1. Dev Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/2_AKS-TEST.html">4.2. Test environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/3_AKS-PRO.html">4.3. Prod environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/4_ScriptsCreateAndDeploy.html">4.4. Scripts for create and deploy environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy.html">6. Build &amp; Deploy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Build.html">6.1. Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_Deploy.html">6.2. Deploy</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">6.3. Automation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_Locally.html">6.4. Running and working locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_CurrentStatus.html">6.5. Current Status of the environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_CodeGuidelines.html">7. Code Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments.html">2. Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments/1_AKS-DEV.html">2.1. Dev Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments/2_AKS-TEST.html">2.2. Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments/3_AKS-PRO.html">2.3. Prod environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_Environments/4_ScriptsCreateAndDeploy.html">2.4. Scripts for create and deploy environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy.html">3. Build &amp; Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Build.html">3.1. Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Deploy.html">3.2. Deploy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3.3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Locally.html">3.4. Running and working locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_CurrentStatus.html">3.5. Current Status of the environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_CodeGuidelines.html">4. Code Guidelines</a></li>
 </ul>
 
             
@@ -144,7 +144,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>6.3. Automation</li>
+      <li>3.3. Automation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -164,7 +164,187 @@
            <div itemprop="articleBody">
             
   <img align="right" width="100px" src="../../_images/Foundation29.png"><div class="section" id="automation">
-<h1>6.3. Automation<a class="headerlink" href="#automation" title="Permalink to this headline">¶</a></h1>
+<h1>3.3. Automation<a class="headerlink" href="#automation" title="Permalink to this headline">¶</a></h1>
+<p>To perform the tasks of building and deploying microservices in different environments, we have created a list of Azure Pipelines that will allow us to automate these tasks and perform them in a more secure way.</p>
+<img width="800px" src="../../_images/aks_pipelines.png"><p>Thus, these pipelines will be organised in this way for each environment:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Development environment. Each project (microservice) will have its own pipeline that will: access the code repository, use the code from the develop branch, use the manifest files defined in this directory and perform the build and deploy tasks on the Container Registry and the AKS of the development environment.</li>
+<li>Test environment. It consists of a single pipeline located in the private repository Dx29.EnvTest. This will define all the stages to be performed on the microservices to be published in test: those of build and those of deploy. To do so, it will access the code of the repository containing the project associated with the microservice you want to work with, it will use the code available in its main branch, and then it will use the manifests files found in the Dx29.EnvTEST repository to perform the build and deploy tasks on the Container Registry and the test AKS.</li>
+<li>Production environment. This environment shares Container Registry with test, so that it will only access it to obtain the images already generated and compiled to be used in the production environment, that is to say, it will not perform build tasks, only deploy. It consists of only one pipeline located in the private repository Dx29.EnvPRO. This will define the deployment stages to be performed on the microservices to be published in production. To do this, it will access the Test Container Registry, take the corresponding image and deploy it to the production AKS.</li>
+</ul>
+</div></blockquote>
+<p>With this in mind, we will now go on to define a generic pipeline for a microservice, that is, how the build and deploy tasks have been performed on it:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>If we take into account that we are working on a single repository where both the code and the necessary manifest files are located</strong>:</li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>trigger:
+- develop/main
+
+resources:
+- repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: &lt;secret&gt;
+  imageRepository: &lt;image_name&gt;
+  containerRegistry: &lt;acr_server&gt;
+  dockerfilePath: &lt;path_Dockerfile&gt;
+  tag: &lt;image_tag&gt;
+  imagePullSecret: &lt;image_pull_secret_AKS&gt;
+
+  # Agent VM image name
+  vmImageName: &#39;ubuntu-latest&#39;
+
+stages:
+- stage: Build
+  displayName: Build and push stage
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          $(tag)
+
+    - upload: manifests
+      artifact: manifests
+
+- stage: Deploy
+  displayName: Deploy stage
+  dependsOn: Build
+
+  jobs:
+  - deployment: Deploy
+    displayName: Deploy
+    pool:
+      vmImage: $(vmImageName)
+    environment: &lt;environment_name.namespace&gt;
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: KubernetesManifest@0
+            displayName: Create imagePullSecret
+            inputs:
+              action: createSecret
+              secretName: $(imagePullSecret)
+              dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+
+          - task: KubernetesManifest@0
+            displayName: Deploy to Kubernetes cluster
+            inputs:
+              action: deploy
+              manifests: |
+                $(Pipeline.Workspace)/manifests/deployment.yml
+                $(Pipeline.Workspace)/manifests/service.yml
+              imagePullSecrets: |
+                $(imagePullSecret)
+              containers: |
+                $(containerRegistry)/$(imageRepository):$(tag)
+</pre></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><strong>If we are in the repository that contains the manifest files but we need to access another repository to obtain the project code</strong>:</li>
+</ul>
+<blockquote>
+<div>We must configure teh repository as a resource of the pipeline, before any stage has been declared:</div></blockquote>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resources</span><span class="p">:</span>  
+  <span class="n">repositories</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">repository</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">repository_name</span><span class="o">&gt;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">repository_name</span><span class="o">&gt;</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">git</span>
+    <span class="n">ref</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">branch</span><span class="o">&gt;</span> 
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div>Add <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">checkout:</span> <span class="pre">&lt;repository_name&gt;</span></code> before execute the task (steps).</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li><strong>If we want to deploy several microservices (as in the case of test and prod) we can organise the stages in different files or templates accessed by the main pipeline</strong>:</li>
+</ul>
+<blockquote>
+<div>Configure the pipelines stages as:</div></blockquote>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>stages:
+  - template: &lt;template_path_and_name&gt;.yml
+    parameters:
+      &lt;input_parameters_template&gt; (i.e. vmImageName: $(vmImageName))
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div>In template.yaml only configure the stages:</div></blockquote>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stages</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">stage</span><span class="p">:</span> <span class="n">Build</span>
+	<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div>And use the inout parameters as: <code class="docutils literal notranslate"><span class="pre">${{parameters.vmImageName}}</span></code></div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li><strong>If we want to work with the input parameters in a pipeline execution, we have to add</strong>:
+We can use the runtime parameters as the <a class="reference external" href="https://docs.microsoft.com/en-GB/azure/devops/pipelines/process/runtime-parameters?view=azure-devops&amp;tabs=script">guide</a> describe:</li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">tag</span>
+  <span class="n">displayName</span><span class="p">:</span> <span class="n">Tag</span>
+  <span class="nb">type</span><span class="p">:</span> <span class="n">string</span>
+  <span class="n">default</span><span class="p">:</span> <span class="s1">&#39;v0.00.00&#39;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><strong>If we want to work with pipeline variables that will share several templates, i.e. organise the variables in a single file</strong>:</li>
+</ul>
+<blockquote>
+<div>As with the pipeline stage definition templates, variables can also be configured within another file.
+This file will be in the format:</div></blockquote>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">variables</span><span class="p">:</span>
+
+  <span class="c1"># Container registry service connection established during pipeline creation</span>
+  <span class="n">dockerRegistryServiceConnection</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">secret</span><span class="o">&gt;</span>
+  <span class="n">containerRegistry</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">acr_server</span><span class="o">&gt;</span>
+  <span class="n">dockerfilePath</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">path_Dockerfile</span><span class="o">&gt;</span>
+  <span class="n">imagePullSecret</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">image_pull_secret_AKS</span><span class="o">&gt;</span>
+
+  <span class="c1"># Agent VM image name</span>
+  <span class="n">vmImageName</span><span class="p">:</span> <span class="s1">&#39;ubuntu-latest&#39;</span>
+
+  <span class="n">environment</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">environment_name</span><span class="o">.</span><span class="n">namespace</span><span class="o">&gt;</span>
+
+  <span class="c1"># Images</span>
+  <span class="n">imageRepositoryX</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">imageX_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div>And it will be imported into the main pipeline as:</div></blockquote>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">variables</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">template</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">path_and_varsFileName</span><span class="o">&gt;.</span><span class="n">yaml</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -175,10 +355,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="4_Locally.html" class="btn btn-neutral float-right" title="6.4. Running and working locally" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="4_Locally.html" class="btn btn-neutral float-right" title="3.4. Running and working locally" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="2_Deploy.html" class="btn btn-neutral float-left" title="6.2. Deploy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="2_Deploy.html" class="btn btn-neutral float-left" title="3.2. Deploy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

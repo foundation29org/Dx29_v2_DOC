@@ -92,13 +92,13 @@
 <li class="toctree-l1"><a class="reference internal" href="2_AKS-TEST.html">2.2. Test environment</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2.3. Prod environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_ScriptsCreateAndDeploy.html">2.4. Scripts for create and deploy environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy.html">6. Build &amp; Deploy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/1_Build.html">6.1. Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/2_Deploy.html">6.2. Deploy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/3_Automation.html">6.3. Automation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/4_Locally.html">6.4. Running and working locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/5_CurrentStatus.html">6.5. Current Status of the environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_CodeGuidelines.html">7. Code Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy.html">3. Build &amp; Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/1_Build.html">3.1. Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/2_Deploy.html">3.2. Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/3_Automation.html">3.3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/4_Locally.html">3.4. Running and working locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/5_CurrentStatus.html">3.5. Current Status of the environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_CodeGuidelines.html">4. Code Guidelines</a></li>
 </ul>
 
             
@@ -184,12 +184,6 @@
 <td>To manage and operate the containers orchestrated on Kubernetes, which contain the microservices necessary for the deployment of the Dx29 application in the production environment.</td>
 </tr>
 <tr>
-<td>Container Registry</td>
-<td><a href="https://docs.microsoft.com/en-GB/azure/container-registry/">link</a></td>
-<td>List of Docker images for each microservice with versions (tags)</td>
-<td>Azure Container Registry (ACR) is a private registry for container images. A private container registry allows you to securely build and deploy custom code and applications. It is associated with an Azure resource cluster. The Kubernetes cluster is associated with this resource to use the images contained therein for deployments.</td>
-</tr>
-<tr>
 <td>Public IP and DNS</td>
 <td><a href="https://docs.microsoft.com/en-us/azure/aks/static-ip">link</a></td>
 <td>https://dx29.ai/</td>
@@ -242,6 +236,24 @@
 <td><a href="https://docs.microsoft.com/en-GB/azure/azure-signalr/signalr-overview">link</a></td>
 <td>-</td>
 <td>Service for the management of real-time application notifications</td>
+</tr>
+</tbody>
+</table><p>And it uses too some components of the test environment:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Component</th>
+<th>Azure</th>
+<th>Configuration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Container Registry</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/container-registry/">link</a></td>
+<td>List of Docker images for each microservice with versions (tags)</td>
+<td>Azure Container Registry (ACR) is a private registry for container images. A private container registry allows you to securely build and deploy custom code and applications. It is associated with an Azure resource cluster. The Kubernetes cluster is associated with this resource to use the images contained therein for deployments.</td>
 </tr>
 </tbody>
 </table></div>

@@ -14,6 +14,36 @@
 .. image:: images/2_Environments/General/azure-kubernetes-service-and-acr.png
    :width: 0px
 
+.. image:: images/3_BuildAndDeploy/steps_ACR_AKS.png
+   :width: 0px
+
+.. image:: images/3_BuildAndDeploy/docker_build.png
+   :width: 0px
+
+.. image:: images/3_BuildAndDeploy/docker_acr.png
+   :width: 0px
+
+.. image:: images/3_BuildAndDeploy/acr_aks.png
+   :width: 0px
+
+.. image:: images/3_BuildAndDeploy/aks_pipelines.png
+   :width: 0px
+
+.. image:: images/3_BuildAndDeploy/compose.png
+   :width: 0px
+
+.. image:: images/3_BuildAndDeploy/start_stop_aks.png
+   :width: 0px  
+
+.. image:: images/4_CodeGuidelines/codeguidelines_1.png
+   :width: 0px  
+
+.. image:: images/4_CodeGuidelines/codeguidelines_2.png
+   :width: 0px 
+
+.. image:: images/4_CodeGuidelines/codeguidelines_3.png
+   :width: 0px 
+
 .. image:: images/All/Foundation29.png
    :width: 100px
    :align: right
