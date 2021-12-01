@@ -78,6 +78,6 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Health29.tex', 'Health29 Documentation',
+    (master_doc, 'Dx29_v2.tex', 'Dx29 v2 Documentation',
      'Foundation29', 'manual'),
 ]
