@@ -33,16 +33,14 @@ The containers will be those that contain each of the microservices that have be
 Docker is an open source software that allows you to virtualise at the operating system level using containers, which allows you to have an additional layer of automation of multiple applications on different operating systems.
 
 Therefore, we need to look at the difference between virtualisation and containers. 
->-To virtualise is to create a virtual translation of software, such as an operating system or any type of server, among others, by means of a program. 
->-With Docker containers, not all calls to the operating system are emulated. system and this leads to better performance, as it takes advantage of the kernel of the host machine. kernel of the host machine.
+>- To virtualise is to create a virtual translation of software, such as an operating system or any type of server, among others, by means of a program. 
+>- With Docker containers, not all calls to the operating system are emulated. system and this leads to better performance, as it takes advantage of the kernel of the host machine. kernel of the host machine.
 
 The main components are:
 >- **IMAGE**: Template where the application and its different libraries are included, which are used to create the containers.
 >- **DOCKERFILE**: It is a file where the configuration that allows the creation of the images is included. This file indicates the operating system to be executed and the different commands that allow the necessary tools to be installed.
 >- **Container**: These are instances that are produced when executing an image containing the application that we have developed.
 >- **VOLUMES**: They are used to store the information of the containers, so that the data is persistent. data are persistent. When a container is deleted, its data is deleted.
-
-
 
 Having clarified the chosen architecture and the concepts necessary for its implementation, we now proceed to detail the components that make it up. To do so, we are going to use the C4 model. Thus, in the description of this section we will differentiate between:
 
@@ -51,4 +49,6 @@ Having clarified the chosen architecture and the concepts necessary for its impl
 - Level 3: A **Component** diagram zooms into an individual container, showing the components inside it.
 - Level 4: A **code** diagram with the technical explanation about the programming of each one of the modules or components.
 
-TODO: Image C4 Dx29 v2
+<p style="text-align: center;">
+	<img width="100%" src="../_images/SW_Architecture_C4.png">
+</p>

@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.4. Running and working locally &mdash; Dx29 v2 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.5. Current Status of the environments" href="5_CurrentStatus.html" />
+    <link rel="prev" title="4.3. Automation" href="3_Automation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Dx29 v2
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dx29 v2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture.html">1. Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture/SystemContext.html">1.1. Level 1: System Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Containers.html">1.2. Level 2: Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Components.html">1.3. Level 3: Component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Code.html">1.4. Level 4: Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_DataModels.html">2. Data models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments.html">3. Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/1_AKS-DEV.html">3.1. Dev Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/2_AKS-TEST.html">3.2. Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/3_AKS-PRO.html">3.3. Prod environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/4_ScriptsCreateAndDeploy.html">3.4. Scripts for create and deploy environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy.html">4. Build &amp; Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Build.html">4.1. Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Deploy.html">4.2. Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Automation.html">4.3. Automation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4.4. Running and working locally</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pull-images">4.4.1. Pull images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-compose">4.4.2. Docker compose</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5_CurrentStatus.html">4.5. Current Status of the environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_CodeGuidelines.html">5. Code Guidelines</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Dx29 v2</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>4.4. Running and working locally</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/pages/4_BuildAndDeploy/4_Locally.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <img align="right" width="100px" src="../../_images/Foundation29.png"><div class="section" id="running-and-working-locally">
+<h1>4.4. Running and working locally<a class="headerlink" href="#running-and-working-locally" title="Permalink to this headline">¶</a></h1>
+<p>To work with the projects locally there will be dependencies between microservices, i.e. for example the Dx29.Web project needs the annotation microservice or the disease calculation microservice among others to be deployed.
+Therefore, we should download all the repositories and launch them on the ports where the Dx29.Web project expects them or generate the Docker images (to save memory on our PC) and launch them on the corresponding ports with Docker Desktop.</p>
+<p>This work can be very laborious, therefore, the Foundation29 developers team have created a project with the scripts and files that allow to deploy the Dx29 application environment locally in a quick and easy way.
+This project contains:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <strong>scripts to obtain the container registry images</strong> from an Azure environment. But this project will be privated for security, and users only can view an example of this script. Here are the steps to create this script and access the Azure resources that must be previously created by the user who is reading this guide if he wants to replicate it. Another way to perform these operations would be to create the Docker images locally with all the projects involved in the Dx29 application.</li>
+<li>A <strong>DockerCompose</strong> file that allows, once we have generated the images of the microservices locally, to raise a container organising them in the ports that the frontend expects and, if necessary, using the volumes that will contain the secrets.</li>
+</ul>
+</div></blockquote>
+<p>Both functionalities can be found in the Dx29.Compose project.</p>
+<p>Finally, it is important to note that whenever a microservice is upgraded, it will be necessary to perform the following steps to work locally:</p>
+<ol class="simple">
+<li>Obtain the updated image or generate it from the updated code.</li>
+<li>Execute DockerCompose so that the container that is executed locally uses the latest version of the image of this microservice.</li>
+</ol>
+<div class="section" id="pull-images">
+<h2>4.4.1. Pull images<a class="headerlink" href="#pull-images" title="Permalink to this headline">¶</a></h2>
+<p>It is a scrpt programmed in python that will perform the tasks of:</p>
+<ol class="simple">
+<li>Logging into the Azure account.</li>
+<li>Login to the container registry where the images we want to obtain are located.</li>
+<li>Pull the latest version of an image and rename it in our PC to work with it. Keep in mind that the name we give it to work locally must coincide with the name expected by the DockerCompose file in order to later pull it up.</li>
+</ol>
+<p>Thus, the script would look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Login in Azure</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;az login&#39;</span><span class="p">)</span>
+
+<span class="c1"># Login in container registry</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;az acr login --name &lt;acr_name&gt;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Docker pull images: Example image1</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;az acr repository show-tags --name &lt;acr_name&gt; --repository &lt;acr_repository_image1&gt; --top 1 --orderby time_desc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">latest_tag</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">image_name</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&lt;acr_server&gt;/&lt;image1&gt;:&#39;</span> <span class="o">+</span> <span class="n">latest_tag</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;docker pull &#39;</span> <span class="o">+</span> <span class="n">image_name</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;docker image tag &#39;</span> <span class="o">+</span> <span class="n">image_name</span> <span class="o">+</span> <span class="s1">&#39; &lt;image_name&gt;:latest&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;docker rmi &#39;</span> <span class="o">+</span> <span class="n">image_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here we have only added the pull of the image1 as an example, we would have to repeat these lines of code for each image we want to get from the registry container.</p>
+<p>To run the script, just execute: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">name_script.py</span></code>. In this project the script is called Scripts.py and is located in the PullImages folder of the project.</p>
+</div>
+<div class="section" id="docker-compose">
+<h2>4.4.2. Docker compose<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h2>
+<p>To build the microservices images with the configuration required by Dx29 we are going to use <a class="reference external" href="https://docs.docker.com/compose/">Docker Compose</a>.</p>
+<img width="800px" src="../../_images/compose.png"><p>Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p>
+<p>Using Compose is basically a three-step process:</p>
+<blockquote>
+<div><ol class="simple">
+<li>Define your app’s environment with a Dockerfile so it can be reproduced anywhere.</li>
+<li>Define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment.</li>
+<li>Run docker compose up and the <a class="reference external" href="https://docs.docker.com/compose/cli-command/">Docker compose command</a> starts and runs your entire app. You can alternatively run docker-compose up using the docker-compose binary.</li>
+</ol>
+</div></blockquote>
+<p>So, Dx29 DockerCompose file is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s1">&#39;3.4&#39;</span>
+
+<span class="n">services</span><span class="p">:</span>
+ <span class="n">dx29</span><span class="o">-</span><span class="n">bioentity</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29bioentity</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="s2">&quot;8000:80&quot;</span>
+
+ <span class="n">dx29</span><span class="o">-</span><span class="n">termsearch2</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29</span><span class="o">-</span><span class="n">termsearch2</span>
+    <span class="n">volumes</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="o">./.</span><span class="n">secrets</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">secrets</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="s2">&quot;8001:8080&quot;</span>
+
+ <span class="n">dx29</span><span class="o">-</span><span class="n">filestorage</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29filestorage</span>
+    <span class="n">volumes</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="o">./.</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span><span class="p">:</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="s2">&quot;8100:80&quot;</span>
+
+ <span class="n">dx29</span><span class="o">-</span><span class="n">medicalhistory</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29medicalhistory</span>
+    <span class="n">volumes</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="o">./.</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span><span class="p">:</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="s2">&quot;8101:80&quot;</span>
+
+ <span class="n">dx29</span><span class="o">-</span><span class="n">annotations</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29annotations</span>
+    <span class="n">volumes</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="o">./.</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span><span class="p">:</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="s2">&quot;8102:80&quot;</span>
+
+ <span class="n">dx29</span><span class="o">-</span><span class="n">bionet</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29bionet</span>
+    <span class="n">volumes</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="o">./.</span><span class="n">secrets</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">secrets</span>
+    <span class="n">ports</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="s2">&quot;8104:80&quot;</span>
+
+ <span class="n">dx29</span><span class="o">-</span><span class="n">localization</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29localization</span>
+    <span class="n">volumes</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="o">./.</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span><span class="p">:</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">ports</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="s2">&quot;8108:80&quot;</span>
+
+ <span class="n">dx29</span><span class="o">-</span><span class="n">mailing</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29</span><span class="o">-</span><span class="n">mailing</span>
+    <span class="n">volumes</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="o">./.</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="s2">&quot;8109:8080&quot;</span>
+
+ <span class="n">dx29</span><span class="o">-</span><span class="n">documents</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29</span><span class="o">-</span><span class="n">documents</span>
+    <span class="n">volumes</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="o">./.</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span><span class="p">:</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="s2">&quot;8111:80&quot;</span>
+
+ <span class="n">dx29</span><span class="o">-</span><span class="n">legacy</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="n">dx29</span><span class="o">-</span><span class="n">legacy</span>
+    <span class="n">volumes</span><span class="p">:</span> 
+      <span class="o">-</span> <span class="o">./.</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">secrets</span><span class="o">/</span><span class="n">appsettings</span><span class="o">.</span><span class="n">secrets</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="s2">&quot;8112:8080&quot;</span>
+</pre></div>
+</div>
+<p>We can see that some of the microservices also require the appsettings.secrets.json file to be added. This is located in the .secrets folder of the project and must be filled with the keys and secret values of the Azure services needed to run the application.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="5_CurrentStatus.html" class="btn btn-neutral float-right" title="4.5. Current Status of the environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="3_Automation.html" class="btn btn-neutral float-left" title="4.3. Automation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Foundation29
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

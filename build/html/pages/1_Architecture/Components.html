@@ -100,18 +100,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Code.html">1.4. Level 4: Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments.html">4. Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/1_AKS-DEV.html">4.1. Dev Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/2_AKS-TEST.html">4.2. Test environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/3_AKS-PRO.html">4.3. Prod environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/4_ScriptsCreateAndDeploy.html">4.4. Scripts for create and deploy environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy.html">6. Build &amp; Deploy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/1_Build.html">6.1. Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/2_Deploy.html">6.2. Deploy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/3_Automation.html">6.3. Automation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/4_Locally.html">6.4. Running and working locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/5_CurrentStatus.html">6.5. Current Status of the environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_CodeGuidelines.html">7. Code Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_DataModels.html">2. Data models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments.html">3. Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/1_AKS-DEV.html">3.1. Dev Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/2_AKS-TEST.html">3.2. Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/3_AKS-PRO.html">3.3. Prod environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/4_ScriptsCreateAndDeploy.html">3.4. Scripts for create and deploy environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy.html">4. Build &amp; Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/1_Build.html">4.1. Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/2_Deploy.html">4.2. Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/3_Automation.html">4.3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/4_Locally.html">4.4. Running and working locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/5_CurrentStatus.html">4.5. Current Status of the environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_CodeGuidelines.html">5. Code Guidelines</a></li>
 </ul>
 
             
@@ -194,7 +195,7 @@ In addition, they will also expose the methods for the application to access the
 <blockquote>
 <div><ul class="simple">
 <li><strong>SQL</strong> database: It is controlled from the frontend directly, but it is important to comment at this point that there is a database of this type that stores the information for the login of the users in Dx29. That is to say, it will only contain the user’s information, not the patient’s information.</li>
-<li><strong>MongoDB</strong> databases: We will have several databases where the patient information is stored. For security reasons, personal data will not be stored in the same location as medical information, to prevent them from being related to each other. In other words, Dx29 ensures anonymity.</li>
+<li><strong>CosmosDB</strong> databases: We will have several databases where the patient information is stored. For security reasons, personal data will not be stored in the same location as medical information, to prevent them from being related to each other. In other words, Dx29 ensures anonymity.</li>
 </ul>
 </div></blockquote>
 </div></blockquote>
@@ -255,7 +256,6 @@ In addition, they will also expose the methods for the application to access the
 <div><ul class="simple">
 <li><a class="reference external" href="https://github.com/exomiser/Exomiser">Exomiser</a>. Foundation29 has also implemented its own Kubernetes cluster to manage this resource, therefore, the Dx29 application accesses this which in turn runs Exomiser and performs a management and administration of this job, allowing it to be used asynchronously.</li>
 <li><a class="reference external" href="https://f29api.northeurope.cloudapp.azure.com/index.html">F29API</a>. It exposes different functionalities, in particular the Dx29 application uses the methods of the Documents driver to prepare and configure the inputs to the services for extracting information from the user’s documents.</li>
-<li>TODO: Lo vamos a quitar, solo se va a quedar Text Analytics: <a class="reference external" href="https:/f29ncr.northeurope.cloudapp.azure.com">F29NCR</a>. As with Exomiser, NCR is used through a Foundation29 resource to manage the jobs of extracting information from user reports as required in the Dx29 application.</li>
 <li><a class="reference external" href="https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview">Azure Microsoft translator</a>.</li>
 </ul>
 </div></blockquote>

@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Data models &mdash; Dx29 v2 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Environments" href="3_Environments.html" />
+    <link rel="prev" title="1.4. Level 4: Code" href="1_Architecture/Code.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Dx29 v2
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dx29 v2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture.html">1. Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture/SystemContext.html">1.1. Level 1: System Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture/Containers.html">1.2. Level 2: Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture/Components.html">1.3. Level 3: Component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture/Code.html">1.4. Level 4: Code</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Data models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#medical-history-case-mhc-caserecords">2.1. Medical History Case (MHC) - CaseRecords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#medical-history-mh-medicalcases">2.2. Medical History (MH) - MedicalCases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resources-grouped-by-type-resourcegroups">2.3. Resources grouped by type - ResourceGroups</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3_Environments.html">3. Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Environments/1_AKS-DEV.html">3.1. Dev Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Environments/2_AKS-TEST.html">3.2. Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Environments/3_AKS-PRO.html">3.3. Prod environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Environments/4_ScriptsCreateAndDeploy.html">3.4. Scripts for create and deploy environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy.html">4. Build &amp; Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/1_Build.html">4.1. Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/2_Deploy.html">4.2. Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/3_Automation.html">4.3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/4_Locally.html">4.4. Running and working locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/5_CurrentStatus.html">4.5. Current Status of the environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_CodeGuidelines.html">5. Code Guidelines</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dx29 v2</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>2. Data models</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/2_DataModels.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <img align="right" width="100px" src="../_images/Foundation29.png"><div class="section" id="data-models">
+<h1>2. Data models<a class="headerlink" href="#data-models" title="Permalink to this headline">¶</a></h1>
+<p>A Dx29 user is the element that contains the credential information and access permissions to the platform.</p>
+<p>This element will be:</p>
+<blockquote>
+<div><ul class="simple">
+<li>On the one hand, the one in charge of managing access to the application.</li>
+<li>On the other hand, the point of differentiation between the different profiles of the application, that is, it will be in charge of restricting the permissions and access to the data and its management or to the different parts of the application.</li>
+</ul>
+</div></blockquote>
+<p>Thus, the information or data of a user of the platform will be mainly:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Credentials: user name, email and password.</li>
+<li>User group: Here a distinction will be made between patients and doctors.</li>
+<li>Role: User or administrator</li>
+</ul>
+</div></blockquote>
+<p>The difference between patient and doctor is:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A patient user will only be able to manage their medical history.</li>
+<li>A doctor user can create several medical records, without the need for a patient user to exist.</li>
+</ul>
+</div></blockquote>
+<p>We are therefore talking about the management of medical records by each profile.</p>
+<p>A medical history is subdivided into two elements:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Medical History Case (MHC), which is stored in the “caseRecords” database and contains the patient’s personal information.</li>
+<li>Medical History (MH), which will be the medical records associated with a patient, stored in the “medicalCases” database and containing the patient’s medical information.</li>
+</ul>
+</div></blockquote>
+<p>In turn, a Medical History will be made up of different resources, which can be grouped by type: symptoms, genes, medical reports, related diseases, etc. In other words, only the pointers to the groups of resources in the medical history will be stored in this database. These groups will be stored in a third database: resourceGroups.</p>
+<p>It is important to take into account that, due to the definition of doctor and patient:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A patient user will have:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>His own medical history, which is the one he has created when registering in the application and filling in his data.</li>
+<li>He/she may have other associated medical histories if he/she has shared his/her case with a doctor. That is, when a patient’s case is shared with a doctor, the doctor will create a new medical history related to that of the patient with whom he/she will work and that the patient will be able to see. In this way it is possible to know who has made the changes to a medical case, even though the user is presented with all the information and this is transparent to him.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>A medical user will have:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>The medical histories that he/she has created without associating them to any patient in the Dx29 application.</li>
+<li>The medical histories shared by the patients of the Dx29 application.</li>
+<li>You will be able to receive medical histories also from other doctors. In the case that a doctor shares with another doctor, the same logic occurs as between patient and doctor, that is, a new medical history will be created for the second doctor, although this will be transparent to the users.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>The following subsections will define the structure of the objects that are stored in each of the above-mentioned databases.</p>
+<div class="section" id="medical-history-case-mhc-caserecords">
+<h2>2.1. Medical History Case (MHC) - CaseRecords<a class="headerlink" href="#medical-history-case-mhc-caserecords" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">mhc_id</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;userId&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">user_id_crypt</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">user_type</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">patient_name</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s2">&quot;birthDate&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">patient_birthdate</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s2">&quot;gender&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">patient_gender</span><span class="o">&gt;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Each Medical history case will contain:</p>
+<blockquote>
+<div><ul class="simple">
+<li>An identifier or id.</li>
+<li>The encrypted identifier of the SQL database that contains the credentials of the users registered in the application.</li>
+<li>The type of the user: Patient or Physician.</li>
+<li>An object with the properties of the Medical History Case: The name, date of birth and gender of the patient.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="medical-history-mh-medicalcases">
+<h2>2.2. Medical History (MH) - MedicalCases<a class="headerlink" href="#medical-history-mh-medicalcases" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+    &quot;id&quot;: &lt;mh_id&gt;,
+    &quot;userId&quot;:  &lt;user_id_crypt&gt;,
+    &quot;status&quot;: &lt;mh_status&gt;,
+    &quot;resourceGroups&quot;: {
+        &lt;resource_group_id&gt;: {
+            &quot;type&quot;: &lt;resource_group_type&gt;,
+            &quot;name&quot;: &lt;resource_group_name&gt;
+            &quot;resources&quot;: {
+                &lt;resource_id&gt;: &lt;resource_status&gt;
+            },
+            &quot;lastUpdate&quot;: &lt;last_resource_update_date&gt;
+        }
+    },
+    &quot;sharedWith&quot;: [
+    	{
+            &quot;userId&quot;: &lt;user_id_who_sharedWith&gt;,
+            &quot;status&quot;: &lt;sharing_status&gt;,
+            &quot;lastUpdate&quot;: &lt;last_sharingAction_update_date&gt;
+        }
+    ],
+    &quot;sharedBy&quot;: [
+    	{	
+            &quot;userId&quot;: &lt;user_id_who_sharedBy&gt;,
+            &quot;caseId&quot;: &lt;main_mh&gt;,
+            &quot;status&quot;: &lt;sharing_status&gt;,
+            &quot;lastUpdate&quot;: &lt;last_sharingAction_update_date&gt;
+        }
+     ],
+    &quot;createdOn&quot;: &lt;mh_createdOn_date&gt;,
+    &quot;updatedOn&quot;: &lt;last_mh_update_date&gt;,
+    ```
+    ```
+}
+</pre></div>
+</div>
+<p>Each Medical history case will contain:</p>
+<blockquote>
+<div><ul class="simple">
+<li>An identifier or id. If the case is a shared case this identifier will start with “s”, while if it is an owner’s case or private it will start with “c”.</li>
+<li>The encrypted identifier of the SQL database that contains the credentials of the users registered in the application.</li>
+<li>The status of the case: Deleted, Shared, Private, …</li>
+<li>The creation and update dates of the case.</li>
+<li>A list of the resource groups associated with the case. Each resource group will be an object in this list with:</li>
+<li>Key equal to the resource group identifier.</li>
+<li>Value, an object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>The type of resource: Phenotype, Gene, Report,….</li>
+<li>The name associated to this resource group. This is used to differentiate for example between manual symptoms and symptoms extracted from a report.</li>
+<li>The creation and update dates of the resource group.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>If applicable, a list of users with whom the case has been shared (shared with):</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>The identifier of the user with whom the case has been shared.</li>
+<li>The status of the sharing: Pending approval, shared, rejected or revoked.</li>
+<li>The date of update of the actions on the shared case.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>If applicable, a list of the users who have shared the case with me (SharedBy):</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>The identifier of the user who has shared the case with me.</li>
+<li>The case identifier of the user who owns the case</li>
+<li>The status of the sharing: Shared, pending, rejected or revoked.</li>
+<li>The date of update of the actions on the sharing of the case.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>TODO:</p>
+<blockquote>
+<div><ul class="simple">
+<li>List of mh posible status</li>
+<li>List of posible sharing status</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="resources-grouped-by-type-resourcegroups">
+<h2>2.3. Resources grouped by type - ResourceGroups<a class="headerlink" href="#resources-grouped-by-type-resourcegroups" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_group_id</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;userId&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">user_id_crypt</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;caseId&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">mh_id</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_group_type</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">resource_group_name</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;resources&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="o">&lt;</span><span class="n">resource_id</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_id</span><span class="o">&gt;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_name</span><span class="o">&gt;</span><span class="s2">&quot;,</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_status</span><span class="o">&gt;</span><span class="p">,</span>
+            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_properties</span><span class="o">&gt;</span><span class="p">,</span>
+            <span class="s2">&quot;createdOn&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_createdOn_date</span><span class="o">&gt;</span><span class="p">,</span>
+            <span class="s2">&quot;updatedOn&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_updatedOn_date</span><span class="o">&gt;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;createdOn&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_group_createdOn_date</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">&quot;updatedOn&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">resource_group_updatedOn_date</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Each ressource group will contain:</p>
+<blockquote>
+<div><ul class="simple">
+<li>An identifier or id.</li>
+<li>The encrypted identifier of the SQL database that contains the credentials of the users registered in the application.</li>
+<li>The creation and update dates of the resource group.</li>
+<li>The type of resource: Phenotype, Gene, Report,….</li>
+<li>The name associated to this resource group. This is used to differentiate for example between manual symptoms and symptoms extracted from a report.</li>
+</ul>
+</div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li>A list of the resources associated with the resource group. Each resource will be an object in this list with:</li>
+<li>Key equal to the resource identifier.</li>
+<li>Value, an object with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>The identifier of the resource</li>
+<li>The name of the resource</li>
+<li>The status of the resource</li>
+<li>The creation and update dates of the resource.</li>
+<li>An object with the properties of the resource: this will be different for each type or resource.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>TODO:</p>
+<blockquote>
+<div><ul class="simple">
+<li>List of resource group types</li>
+<li>List of resource group names</li>
+<li>List of resource status</li>
+<li>List of resource names</li>
+<li>List of properties for each type of resource</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3_Environments.html" class="btn btn-neutral float-right" title="3. Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1_Architecture/Code.html" class="btn btn-neutral float-left" title="1.4. Level 4: Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Foundation29
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

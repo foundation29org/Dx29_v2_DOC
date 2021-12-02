@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Environments" href="../2_Environments.html" />
+    <link rel="next" title="2. Data models" href="../2_DataModels.html" />
     <link rel="prev" title="1.3. Level 3: Component" href="Components.html" /> 
 </head>
 
@@ -101,9 +101,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#dx29-localization">1.4.2.7. Dx29.Localization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dx29-mailing">1.4.2.8. Dx29.Mailing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dx29-medicalhistory">1.4.2.9. Dx29.MedicalHistory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dx29-segmentation">1.4.2.10. Dx29.Segmentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dx29-termsearch2">1.4.2.11. Dx29.TermSearch2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dx29-webmanagement">1.4.2.12. Dx29.WebManagement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dx29-phensimilarity">1.4.2.10. Dx29.PhenSimilarity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dx29-segmentation">1.4.2.11. Dx29.Segmentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dx29-termsearch2">1.4.2.12. Dx29.TermSearch2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dx29-webmanagement">1.4.2.13. Dx29.WebManagement</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#external-containers">1.4.3. External containers</a></li>
@@ -115,18 +116,19 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments.html">4. Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/1_AKS-DEV.html">4.1. Dev Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/2_AKS-TEST.html">4.2. Test environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/3_AKS-PRO.html">4.3. Prod environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_Environments/4_ScriptsCreateAndDeploy.html">4.4. Scripts for create and deploy environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy.html">6. Build &amp; Deploy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/1_Build.html">6.1. Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/2_Deploy.html">6.2. Deploy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/3_Automation.html">6.3. Automation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/4_Locally.html">6.4. Running and working locally</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3_BuildAndDeploy/5_CurrentStatus.html">6.5. Current Status of the environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_CodeGuidelines.html">7. Code Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_DataModels.html">2. Data models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments.html">3. Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/1_AKS-DEV.html">3.1. Dev Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/2_AKS-TEST.html">3.2. Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/3_AKS-PRO.html">3.3. Prod environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments/4_ScriptsCreateAndDeploy.html">3.4. Scripts for create and deploy environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy.html">4. Build &amp; Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/1_Build.html">4.1. Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/2_Deploy.html">4.2. Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/3_Automation.html">4.3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/4_Locally.html">4.4. Running and working locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/5_CurrentStatus.html">4.5. Current Status of the environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_CodeGuidelines.html">5. Code Guidelines</a></li>
 </ul>
 
             
@@ -319,7 +321,7 @@ The operations container will have different elements that will facilitate these
 <td>http://dx29-phensimilarity:8080/api/v1/</td>
 </tr>
 </tbody>
-</table><p>In addition, this project accesses the user database (SQL) and the blob. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:</p>
+</table><p>In addition, this project accesses the user database (SQL) and the blob that openDx29 uses to exchange information with Dx29 v2. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -337,7 +339,7 @@ The operations container will have different elements that will facilitate these
 <tr>
 <td>ConnectionStrings</td>
 <td>OpenDataBlobStorage</td>
-<td>Blob endpoint and credentials</td>
+<td>OpenDx29 blob endpoint and credentials</td>
 </tr>
 <tr>
 <td>SignalR</td>
@@ -392,11 +394,7 @@ The operations container will have different elements that will facilitate these
 <div class="section" id="dx29-annotations">
 <h3>1.4.2.1. Dx29.Annotations<a class="headerlink" href="#dx29-annotations" title="Permalink to this headline">¶</a></h3>
 <p>The annotation service is used to extract information from medical documents.</p>
-<p>It offers the following methods for this purpose:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Methods for performing extraction operations asynchronously (Text Analytics). Baseline request: <code class="docutils literal notranslate"><span class="pre">/api/v1/Annotations/</span></code></li>
-</ul>
+<p>It offers the following methods for performing extraction operations asynchronously (Text Analytics):</p>
 <blockquote>
 <div><ul class="simple">
 <li>Process.</li>
@@ -479,27 +477,7 @@ The operations container will have different elements that will facilitate these
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-</div></blockquote>
-<blockquote>
-<div><ul class="simple">
-<li>Methods to perform extraction operations synchronously (NCR). Baseline request:<code class="docutils literal notranslate"><span class="pre">/api/v1/SyncAnnotations/</span></code></li>
-</ul>
-<blockquote>
-<div><ul class="simple">
-<li>Process.</li>
-</ul>
-<blockquote>
-<div><ul class="simple">
-<li>To make both external and internal queries to Dx29.</li>
-<li>POST request: <code class="docutils literal notranslate"><span class="pre">/api/v1/SyncAnnotations/</span></code></li>
-<li>Body request: string or text of the document to be extracted.</li>
-<li>Response: Object with the results of the annotation process line the one of the asynchronous results request.</li>
-</ul>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-<p>It is programmed in C#, and two Docker images will result from this project: Annotations and AnnotationsJobs. The first one will contain the extraction functionality, while the second one will be used to manage the asynchronous jobs.
-To configure it, it is necessary to create a ServiceBus, where the asynchronous jobs will be sent. Therefore needs the configuration file with the secrets: keys and values.</p>
+<p>It is programmed in C#, and two Docker images will result from this project: Annotations and AnnotationsJobs. The first one will contain the extraction functionality, while the second one will be used to manage the asynchronous jobs.</p>
 <p>The structure of the project is as follows:</p>
 <blockquote>
 <div><ul class="simple">
@@ -509,7 +487,7 @@ To configure it, it is necessary to create a ServiceBus, where the asynchronous 
 <li><strong>Dx29</strong>, <strong>Dx29.Azure</strong> and <strong>Dx29.Jobs</strong> used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
 </ul>
 </div></blockquote>
-<p>As it has been programmed with C#, so the project must include a configuration file: appsettings.json. This includes the dependencies with other microservices:</p>
+<p>The project must include a configuration file: appsettings.json. This includes the dependencies with other microservices:</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -540,7 +518,15 @@ To configure it, it is necessary to create a ServiceBus, where the asynchronous 
 <td>https://f29api.northeurope.cloudapp.azure.com/api/</td>
 </tr>
 </tbody>
-</table><p>And finally, it should be mentioned that it depends on two external services: NCR and TextAnalytics. In addition, this project accesses the blob and it also uses ServiceBus and SignalR for notification management, and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:</p>
+</table><p>And finally, it should be mentioned that:</p>
+<blockquote>
+<div><ul class="simple">
+<li>It depends on a external service: TextAnalytics</li>
+<li>It accesses the blob</li>
+<li>It is necessary to create a ServiceBus, where the asynchronous jobs will be sent, SignalR for notification management, and AppInsights for logging.</li>
+</ul>
+</div></blockquote>
+<p>Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -594,16 +580,6 @@ To configure it, it is necessary to create a ServiceBus, where the asynchronous 
 <td>CognitiveServices</td>
 <td>Region</td>
 <td>Azure cognitive service region configured</td>
-</tr>
-<tr>
-<td>NCRAnnotation</td>
-<td>Endpoint</td>
-<td>Endpoint Azure cognitive service configured for NCR</td>
-</tr>
-<tr>
-<td>NCRAnnotation</td>
-<td>Authorization</td>
-<td>Authorization key</td>
 </tr>
 <tr>
 <td>TAHAnnotation</td>
@@ -718,7 +694,6 @@ The APIs that he explains can be consulted in this <a class="reference external"
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-<p><strong>TODO: Update with the new methods</strong></p>
 <p>It is programmed in C#, and a Docker image will result from this project.</p>
 <p>The structure of the project is as follows:</p>
 <blockquote>
@@ -905,7 +880,7 @@ For now, only the application’s terms and conditions and privacy policy docume
 <tbody>
 <tr>
 <td>ConnectionStrings</td>
-<td>OpenDataBlobStorage</td>
+<td>BlobStorage</td>
 <td>Blob endpoint and credentials</td>
 </tr>
 </tbody>
@@ -1004,7 +979,7 @@ For now, only the application’s terms and conditions and privacy policy docume
 <tbody>
 <tr>
 <td>ConnectionStrings</td>
-<td>OpenDataBlobStorage</td>
+<td>BlobStorage</td>
 <td>Blob endpoint and credentials</td>
 </tr>
 </tbody>
@@ -1104,12 +1079,12 @@ For now, only the application’s terms and conditions and privacy policy docume
 <tbody>
 <tr>
 <td>ConnectionStrings</td>
-<td>OpenDataBlobStorage</td>
+<td>BlobStorage</td>
 <td>Blob endpoint and credentials</td>
 </tr>
 <tr>
 <td>ConnectionStrings</td>
-<td>OpenDataBlobStorage</td>
+<td>BlobStorage</td>
 <td>Blob endpoint and credentials</td>
 </tr>
 <tr>
@@ -1141,7 +1116,18 @@ For now, only the application’s terms and conditions and privacy policy docume
 <blockquote>
 <div><ul class="simple">
 <li>This method is the one that performs the function of sending an email.</li>
-<li>POST request: <code class="docutils literal notranslate"> <span class="pre">api/sendEmail?params={To:&lt;destination</span> <span class="pre">address,From:&lt;request</span> <span class="pre">address&gt;,Subject:&lt;subject</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">email&gt;,</span> <span class="pre">CC:&lt;copy&gt;,</span> <span class="pre">BCC:&lt;blid</span> <span class="pre">copy&gt;,</span> <span class="pre">ReplyTo:&lt;To</span> <span class="pre">whom</span> <span class="pre">the</span> <span class="pre">email</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">replied</span> <span class="pre">to&gt;}</span></code> (*CC, BCC and ReplyTo are optional)</li>
+<li>POST request:</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>api/sendEmail?params={ To: &lt;destination address, From: &lt;request address&gt;, Subject: &lt;subject of the email&gt;, 
+CC: &lt;copy&gt;, BCC: &lt;blid copy&gt;, ReplyTo: &lt;To whom the email can be replied to&gt; }
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div><p>(*CC, BCC and ReplyTo are optional)</p>
+<ul class="simple">
 <li>Atachments are added in the header of the request: <strong>dx-attachments</strong> header.</li>
 </ul>
 <blockquote>
@@ -1410,7 +1396,20 @@ The structure of the project is as follows:</p>
 <blockquote>
 <div><ul class="simple">
 <li>Get Resources by type?, name?, resourceId?</li>
-<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;?groupType=&lt;group</span> <span class="pre">type&gt;&amp;groupName=&lt;group</span> <span class="pre">name&gt;&amp;resourceId=&lt;resource</span> <span class="pre">id&gt;</span></code> (All queries are optional).</li>
+<li>GET request:</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>api/v1/Resources/&lt;userId&gt;/&lt;caseId&gt;?groupType=&lt;group type&gt;&amp;groupName=&lt;group name&gt;&amp;
+&lt;resourceId=&lt;resource id&gt; 
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>(All queries are optional).</p>
+<ul class="simple">
 <li>Result response: A dictionary with resourceGroupId.resourceGroupName as keys and list of resource objects as values with</li>
 </ul>
 <blockquote>
@@ -1661,8 +1660,80 @@ The structure of the project is as follows:</p>
 </tr>
 </tbody>
 </table></div>
+<div class="section" id="dx29-phensimilarity">
+<h3>1.4.2.10. Dx29.PhenSimilarity<a class="headerlink" href="#dx29-phensimilarity" title="Permalink to this headline">¶</a></h3>
+<p>It is used to obtain the differential diagnosis at the phenotypic level between a patient’s symptoms and those of a disease.</p>
+<p>For this purpose, it offers the following method:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Calculate</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Getting the differential diagnosis between two list of symptoms</li>
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">api/v1/calculate</span></code></li>
+<li>Body request:</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;list_reference&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">patient</span> <span class="n">symptoms</span> <span class="n">ids</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span> 
+<span class="s2">&quot;list_compare&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">disease</span> <span class="n">symptoms</span> <span class="n">ids</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="o">&gt;</span><span class="p">]}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li>Response: List of objetcs with:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Symptom identifier (HP)</li>
+<li>HasPatient and HasDisease booleans, indicating if the patient and if the disease has or not this symptom.</li>
+<li>RelatedId: if the symptom is present in patient or disease by inheritance, here appears the related symptom identifier that has been used to assume the value of the previous booleans.</li>
+<li>Relationship: Relationship between symptom and related symptom (Equals, Predeccessor or Successor)</li>
+<li>Score: Relationship type score</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>It is programmed in NodeJS, and a Docker image will result from this project.
+The structure of the project is as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <strong>controllers folder</strong> contains the functionality to work with the previous method.</li>
+<li>In the <strong>routes folder</strong>, all the routes of the API appear. It contains the file index.js that links with the controllers, defining the requests that will be available to the external clients.</li>
+<li>In the <strong>services folder</strong> the functionality is implemented.</li>
+<li><strong>Some files</strong>:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>index.js: file where the app.js is loaded. It establish the port for connections and listens to requests.</li>
+<li>Config.js: configuration file. It contains the keys and values that can be public.</li>
+<li>App.js: the crossdomain is established.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>This project deppends on F29BIO (TODO: Change by new URL), so in config file we must include:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f29bio</td>
+<td>https://f29bio.northeurope.cloudapp.azure.com</td>
+<td>API for get symptoms information</td>
+</tr>
+</tbody>
+</table><p>This project doesn’t need any secret value.</p>
+<p><strong>TODO new microservice that expose new calls of F29bio</strong></p>
+</div>
 <div class="section" id="dx29-segmentation">
-<h3>1.4.2.10. Dx29.Segmentation<a class="headerlink" href="#dx29-segmentation" title="Permalink to this headline">¶</a></h3>
+<h3>1.4.2.11. Dx29.Segmentation<a class="headerlink" href="#dx29-segmentation" title="Permalink to this headline">¶</a></h3>
 <p>It is used to divide a text into paragraphs, lines, sections,… before sending it to the annotation service.</p>
 <p>For this purpose, it offers the following method:</p>
 <blockquote>
@@ -1690,7 +1761,7 @@ The structure of the project is as follows:</p>
 <p>This project doesn’t have any dependency and doesn’t need any secret value.</p>
 </div>
 <div class="section" id="dx29-termsearch2">
-<h3>1.4.2.11. Dx29.TermSearch2<a class="headerlink" href="#dx29-termsearch2" title="Permalink to this headline">¶</a></h3>
+<h3>1.4.2.12. Dx29.TermSearch2<a class="headerlink" href="#dx29-termsearch2" title="Permalink to this headline">¶</a></h3>
 <p>This microservice allows the searches described in the Dx29 application to be carried out: both for symptoms and diseases. That is, it will be the one called by the search boxes.</p>
 <p>For this purpose, it offers the following method:</p>
 <blockquote>
@@ -1726,7 +1797,7 @@ The structure of the project is as follows:</p>
 This project doesn’t need any secret value.</p>
 </div>
 <div class="section" id="dx29-webmanagement">
-<h3>1.4.2.12. Dx29.WebManagement<a class="headerlink" href="#dx29-webmanagement" title="Permalink to this headline">¶</a></h3>
+<h3>1.4.2.13. Dx29.WebManagement<a class="headerlink" href="#dx29-webmanagement" title="Permalink to this headline">¶</a></h3>
 <p>This project will allow the use of methods in the Dx29 web application or the frontend (Dx29.Web) that require authentication and authorisation. For example, those related to the databases: Medical History.
 It will be used on demand, in order to be able to perform automated actions.</p>
 <p>It shall not be exposed for use by third parties. It is an internal management tool for Fundation 29 programmers.</p>
@@ -2364,7 +2435,7 @@ As it has been programmed with C#, the project must include a configuration file
 <td>http://dx29-phensimilarity:8080/api/v1/</td>
 </tr>
 </tbody>
-</table><p>In addition, this project accesses the user database (SQL) and the blob. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:</p>
+</table><p>In addition, this project accesses the user database (SQL) and the blob that openDx29 uses to exchange information with Dx29 v2.. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -2382,7 +2453,7 @@ As it has been programmed with C#, the project must include a configuration file
 <tr>
 <td>ConnectionStrings</td>
 <td>OpenDataBlobStorage</td>
-<td>Blob endpoint and credentials</td>
+<td>OpenDx29 blob endpoint and credentials</td>
 </tr>
 <tr>
 <td>SignalR</td>
@@ -2434,7 +2505,7 @@ As it has been programmed with C#, the project must include a configuration file
 </div>
 <div class="section" id="external-containers">
 <h2>1.4.3. External containers<a class="headerlink" href="#external-containers" title="Permalink to this headline">¶</a></h2>
-<p>In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires <a class="reference external" href="https://github.com/exomiser/Exomiser">Exomiser</a>, TODO: Lo vamos a quitar y solo trabajar con Text Analytics: <a class="reference external" href="https:/f29ncr.northeurope.cloudapp.azure.com">F29NCR</a>, <a class="reference external" href="https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview">Microsoft translator</a> and <a class="reference external" href="https://f29api.northeurope.cloudapp.azure.com/index.html">F29API</a>.</p>
+<p>In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires <a class="reference external" href="https://github.com/exomiser/Exomiser">Exomiser</a>, <a class="reference external" href="https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview">Microsoft translator</a> and <a class="reference external" href="https://f29api.northeurope.cloudapp.azure.com/index.html">F29API</a>.</p>
 <p>The documentation of each of these projects is not the subject of this manual. It is only necessary to understand that they expose APIs, with the endpoints that have been indicated here, and that their methods will be used, so you only need to understand the type of request, the input and output of each one.</p>
 </div>
 <div class="section" id="operation-containers">
@@ -2477,7 +2548,7 @@ Both projects have the following structure in common:</p>
 <p>During the implementation of the application, as we have already seen in the Environments section, three environments have been deployed: DEV, TEST and PROD. The previous projects help us to: generate the images, upload them to the corresponding container registry and deploy them in the cluster already created in the corresponding environment.
 This project shows how these environments have been created in Azure: Creation of the AKS, cluster, Association of a container registry, etc. and also the configuration to expose different IPs with DNS and HTTPs communication and the inclusion of the file with the secrets.</p>
 <p>So, here are presented the different scripts to perform these functions in each of the environments.</p>
-<p>These actions will only be necessary for the creation of new environments, therefore, although they are related to the Build and deploy of the application, they do not influence the designed automation and they will only have to be executed once. For this reason, we have left them as scripts that indicate the commands to be executed on the command line.l</p>
+<p>These actions will only be necessary for the creation of new environments, therefore, although they are related to the Build and deploy of the application, they do not influence the designed automation and they will only have to be executed once. For this reason, we have left them as scripts that indicate the commands to be executed on the command line.</p>
 </div>
 </div>
 </div>
@@ -2490,7 +2561,7 @@ This project shows how these environments have been created in Azure: Creation o
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2_Environments.html" class="btn btn-neutral float-right" title="4. Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../2_DataModels.html" class="btn btn-neutral float-right" title="2. Data models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Components.html" class="btn btn-neutral float-left" title="1.3. Level 3: Component" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Environments &mdash; Dx29 v2 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.1. Dev Environment" href="3_Environments/1_AKS-DEV.html" />
+    <link rel="prev" title="2. Data models" href="2_DataModels.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Dx29 v2
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dx29 v2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture.html">1. Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture/SystemContext.html">1.1. Level 1: System Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture/Containers.html">1.2. Level 2: Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture/Components.html">1.3. Level 3: Component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Architecture/Code.html">1.4. Level 4: Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_DataModels.html">2. Data models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Environments/1_AKS-DEV.html">3.1. Dev Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Environments/2_AKS-TEST.html">3.2. Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Environments/3_AKS-PRO.html">3.3. Prod environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Environments/4_ScriptsCreateAndDeploy.html">3.4. Scripts for create and deploy environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy.html">4. Build &amp; Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/1_Build.html">4.1. Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/2_Deploy.html">4.2. Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/3_Automation.html">4.3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/4_Locally.html">4.4. Running and working locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_BuildAndDeploy/5_CurrentStatus.html">4.5. Current Status of the environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_CodeGuidelines.html">5. Code Guidelines</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dx29 v2</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>3. Environments</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/3_Environments.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <img align="right" width="100px" src="../_images/Foundation29.png"><div class="section" id="environments">
+<h1>3. Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h1>
+<p>The different phases defined for software development are followed:</p>
+<p style="text-align: center;">
+	<img width="400px" src="../_images/applicationPhases.jpg">
+</p><p>In the development phase, it will be achieved:</p>
+<ul class="simple">
+<li>Integrate the work of different developers in a central repository, resulting in an updated and consolidated version of the code.</li>
+<li>Automate the integration tests and their validation before being moved to the next environment.</li>
+<li>Send the code to the next environment if the tests have been passed successfully.</li>
+</ul>
+<p>Once the integration tests in the development environment have been passed, the code will be moved to the pre-production (test) environment. Here the validation tests will be performed to the whole software, with the objective of locating any error before reaching the production environment and thus avoid problems arising from them. This environment can also be used as a demo environment, where the final customer can test the new application or the modifications or corrections made to the existing application. From here, the customer’s impressions will be extracted and possible deficiencies in the initial requirements, in the design or in its implementation will be located early on.
+Finally, the version will be moved into the production environment.</p>
+<p>So, the Dx29 application is divided into three environments:</p>
+<ul class="simple">
+<li>The <strong>development</strong> environment, for programmers.</li>
+<li>The <strong>test</strong> environment for the pre-production phase.</li>
+<li>The <strong>production</strong> environment for users.</li>
+</ul>
+<p>On the <strong>one hand</strong>, these environments are created as <strong>Kubernetes clusters on Azure</strong>: <a class="reference external" href="https://docs.microsoft.com/en-us/azure/aks/">AKS</a>.</p>
+<p>A Kubernetes cluster is a collection of node machines running containerised applications.
+A cluster contains, at a minimum, a control plane and one or more compute machines or nodes. The control plane is responsible for maintaining the desired state of the cluster and controlling, for example, which applications are run and which container images are used. The nodes are the ones that actually run the applications and workloads.</p>
+<p>Kubernetes clusters have a desired state, which defines the applications or workloads that should be running, the images that are used, the resources that should be available, and other configuration details.
+The desired state is defined through configuration files composed of manifests. These are JSON or YAML files that indicate the type of application to be run and the number of replicas required to keep a system running smoothly.
+The desired state of the cluster is defined using the Kubernetes API. This can be done from the command line (with kubectl) or by using the API to interact with the cluster and set or modify the desired state.
+Kubernetes will automatically manage the cluster to match that state. So, depending on the environment we will set this desired state to 1 or two. This means that this number of replicas of the application should be running. If one of the containers fails, Kubernetes will notice that there are fewer replicas running and will add the replicas needed to achieve the desired state.</p>
+<p>With that, these are the main concepts for working with a Kubernetes cluster:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Nodes: machines that perform the requested tasks assigned by the control plane.</li>
+<li>Pod: a group of one or more containers deployed on a single node. It is the smallest and simplest object in Kubernetes.</li>
+<li>Service: A way to expose an application running on a set of pods as a network service. This separates the task definitions from the pods.</li>
+<li>Volume: A directory containing data, which can be accessed by containers in a pod. A Kubernetes volume has the same lifespan as the pod that contains it. However, it outlasts any of the containers running within the pod, and data is retained when any of them are restarted.</li>
+<li>Namespace: Virtual cluster. Allows Kubernetes to manage multiple clusters for different machines or projects within the same physical cluster.</li>
+</ul>
+</div></blockquote>
+<p>As we have already seen, the Dx29 architecture is a microservices architecture that will be deployed in Azure. The architecture consists of the following components:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Azure Kubernetes Service (AKS). AKS is a managed Kubernetes cluster hosted in the Azure cloud. When using AKS, Azure manages the Kubernetes API service, and you only need to manage the agent nodes.</li>
+<li>Azure Load Balancer. After creating an AKS cluster; it is ready to use the load balancer. Then, once the NGINX service has been deployed, the load balancer will be configured with a new public IP address that will be put in front of the ingress controller. In this way, the load balancer routes the Internet traffic to the gateway.</li>
+<li>Azure Container Registry. Use Container Registry to store private Docker images, which are deployed to the cluster.</li>
+<li>Helm. Helm is a package manager for Kubernetes, a way to group and generalize Kubernetes objects into a single unit that can be published, deployed, versioned, and updated.</li>
+</ul>
+</div></blockquote>
+<img width="800px" src="../_images/azure-kubernetes-service-and-acr.png"><p>To deploy the three environments, we will follow these steps for each one:</p>
+<ol class="simple">
+<li>Prepare an application for Azure Kubernetes Service, the tutorial can be found <a class="reference external" href="https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app">here</a></li>
+<li>Deploy and use Azure Container Registry, the tutorial can be found <a class="reference external" href="https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-acr?tabs=azure-cli">here</a></li>
+<li>Deploy an Azure Kubernetes Service (AKS) cluster, tutorial available <a class="reference external" href="https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster?tabs=azure-cli">here</a></li>
+<li>Run applications in Azure Kubernetes Service (AKS), tutorial available <a class="reference external" href="https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-application?tabs=azure-cli">here</a></li>
+<li>Update an application in Azure Kubernetes Service (AKS), tutorial available <a class="reference external" href="https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-app-update?tabs=azure-cli">here</a></li>
+</ol>
+<p>In addition to all this, it must be taken into account that we will be working with secret values and keys and therefore this file must be included in the cluster corresponding to each environment. This can be done as indicated in this <a class="reference external" href="https://docs.microsoft.com/en-us/azure/aks/concepts-security">link</a>.</p>
+<p>On the <strong>other hand</strong>, each environment will use specific <strong>resources or containers</strong>. Thus:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Azure Kubernetes Service <a class="reference external" href="https://docs.microsoft.com/en-us/azure/aks/">AKS</a>.</li>
+<li><a class="reference external" href="https://docs.microsoft.com/en-GB/azure/container-registry/">Container registry</a> for Docker images of the microservices and the web application.</li>
+<li>There will be database containers and blobs for each environment:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Database <a class="reference external" href="https://docs.microsoft.com/en-GB/azure/azure-sql/database/">SQL</a> for manage user credentials</li>
+<li><a class="reference external" href="https://docs.microsoft.com/en-gb/azure/cosmos-db/introduction">MongoDB databases</a> with <a class="reference external" href="https://docs.microsoft.com/en-gb/azure/cosmos-db/choose-api">SQL API</a> for users Dx29 data</li>
+<li><a class="reference external" href="https://docs.microsoft.com/en-GB/azure/storage/blobs/">Azure blob storage</a> for users Dx29 data</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>In this section we will only explain the architecture of the application environments and the steps to follow for the build and the deploy of the application.
+Therefore, the section will be divided into different sections, one for each environment and the latest is common for automatization the creation and the deployment of the environments.</p>
+<p>For the development and versioning all projects we will follow the <strong>GitFlow</strong> defined in this <a class="reference external" href="https://blog.axosoft.com/gitflow/">guide</a>.</p>
+<p style="text-align: center;">
+	<img width="500px" src="../_images/gitflow.jpg">
+</p><p>It consists of a division by branches according to the task to be performed. Like this:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The master branch will contain the latest version of the code uploaded to production.</li>
+<li>The develop branch will be used to prepare the next versions. It will be the main branch on which the developers will work.</li>
+<li>Feature branches will be created to implement the functionality of the tasks defined in each sprint.</li>
+<li>Hotfixes branches will be created to implement the bugs defined in each Sprint.</li>
+<li>The releases branch will serve as a link between the development and master branches. It will be the one on which the following versions will be built and added to the production.</li>
+</ul>
+</div></blockquote>
+<p>Thus, there will be a relationship between each of the branches:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The Develop branch is generated from the Master branch. This is part of the latest production version when starting a Sprint.</li>
+<li>Features branches are created from the Develop branch. A branch will be created for each Sprint Task.</li>
+<li>From the Master branch the Hotfixes branches are created where the Sprint bugs will be resolved.</li>
+<li>The releases branch will be the union between Develop and Master, so that to move to Master (new version) you will first have to move from Develop to the releases branch, and then perform a validation phase. When this validation phase is finished, you can move to the Master branch.</li>
+</ul>
+</div></blockquote>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3_Environments/1_AKS-DEV.html" class="btn btn-neutral float-right" title="3.1. Dev Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2_DataModels.html" class="btn btn-neutral float-left" title="2. Data models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Foundation29
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

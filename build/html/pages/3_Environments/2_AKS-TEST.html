@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.2. Test environment &mdash; Dx29 v2 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.3. Prod environment" href="3_AKS-PRO.html" />
+    <link rel="prev" title="3.1. Dev Environment" href="1_AKS-DEV.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Dx29 v2
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dx29 v2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture.html">1. Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture/SystemContext.html">1.1. Level 1: System Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Containers.html">1.2. Level 2: Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Components.html">1.3. Level 3: Component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_Architecture/Code.html">1.4. Level 4: Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_DataModels.html">2. Data models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Environments.html">3. Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_AKS-DEV.html">3.1. Dev Environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3.2. Test environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_AKS-PRO.html">3.3. Prod environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_ScriptsCreateAndDeploy.html">3.4. Scripts for create and deploy environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy.html">4. Build &amp; Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/1_Build.html">4.1. Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/2_Deploy.html">4.2. Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/3_Automation.html">4.3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/4_Locally.html">4.4. Running and working locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_BuildAndDeploy/5_CurrentStatus.html">4.5. Current Status of the environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_CodeGuidelines.html">5. Code Guidelines</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Dx29 v2</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>3.2. Test environment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/pages/3_Environments/2_AKS-TEST.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <img align="right" width="100px" src="../../_images/Foundation29.png"><div class="section" id="test-environment">
+<h1>3.2. Test environment<a class="headerlink" href="#test-environment" title="Permalink to this headline">¶</a></h1>
+<p>This is where application testing is conducted to find and fix errors. All the work done in the development environment is merged into the built system before it is moved into the production environment.</p>
+<p>A test environment is where the testing teams analyze the quality of the application/program. This also allows computer programmers to identify and fix any bugs that may impact smooth functioning of the application or impair user experience.
+A test environment allows software developers to check how a code/program will behave in a live environment. The testing environment should closely resemble the production environment since it is one of the last safe places to find and fix environment-related bugs before moving into production.</p>
+<p>The Dx29 application test environment will consist of the following components:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Component</th>
+<th>Azure</th>
+<th>Configuration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure Kubernetes Service</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/aks/">link</a></td>
+<td>One instance for each deployment and service</td>
+<td>To manage and operate the containers orchestrated on Kubernetes, which contain the microservices necessary for the deployment of the Dx29 application in the test environment.</td>
+</tr>
+<tr>
+<td>Container Registry</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/container-registry/">link</a></td>
+<td>List of Docker images for each microservice with versions (tags)</td>
+<td>Azure Container Registry (ACR) is a private registry for container images. A private container registry allows you to securely build and deploy custom code and applications. It is associated with an Azure resource cluster. The Kubernetes cluster is associated with this resource to use the images contained therein for deployments.</td>
+</tr>
+<tr>
+<td>Public IP and DNS</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/aks/static-ip">link</a></td>
+<td>https://dx29test.northeurope.cloudapp.azure.com/</td>
+<td>To access Dx29 application from test environment</td>
+</tr>
+<tr>
+<td>SQL database</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/azure-sql/database/">link</a></td>
+<td>Information about the user: email, encrypted password, First name, Last name, Language and role: Physician or Patient</td>
+<td>For managing user accounts of Dx29 application in test environment</td>
+</tr>
+<tr>
+<td>CosmosDB databases</td>
+<td><a href="https://docs.microsoft.com/en-gb/azure/cosmos-db/introduction">link</a></td>
+<td>With <a href="https://docs.microsoft.com/en-gb/azure/cosmos-db/choose-api">SQL API</a></td>
+<td>There are now two such databases. A separation of data is starting to be made, although it is not entirely correct in terms of security (as it is a test environment this is not a problem as in development). Now we have one for the user data and its associated medical cases: caseRecords and medicalCases, and another one for the resources of each c: resourceGroups.</td>
+</tr>
+<tr>
+<td>Blob storage</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/storage/blobs/">link</a></td>
+<td>One container for the application literals, another for the documents, another for communication with openDx29 and finally a private container for each Dx29 medical case.</td>
+<td>It is organised in different containers for the following functionalities: translation of Dx29 in English or Spanish, access to documents required by the application such as the privacy policy or emails, or access to a user's data in a private and secure way (medical reports, genotypes, results of Dx29 application processes, etc</td>
+</tr>
+</tbody>
+</table><p>In addition, it uses some components of the development environment:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Component</th>
+<th>Azure</th>
+<th>Configuration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application Insights</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/azure-monitor/app/app-insights-overview">link</a></td>
+<td>-</td>
+<td>For the logging of the Dx29 application</td>
+</tr>
+<tr>
+<td>SignalR</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/azure-signalr/signalr-overview">link</a></td>
+<td>-</td>
+<td>Service for the management of real-time application notifications</td>
+</tr>
+<tr>
+<td>ServiceBus</td>
+<td><a href="https://docs.microsoft.com/en-GB/azure/service-bus-messaging/service-bus-messaging-overview">link</a></td>
+<td>Queue</td>
+<td>Dx29 messaging service</td>
+</tr>
+</tbody>
+</table></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3_AKS-PRO.html" class="btn btn-neutral float-right" title="3.3. Prod environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1_AKS-DEV.html" class="btn btn-neutral float-left" title="3.1. Dev Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Foundation29
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

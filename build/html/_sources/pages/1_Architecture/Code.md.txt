@@ -54,12 +54,12 @@ As it has been programmed with C#, the Dx29.Web project must include a configura
 | OpenDx29       | Endpoint  |https://dx29.ai/api                                            |
 | PhenSimilarity | Endpoint  |http://dx29-phensimilarity:8080/api/v1/                        |
 
-In addition, this project accesses the user database (SQL) and the blob. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+In addition, this project accesses the user database (SQL) and the blob that openDx29 uses to exchange information with Dx29 v2. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
 
 |  Key                 | Value               |		                                                                                |
 |----------------------|---------------------|--------------------------------------------------------------------------------------|
 | ConnectionStrings    | IdentityConnection  |SQL database endpoint and credentials                                                 |
-| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+| ConnectionStrings    | OpenDataBlobStorage |OpenDx29 blob endpoint and credentials                                                         |
 | SignalR              | ConnectionString    |SignalR connection string & credentials                                               |
 | SignalR              | HubName             |SignalR Hub HubName                                                                   |
 | AppInsights          | Key                 |Secret key for connecting with AppInsights                                            |
@@ -75,58 +75,49 @@ In addition, this project accesses the user database (SQL) and the blob. It also
 #### 1.4.2.1. Dx29.Annotations
 The annotation service is used to extract information from medical documents. 
 
-It offers the following methods for this purpose:
->- Methods for performing extraction operations asynchronously (Text Analytics). Baseline request: ```/api/v1/Annotations/```
->>- Process. 
->>>- To make external queries to Dx29, that is to say, with documents that are not associated to any user profile of the application.
->>>- POST request: ```/api/v1/Annotations/process```
->>>- Body request: Stream document.
->>>- Response: Job Status
->>>>- Name
->>>>- Token: Job identifier. This will be needed later for job status and/or result queries.
->>>>- Date: Date when the query is performed
->>>>- Status: String indicating the status of the job. Can be: Failed, Succeeded, Running, Preparing, Pending, Created or Unknown.
->>>>- CreatedOn: Date when the operation has made.
->>>>- LastUpdate
->>- Process/userId/caseId/reportId. 
->>>- For internal Dx29 queries, i.e. on users, cases and existing reports. This request will query the blobs to perform the relevant operations on the indicated document (For the user and the case, the report with identifier reportId is searched, and processed).
->>>- POST request: ```/api/v1/Annotations/process/{userId}/{caseId}/{reportId}```
->>>- Body request: Stream document.
->>>- Response: Job status. An object like the one in the request described above is returned.
->>- Status. 
->>>- To request the status of a given job. The identifier of the job corresponds to the token returned by any of the previous requests.
->>>- GET request: ```/api/v1/Annotations/status?params=<token>```
->>>- Response: Job status. An object like the one in the request described above is returned.
->>- Results.
->>>- To obtain the results of a given job. The job identifier corresponds to the token returned by any of the previous requests. 
->>>- GET request: ```/api/v1/Annotations/results?params=<token>```
->>>- Object with the results of the annotation process:
->>>>- Analyzer: If the document wa analyze with OCR or not.
->>>>- Segments List. List of the segments extracted as a result, composed by objects with:
->>>>>- Id or identifier of the segment
->>>>>- Language of the results
->>>>>- String Text
->>>>>- Source composed by the Language and the string text sources (from the document).
->>>>>- Annotations list or the items that are recognised in the result text:
->>>>>>- Id or identifier
->>>>>>- Text of the annotation
->>>>>>- Offset
->>>>>>- Length
->>>>>>- Category
->>>>>>- CondifenceScore
->>>>>>- IsNegated
->>>>>>- IsDiscarded
->>>>>>- List of related links composed by the data of the source and an Id.
-
->- Methods to perform extraction operations synchronously (NCR). Baseline request:```/api/v1/SyncAnnotations/```
->>- Process. 
->>>- To make both external and internal queries to Dx29.
->>>- POST request: ```/api/v1/SyncAnnotations/```
->>>- Body request: string or text of the document to be extracted.
->>>- Response: Object with the results of the annotation process line the one of the asynchronous results request.
+It offers the following methods for performing extraction operations asynchronously (Text Analytics):
+>- Process. 
+>>- To make external queries to Dx29, that is to say, with documents that are not associated to any user profile of the application.
+>>- POST request: ```/api/v1/Annotations/process```
+>>- Body request: Stream document.
+>>- Response: Job Status
+>>>- Name
+>>>- Token: Job identifier. This will be needed later for job status and/or result queries.
+>>>- Date: Date when the query is performed
+>>>- Status: String indicating the status of the job. Can be: Failed, Succeeded, Running, Preparing, Pending, Created or Unknown.
+>>>- CreatedOn: Date when the operation has made.
+>>>- LastUpdate
+>- Process/userId/caseId/reportId. 
+>>- For internal Dx29 queries, i.e. on users, cases and existing reports. This request will query the blobs to perform the relevant operations on the indicated document (For the user and the case, the report with identifier reportId is searched, and processed).
+>>- POST request: ```/api/v1/Annotations/process/{userId}/{caseId}/{reportId}```
+>>- Body request: Stream document.
+>>- Response: Job status. An object like the one in the request described above is returned.
+>- Status. 
+>>- To request the status of a given job. The identifier of the job corresponds to the token returned by any of the previous requests.
+>>- GET request: ```/api/v1/Annotations/status?params=<token>```
+>>- Response: Job status. An object like the one in the request described above is returned.
+>- Results.
+>>- To obtain the results of a given job. The job identifier corresponds to the token returned by any of the previous requests. 
+>>- GET request: ```/api/v1/Annotations/results?params=<token>```
+>>- Object with the results of the annotation process:
+>>>- Analyzer: If the document wa analyze with OCR or not.
+>>>- Segments List. List of the segments extracted as a result, composed by objects with:
+>>>>- Id or identifier of the segment
+>>>>- Language of the results
+>>>>- String Text
+>>>>- Source composed by the Language and the string text sources (from the document).
+>>>>- Annotations list or the items that are recognised in the result text:
+>>>>>- Id or identifier
+>>>>>- Text of the annotation
+>>>>>- Offset
+>>>>>- Length
+>>>>>- Category
+>>>>>- CondifenceScore
+>>>>>- IsNegated
+>>>>>- IsDiscarded
+>>>>>- List of related links composed by the data of the source and an Id.
 
 It is programmed in C#, and two Docker images will result from this project: Annotations and AnnotationsJobs. The first one will contain the extraction functionality, while the second one will be used to manage the asynchronous jobs.
-To configure it, it is necessary to create a ServiceBus, where the asynchronous jobs will be sent. Therefore needs the configuration file with the secrets: keys and values.
 
 The structure of the project is as follows:
 >- **Dx29.Annotations.Web.API**. In this project is the implementation of the controllers that expose the aforementioned methods.
@@ -134,7 +125,7 @@ The structure of the project is as follows:
 >- **Dx29.Annotations.Worker**. This project manages the Dispatcher required for the asynchronous functionalities. The administration and communication with the ServiceBus is carried out in this project.
 >- **Dx29**, **Dx29.Azure** and **Dx29.Jobs** used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.
 
-As it has been programmed with C#, so the project must include a configuration file: appsettings.json. This includes the dependencies with other microservices:
+The project must include a configuration file: appsettings.json. This includes the dependencies with other microservices:
 
 |  Key           | Value     |		                                                         |
 |----------------|-----------|---------------------------------------------------------------|
@@ -143,7 +134,12 @@ As it has been programmed with C#, so the project must include a configuration f
 | Segmentation   | Endpoint  |http://dx29-segmentation:8080/api/v1/                          |
 | DocConverter   | Endpoint  |https://f29api.northeurope.cloudapp.azure.com/api/             |
 
-And finally, it should be mentioned that it depends on two external services: NCR and TextAnalytics. In addition, this project accesses the blob and it also uses ServiceBus and SignalR for notification management, and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+And finally, it should be mentioned that:
+>- It depends on a external service: TextAnalytics
+>- It accesses the blob 
+>- It is necessary to create a ServiceBus, where the asynchronous jobs will be sent, SignalR for notification management, and AppInsights for logging. 
+
+Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
 
 |  Key                 | Value               |		                                                                                |
 |----------------------|---------------------|--------------------------------------------------------------------------------------|
@@ -156,8 +152,6 @@ And finally, it should be mentioned that it depends on two external services: NC
 | CognitiveServices    | Endpoint            |Endpoint Azure cognitive service configured                                           |
 | CognitiveServices    | Authorization       |Authorization key                                                                     |
 | CognitiveServices    | Region              |Azure cognitive service region configured                                             |
-| NCRAnnotation        | Endpoint            |Endpoint Azure cognitive service configured for NCR                                   |
-| NCRAnnotation        | Authorization       |Authorization key                                                                     |
 | TAHAnnotation        | Endpoint            |Endpoint Azure cognitive service configured  for Text Analytics                       |
 | TAHAnnotation        | Path                |text/analytics/v3.1/entities/health/jobs                                              |
 | TAHAnnotation        | Authorization       |Authorization key                                                                     |
@@ -212,8 +206,6 @@ For this purpose, it offers the following methods organised according to the typ
 >>>>- POST Request:```api/v1/Terms/describe?lang=<lang>```
 >>>>- POST body request: List of ids (strings).
 >>>- Result: An object like the one in the request of describe diseases method is returned.
-
-**TODO: Update with the new methods**
 
 It is programmed in C#, and a Docker image will result from this project.
 
@@ -312,7 +304,7 @@ This project doesn't need any dependency but it accesses tthe blob. Therefore, i
 
 |  Key                 | Value               |		                                                                                |
 |----------------------|---------------------|--------------------------------------------------------------------------------------|
-| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+| ConnectionStrings    | BlobStorage         |Blob endpoint and credentials                                                         |
 
 
 #### 1.4.2.6. Dx29.FileStorage
@@ -359,7 +351,7 @@ This project doesn't need any dependency but it accesses the blob. Therefore, in
 
 |  Key                 | Value               |		                                                                                |
 |----------------------|---------------------|--------------------------------------------------------------------------------------|
-| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+| ConnectionStrings    | BlobStorage         |Blob endpoint and credentials                                                         |
 
 
 #### 1.4.2.7. Dx29.Localization
@@ -401,8 +393,8 @@ This project doesn't need any dependency but it accesses the blob. In addition, 
 
 |  Key                 | Value               |		                                                                                |
 |----------------------|---------------------|--------------------------------------------------------------------------------------|
-| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
-| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+| ConnectionStrings    | BlobStorage         |Blob endpoint and credentials                                                         |
+| ConnectionStrings    | BlobStorage         |Blob endpoint and credentials                                                         |
 | CognitiveServices    | Endpoint            |Endpoint Azure cognitive service configured                                           |
 | CognitiveServices    | Authorization       |Authorization key                                                                     |
 | CognitiveServices    | Region              |Azure cognitive service region configured                                             |
@@ -415,7 +407,12 @@ To perform these tasks it uses the [SendGrid] library (https://www.npmjs.com/pac
 It offers the following methods for this purpose in Sendgrid controller (baseline request: ``` api/ ```)
 >- Send email.
 >>- This method is the one that performs the function of sending an email.
->>- POST request: ``` api/sendEmail?params={To:<destination address,From:<request address>,Subject:<subject of the email>, CC:<copy>, BCC:<blid copy>, ReplyTo:<To whom the email can be replied to>}``` (\*CC, BCC and ReplyTo are optional)
+>>- POST request: 
+``` 
+api/sendEmail?params={ To: <destination address, From: <request address>, Subject: <subject of the email>, 
+CC: <copy>, BCC: <blid copy>, ReplyTo: <To whom the email can be replied to> }
+``` 
+>> (\*CC, BCC and ReplyTo are optional)
 >>- Atachments are added in the header of the request: **dx-attachments** header.
 >>>- POST body: Html content of the email
 >>>- Result: Data about the events that occur as Twilio SendGrid processes your email, with status code (200 OK).
@@ -534,7 +531,12 @@ For this purpose, it offers the following methods organised in different control
 >- Resources controller: ``` api/v1/Resources/ ```
 >>- Get resources 1
 >>>- Get Resources by type?, name?, resourceId?
->>>- GET request: ``` api/v1/Resources/<userId>/<caseId>?groupType=<group type>&groupName=<group name>&resourceId=<resource id> ``` (All queries are optional).
+>>>- GET request:
+``` 
+api/v1/Resources/<userId>/<caseId>?groupType=<group type>&groupName=<group name>&
+<resourceId=<resource id> 
+``` 
+>>>	(All queries are optional).
 >>>- Result response: A dictionary with resourceGroupId.resourceGroupName as keys and list of resource objects as values with
 >>>>- Identifier and name of the resource
 >>>>- Status: undefined, selected, unselected
@@ -633,8 +635,48 @@ This project doesn't need any dependency but it accesses the data bases. Therefo
 | Records              | Key                 |Secret from SQL database (encrypt)                                                    |
 | Records              | Inx                 |Secret from SQL database (encrypt)                                                    |
 
+#### 1.4.2.10. Dx29.PhenSimilarity
+It is used to obtain the differential diagnosis at the phenotypic level between a patient's symptoms and those of a disease.
 
-#### 1.4.2.10. Dx29.Segmentation
+For this purpose, it offers the following method: 
+>- Calculate
+>>- Getting the differential diagnosis between two list of symptoms
+>>- POST request: ```api/v1/calculate```
+>>- Body request: 
+```
+{"list_reference":<list of the patient symptoms ids (string)>, 
+"list_compare":<list of the disease symptoms ids (string)>]}
+```
+>>- Response: List of objetcs with:
+>>>- Symptom identifier (HP)
+>>>- HasPatient and HasDisease booleans, indicating if the patient and if the disease has or not this symptom.
+>>>- RelatedId: if the symptom is present in patient or disease by inheritance, here appears the related symptom identifier that has been used to assume the value of the previous booleans.
+>>>- Relationship: Relationship between symptom and related symptom (Equals, Predeccessor or Successor)
+>>>- Score: Relationship type score
+
+It is programmed in NodeJS, and a Docker image will result from this project.
+The structure of the project is as follows:
+>- The **controllers folder** contains the functionality to work with the previous method. 
+>- In the **routes folder**, all the routes of the API appear. It contains the file index.js that links with the controllers, defining the requests that will be available to the external clients. 
+>- In the **services folder** the functionality is implemented.
+>- **Some files**:
+>>- index.js: file where the app.js is loaded. It establish the port for connections and listens to requests.
+>>- Config.js: configuration file. It contains the keys and values that can be public.
+>>- App.js: the crossdomain is established.
+
+This project deppends on F29BIO (TODO: Change by new URL), so in config file we must include:
+
+|  Key                 | Value                                             |		                                                                              |  
+|----------------------|---------------------------------------------------|--------------------------------------------------------------------------------------|
+| f29bio               | https://f29bio.northeurope.cloudapp.azure.com     | API for get symptoms information                                                     |
+
+
+This project doesn't need any secret value.
+
+
+**TODO new microservice that expose new calls of F29bio** 
+
+#### 1.4.2.11. Dx29.Segmentation
 It is used to divide a text into paragraphs, lines, sections,... before sending it to the annotation service.
 
 For this purpose, it offers the following method: 
@@ -652,7 +694,7 @@ The structure of the project is as follows:
 
 This project doesn't have any dependency and doesn't need any secret value.
 
-#### 1.4.2.11. Dx29.TermSearch2
+#### 1.4.2.12. Dx29.TermSearch2
 This microservice allows the searches described in the Dx29 application to be carried out: both for symptoms and diseases. That is, it will be the one called by the search boxes.
 
 For this purpose, it offers the following method: 
@@ -675,7 +717,7 @@ Please note that it uses diseases-terms-lang.json and symptom-terms-lang.json fi
 This project doesn't need any secret value.
 
 
-#### 1.4.2.12. Dx29.WebManagement
+#### 1.4.2.13. Dx29.WebManagement
 This project will allow the use of methods in the Dx29 web application or the frontend (Dx29.Web) that require authentication and authorisation. For example, those related to the databases: Medical History.
 It will be used on demand, in order to be able to perform automated actions.
 
@@ -915,12 +957,12 @@ As it has been programmed with C#, the project must include a configuration file
 | OpenDx29       | Endpoint  |https://dx29.ai/api                                            |
 | PhenSimilarity | Endpoint  |http://dx29-phensimilarity:8080/api/v1/                        |
 
-In addition, this project accesses the user database (SQL) and the blob. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
+In addition, this project accesses the user database (SQL) and the blob that openDx29 uses to exchange information with Dx29 v2.. It also uses SignalR for notification management and AppInsights for logging. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:
 
 |  Key                 | Value               |		                                                                                |
 |----------------------|---------------------|--------------------------------------------------------------------------------------|
 | ConnectionStrings    | IdentityConnection  |SQL database endpoint and credentials                                                 |
-| ConnectionStrings    | OpenDataBlobStorage |Blob endpoint and credentials                                                         |
+| ConnectionStrings    | OpenDataBlobStorage |OpenDx29 blob endpoint and credentials                                                |
 | SignalR              | ConnectionString    |SignalR connection string & credentials                                               |
 | SignalR              | HubName             |SignalR Hub HubName                                                                   |
 | AppInsights          | Key                 |Secret key for connecting with AppInsights                                            |
@@ -933,7 +975,7 @@ In addition, this project accesses the user database (SQL) and the blob. It also
 
 
 ### 1.4.3. External containers
-In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires [Exomiser](https://github.com/exomiser/Exomiser), TODO: Lo vamos a quitar y solo trabajar con Text Analytics: [F29NCR](https:/f29ncr.northeurope.cloudapp.azure.com), [Microsoft translator](https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview) and [F29API](https://f29api.northeurope.cloudapp.azure.com/index.html).
+In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires [Exomiser](https://github.com/exomiser/Exomiser), [Microsoft translator](https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview) and [F29API](https://f29api.northeurope.cloudapp.azure.com/index.html).
 
 The documentation of each of these projects is not the subject of this manual. It is only necessary to understand that they expose APIs, with the endpoints that have been indicated here, and that their methods will be used, so you only need to understand the type of request, the input and output of each one.
 
@@ -968,4 +1010,4 @@ This project shows how these environments have been created in Azure: Creation o
 
 So, here are presented the different scripts to perform these functions in each of the environments.
 
-These actions will only be necessary for the creation of new environments, therefore, although they are related to the Build and deploy of the application, they do not influence the designed automation and they will only have to be executed once. For this reason, we have left them as scripts that indicate the commands to be executed on the command line.l
+These actions will only be necessary for the creation of new environments, therefore, although they are related to the Build and deploy of the application, they do not influence the designed automation and they will only have to be executed once. For this reason, we have left them as scripts that indicate the commands to be executed on the command line.

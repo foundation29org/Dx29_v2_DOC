@@ -13,7 +13,7 @@ In addition, they will also expose the methods for the application to access the
 How is this information organised?
 >- For the **databases**:
 >>- **SQL** database: It is controlled from the frontend directly, but it is important to comment at this point that there is a database of this type that stores the information for the login of the users in Dx29. That is to say, it will only contain the user's information, not the patient's information.
->>- **MongoDB** databases: We will have several databases where the patient information is stored. For security reasons, personal data will not be stored in the same location as medical information, to prevent them from being related to each other. In other words, Dx29 ensures anonymity.
+>>- **CosmosDB** databases: We will have several databases where the patient information is stored. For security reasons, personal data will not be stored in the same location as medical information, to prevent them from being related to each other. In other words, Dx29 ensures anonymity.
 
 >- In the **blobs**, an input will be created for each medical case or medical history where the files that have been attached (uploaded) will be stored, as well as others necessary for the functioning of the application: literals, documents,...
 
@@ -63,5 +63,4 @@ All of them will be accessed using [REST](https://restfulapi.net/).
 The list of these is as follows:
 >- [Exomiser](https://github.com/exomiser/Exomiser). Foundation29 has also implemented its own Kubernetes cluster to manage this resource, therefore, the Dx29 application accesses this which in turn runs Exomiser and performs a management and administration of this job, allowing it to be used asynchronously.
 >- [F29API](https://f29api.northeurope.cloudapp.azure.com/index.html). It exposes different functionalities, in particular the Dx29 application uses the methods of the Documents driver to prepare and configure the inputs to the services for extracting information from the user's documents.
->- TODO: Lo vamos a quitar, solo se va a quedar Text Analytics: [F29NCR](https:/f29ncr.northeurope.cloudapp.azure.com). As with Exomiser, NCR is used through a Foundation29 resource to manage the jobs of extracting information from user reports as required in the Dx29 application.
 >- [Azure Microsoft translator](https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview).

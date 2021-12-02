@@ -5,43 +5,76 @@
 .. image:: images/All/Foundation29.png
    :width: 0px
 
-.. image:: images/2_Environments/General/applicationPhases.jpg
+.. image:: images/1_Architecture/GeneralSchema/SW_Architecture_C4.png
    :width: 0px
 
-.. image:: images/2_Environments/General/gitflow.jpg
+.. image:: images/1_Architecture/System_context/System.png
    :width: 0px
 
-.. image:: images/2_Environments/General/azure-kubernetes-service-and-acr.png
+.. image:: images/1_Architecture/Containers/containers.png
    :width: 0px
 
-.. image:: images/3_BuildAndDeploy/steps_ACR_AKS.png
+.. image:: images/3_Environments/General/applicationPhases.jpg
    :width: 0px
 
-.. image:: images/3_BuildAndDeploy/docker_build.png
+.. image:: images/3_Environments/General/gitflow.jpg
    :width: 0px
 
-.. image:: images/3_BuildAndDeploy/docker_acr.png
+.. image:: images/3_Environments/General/azure-kubernetes-service-and-acr.png
    :width: 0px
 
-.. image:: images/3_BuildAndDeploy/acr_aks.png
+.. image:: images/4_BuildAndDeploy/steps_ACR_AKS.png
    :width: 0px
 
-.. image:: images/3_BuildAndDeploy/aks_pipelines.png
+.. image:: images/4_BuildAndDeploy/docker_build.png
    :width: 0px
 
-.. image:: images/3_BuildAndDeploy/compose.png
+.. image:: images/4_BuildAndDeploy/docker_acr.png
    :width: 0px
 
-.. image:: images/3_BuildAndDeploy/start_stop_aks.png
+.. image:: images/4_BuildAndDeploy/acr_aks.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/aks_pipelines.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/pipelines_1.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/pipelines_2.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/pipelines_3.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/pipelines_4.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/pipelines_5.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/pipelines_test_1.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/pipelines_test_2.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/pipelines_test_3.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/compose.png
+   :width: 0px
+
+.. image:: images/4_BuildAndDeploy/start_stop_aks.png
    :width: 0px  
 
-.. image:: images/4_CodeGuidelines/codeguidelines_1.png
+.. image:: images/5_CodeGuidelines/codeguidelines_1.png
    :width: 0px  
 
-.. image:: images/4_CodeGuidelines/codeguidelines_2.png
+.. image:: images/5_CodeGuidelines/codeguidelines_2.png
    :width: 0px 
 
-.. image:: images/4_CodeGuidelines/codeguidelines_3.png
+.. image:: images/5_CodeGuidelines/codeguidelines_3.png
    :width: 0px 
 
 .. image:: images/All/Foundation29.png
@@ -87,15 +120,16 @@ This document presents a technical description of the Dx29 software architecture
    pages/1_Architecture/Containers
    pages/1_Architecture/Components
    pages/1_Architecture/Code  
-   pages/2_Environments
-   pages/2_Environments/1_AKS-DEV
-   pages/2_Environments/2_AKS-TEST
-   pages/2_Environments/3_AKS-PRO
-   pages/2_Environments/4_ScriptsCreateAndDeploy
-   pages/3_BuildAndDeploy
-   pages/3_BuildAndDeploy/1_Build
-   pages/3_BuildAndDeploy/2_Deploy
-   pages/3_BuildAndDeploy/3_Automation
-   pages/3_BuildAndDeploy/4_Locally
-   pages/3_BuildAndDeploy/5_CurrentStatus
-   pages/4_CodeGuidelines
+   pages/2_DataModels
+   pages/3_Environments
+   pages/3_Environments/1_AKS-DEV
+   pages/3_Environments/2_AKS-TEST
+   pages/3_Environments/3_AKS-PRO
+   pages/3_Environments/4_ScriptsCreateAndDeploy
+   pages/4_BuildAndDeploy
+   pages/4_BuildAndDeploy/1_Build
+   pages/4_BuildAndDeploy/2_Deploy
+   pages/4_BuildAndDeploy/3_Automation
+   pages/4_BuildAndDeploy/4_Locally
+   pages/4_BuildAndDeploy/5_CurrentStatus
+   pages/5_CodeGuidelines
