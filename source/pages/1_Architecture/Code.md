@@ -197,7 +197,25 @@ For this purpose, it offers the following methods organised according to the typ
 >>- Describe.
 >>>- To obtain information on phenotypes from a list of IDs and in a given language.
 >>>- GET request: ```api/v1/Phenotypes/describe?id=<List<string>>&lang=<lang>```
->>>- Result: An object like the one in the request of describe diseases method is returned.
+>>>- POST request:  ```api/v1/Phenotypes/describe?lang=<lang>```
+>>>- Body request: List symptom identifiers (strings).
+>>>- Result: Dictionary with key equal to the identifier of the request and value the list of results obtained. This list of results will be composed of objects with the items:
+>>>>- Disease Id (string)
+>>>>- Disease Name (string)
+>>>>- Disease Description (string)
+>>>>- Disease comment (string)
+>>>>- Alternates: List of strings of the alternates of this disease
+>>>>- Synonyms: list of synonyms with this information: Label, Scope,Type and Xrefs (all strings)
+>>>>- Categories, Parents, Children and Consider: List of related items with Id and Name.
+>>>>- PubMeds and XRefs (List strings)
+>>>>- IsObsolete (bool) and ReplacedBy (Reference of the new disease with its Id and Name).
+>>>>- ToString method for printing the disease as: "Id: Name".
+>>- Predecessors.
+>>>- Get the predeccesors of a symptom with configurable tree depth (-1 is equal to ALL predecessors of a symptom in the tree).
+>>>- GET request: ```api/v1/Phenotypes/predecessors?<List<string>>&depth=<int_depth>```
+>>>- POST request: ```api/v1/Phenotypes/predecessors?depth=<int_depth>```
+>>>- Body request: List symptom identifiers (strings).
+>>>- Result request: Dictionary with key equal to the identifier of the request and value is an object with the predecessors information.
 >- Terms Controller: To search for diseases or symptoms regardless of type, i.e. a search for terms in all files.
 >>- Describe.
 >>>- To obtain information on terms from a list of IDs and in a given language.
@@ -664,17 +682,14 @@ The structure of the project is as follows:
 >>- Config.js: configuration file. It contains the keys and values that can be public.
 >>- App.js: the crossdomain is established.
 
-This project deppends on F29BIO (TODO: Change by new URL), so in config file we must include:
+This project deppends on Dx29.Bioentity, so in config file we must include:
 
 |  Key                 | Value                                             |		                                                                              |  
 |----------------------|---------------------------------------------------|--------------------------------------------------------------------------------------|
-| f29bio               | https://f29bio.northeurope.cloudapp.azure.com     | API for get symptoms information                                                     |
+| f29bio               | http://dx29-bioentity                             | API for get symptoms information (predecessors method)                               |
 
 
 This project doesn't need any secret value.
-
-
-**TODO new microservice that expose new calls of F29bio** 
 
 #### 1.4.2.11. Dx29.Segmentation
 It is used to divide a text into paragraphs, lines, sections,... before sending it to the annotation service.
@@ -1005,7 +1020,7 @@ The main difference comes in the variable folder,
 
 
 #### 1.4.4.3. Environments
-During the implementation of the application, as we have already seen in the Environments section, three environments have been deployed: DEV, TEST and PROD. The previous projects help us to: generate the images, upload them to the corresponding container registry and deploy them in the cluster already created in the corresponding environment.
+During the implementation of the application, as we will see in the Environments section, three environments have been deployed: DEV, TEST and PROD. The previous projects help us to: generate the images, upload them to the corresponding container registry and deploy them in the cluster already created in the corresponding environment.
 This project shows how these environments have been created in Azure: Creation of the AKS, cluster, Association of a container registry, etc. and also the configuration to expose different IPs with DNS and HTTPs communication and the inclusion of the file with the secrets.
 
 So, here are presented the different scripts to perform these functions in each of the environments.

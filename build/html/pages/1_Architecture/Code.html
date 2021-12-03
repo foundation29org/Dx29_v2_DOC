@@ -665,7 +665,35 @@ The APIs that he explains can be consulted in this <a class="reference external"
 <div><ul class="simple">
 <li>To obtain information on phenotypes from a list of IDs and in a given language.</li>
 <li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/Phenotypes/describe?id=&lt;List&lt;string&gt;&gt;&amp;lang=&lt;lang&gt;</span></code></li>
-<li>Result: An object like the one in the request of describe diseases method is returned.</li>
+<li>POST request:  <code class="docutils literal notranslate"><span class="pre">api/v1/Phenotypes/describe?lang=&lt;lang&gt;</span></code></li>
+<li>Body request: List symptom identifiers (strings).</li>
+<li>Result: Dictionary with key equal to the identifier of the request and value the list of results obtained. This list of results will be composed of objects with the items:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Disease Id (string)</li>
+<li>Disease Name (string)</li>
+<li>Disease Description (string)</li>
+<li>Disease comment (string)</li>
+<li>Alternates: List of strings of the alternates of this disease</li>
+<li>Synonyms: list of synonyms with this information: Label, Scope,Type and Xrefs (all strings)</li>
+<li>Categories, Parents, Children and Consider: List of related items with Id and Name.</li>
+<li>PubMeds and XRefs (List strings)</li>
+<li>IsObsolete (bool) and ReplacedBy (Reference of the new disease with its Id and Name).</li>
+<li>ToString method for printing the disease as: “Id: Name”.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>Predecessors.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Get the predeccesors of a symptom with configurable tree depth (-1 is equal to ALL predecessors of a symptom in the tree).</li>
+<li>GET request: <code class="docutils literal notranslate"><span class="pre">api/v1/Phenotypes/predecessors?&lt;List&lt;string&gt;&gt;&amp;depth=&lt;int_depth&gt;</span></code></li>
+<li>POST request: <code class="docutils literal notranslate"><span class="pre">api/v1/Phenotypes/predecessors?depth=&lt;int_depth&gt;</span></code></li>
+<li>Body request: List symptom identifiers (strings).</li>
+<li>Result request: Dictionary with key equal to the identifier of the request and value is an object with the predecessors information.</li>
 </ul>
 </div></blockquote>
 </div></blockquote>
@@ -1713,7 +1741,7 @@ The structure of the project is as follows:</p>
 </ul>
 </div></blockquote>
 </div></blockquote>
-<p>This project deppends on F29BIO (TODO: Change by new URL), so in config file we must include:</p>
+<p>This project deppends on Dx29.Bioentity, so in config file we must include:</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -1725,12 +1753,11 @@ The structure of the project is as follows:</p>
 <tbody>
 <tr>
 <td>f29bio</td>
-<td>https://f29bio.northeurope.cloudapp.azure.com</td>
-<td>API for get symptoms information</td>
+<td>http://dx29-bioentity</td>
+<td>API for get symptoms information (predecessors method)</td>
 </tr>
 </tbody>
 </table><p>This project doesn’t need any secret value.</p>
-<p><strong>TODO new microservice that expose new calls of F29bio</strong></p>
 </div>
 <div class="section" id="dx29-segmentation">
 <h3>1.4.2.11. Dx29.Segmentation<a class="headerlink" href="#dx29-segmentation" title="Permalink to this headline">¶</a></h3>
@@ -2545,7 +2572,7 @@ Both projects have the following structure in common:</p>
 </div>
 <div class="section" id="environments">
 <h3>1.4.4.3. Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h3>
-<p>During the implementation of the application, as we have already seen in the Environments section, three environments have been deployed: DEV, TEST and PROD. The previous projects help us to: generate the images, upload them to the corresponding container registry and deploy them in the cluster already created in the corresponding environment.
+<p>During the implementation of the application, as we will see in the Environments section, three environments have been deployed: DEV, TEST and PROD. The previous projects help us to: generate the images, upload them to the corresponding container registry and deploy them in the cluster already created in the corresponding environment.
 This project shows how these environments have been created in Azure: Creation of the AKS, cluster, Association of a container registry, etc. and also the configuration to expose different IPs with DNS and HTTPs communication and the inclusion of the file with the secrets.</p>
 <p>So, here are presented the different scripts to perform these functions in each of the environments.</p>
 <p>These actions will only be necessary for the creation of new environments, therefore, although they are related to the Build and deploy of the application, they do not influence the designed automation and they will only have to be executed once. For this reason, we have left them as scripts that indicate the commands to be executed on the command line.</p>

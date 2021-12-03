@@ -20,25 +20,25 @@ So, once the project repository has been created and the functionality has been 
 >- 1. Access Azure Devops Pipelines and create a "New pipeline".
 
 <p style="text-align: center;">
-  <img width="800px" src="../../_images/pipelines_1.png">
+  <img width="800px" src="../../_images/pipelines_1.PNG">
 <p>
 
 >- 2. Select Azure Repos Git as the input source.
 
 <p style="text-align: center;">
-  <img width="500px" src="../../_images/pipelines_2.png">
+  <img width="500px" src="../../_images/pipelines_2.PNG">
 <p>
 
 >- 3. Select the code repository of the component.
 
 <p style="text-align: center;">
-  <img width="500px" src="../../_images/pipelines_3.png">
+  <img width="500px" src="../../_images/pipelines_3.PNG">
 <p>
 
 >- 4. Among the available options, choose: “Deploy to Azure Kubernetes Service”.
 
 <p style="text-align: center;">
-  <img width="500px" src="../../_images/pipelines_4.png">
+  <img width="500px" src="../../_images/pipelines_4.PNG">
 <p>
 
 >- 5. Configure the pipeline resources according to the Azure cluster to be used:
@@ -50,7 +50,7 @@ So, once the project repository has been created and the functionality has been 
 >>>- The port is 80 for microservices implemented in C# and 8080 for Nodejs ones.
 
 <p style="text-align: center;">
-  <img width="500px" src="../../_images/pipelines_5.png">
+  <img width="500px" src="../../_images/pipelines_5.PNG">
 <p>
 
 After clicking on Validate and configure, the YAML with the content of our pipeline will be automatically generated. At this point we must make the necessary modifications to ensure that: The image name complies with the pattern ```dx29-<image name>``` and that the environment used corresponds to where we want to display the image (Dx29-DEV.app-ingress, Dx29-TEST.app-ingress or Dx29-PROD.app-ingress).
@@ -230,20 +230,20 @@ There will be a single YAML that has access to the different repositories of the
 In this way, there will be a main pipeline that will use as templates those of the different components of the application according to [this](ttps://stackoverflow.com/questions/64777703/azure-pipelines-using-yaml-for-multiple-environments-stages-with-different-var).
 
 <p style="text-align: center;">
-  <img width="600px" src="../../_images/pipelines_test_1.png">
+  <img width="600px" src="../../_images/pipelines_test_1.PNG">
 <p>
 
 >- Azure-pipelines.yaml is the main file.
 >- Folder templates contains the YAML files for each component.
 
 <p style="text-align: center;">
-  <img width="600px" src="../../_images/pipelines_test_2.png">
+  <img width="600px" src="../../_images/pipelines_test_2.PNG">
 <p>
 
 >- Folder manifests contains the manifests for each component (deployment and service).
 
 <p style="text-align: center;">
-  <img width="600px" src="../../_images/pipelines_test_3.png">
+  <img width="600px" src="../../_images/pipelines_test_3.PNG">
 <p>
 
 For each component, the repository where the [source code is located will be accessed](https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/multi-repo-checkout?view=azure-devops).

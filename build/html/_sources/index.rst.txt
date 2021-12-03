@@ -38,28 +38,28 @@
 .. image:: images/4_BuildAndDeploy/aks_pipelines.png
    :width: 0px
 
-.. image:: images/4_BuildAndDeploy/pipelines_1.png
+.. image:: images/4_BuildAndDeploy/pipelines_1.PNG
    :width: 0px
 
-.. image:: images/4_BuildAndDeploy/pipelines_2.png
+.. image:: images/4_BuildAndDeploy/pipelines_2.PNG
    :width: 0px
 
-.. image:: images/4_BuildAndDeploy/pipelines_3.png
+.. image:: images/4_BuildAndDeploy/pipelines_3.PNG
    :width: 0px
 
-.. image:: images/4_BuildAndDeploy/pipelines_4.png
+.. image:: images/4_BuildAndDeploy/pipelines_4.PNG
    :width: 0px
 
-.. image:: images/4_BuildAndDeploy/pipelines_5.png
+.. image:: images/4_BuildAndDeploy/pipelines_5.PNG
    :width: 0px
 
-.. image:: images/4_BuildAndDeploy/pipelines_test_1.png
+.. image:: images/4_BuildAndDeploy/pipelines_test_1.PNG
    :width: 0px
 
-.. image:: images/4_BuildAndDeploy/pipelines_test_2.png
+.. image:: images/4_BuildAndDeploy/pipelines_test_2.PNG
    :width: 0px
 
-.. image:: images/4_BuildAndDeploy/pipelines_test_3.png
+.. image:: images/4_BuildAndDeploy/pipelines_test_3.PNG
    :width: 0px
 
 .. image:: images/4_BuildAndDeploy/compose.png

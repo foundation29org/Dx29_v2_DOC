@@ -203,7 +203,7 @@
 </ul>
 </div></blockquote>
 <p style="text-align: center;">
-  <img width="800px" src="../../_images/pipelines_1.png">
+  <img width="800px" src="../../_images/pipelines_1.PNG">
 <p><blockquote>
 <div><ul class="simple">
 <li><ol class="first">
@@ -213,7 +213,7 @@
 </ul>
 </div></blockquote>
 <p style="text-align: center;">
-  <img width="500px" src="../../_images/pipelines_2.png">
+  <img width="500px" src="../../_images/pipelines_2.PNG">
 <p><blockquote>
 <div><ul class="simple">
 <li><ol class="first">
@@ -223,7 +223,7 @@
 </ul>
 </div></blockquote>
 <p style="text-align: center;">
-  <img width="500px" src="../../_images/pipelines_3.png">
+  <img width="500px" src="../../_images/pipelines_3.PNG">
 <p><blockquote>
 <div><ul class="simple">
 <li><ol class="first">
@@ -233,7 +233,7 @@
 </ul>
 </div></blockquote>
 <p style="text-align: center;">
-  <img width="500px" src="../../_images/pipelines_4.png">
+  <img width="500px" src="../../_images/pipelines_4.PNG">
 <p><blockquote>
 <div><ul class="simple">
 <li><ol class="first">
@@ -257,7 +257,7 @@
 </div></blockquote>
 </div></blockquote>
 <p style="text-align: center;">
-  <img width="500px" src="../../_images/pipelines_5.png">
+  <img width="500px" src="../../_images/pipelines_5.PNG">
 <p><p>After clicking on Validate and configure, the YAML with the content of our pipeline will be automatically generated. At this point we must make the necessary modifications to ensure that: The image name complies with the pattern <code class="docutils literal notranslate"><span class="pre">dx29-&lt;image</span> <span class="pre">name&gt;</span></code> and that the environment used corresponds to where we want to display the image (Dx29-DEV.app-ingress, Dx29-TEST.app-ingress or Dx29-PROD.app-ingress).
 When we are sure of this we can save and finish. This will cause the following files to be added to the repository:</p>
 <blockquote>
@@ -521,7 +521,7 @@ It does not have version control.</p>
 <p>There will be a single YAML that has access to the different repositories of the Dx29 component projects (web and microservices) and uses templates to build the images of each of them and deploy them in the test environment.
 In this way, there will be a main pipeline that will use as templates those of the different components of the application according to <a class="reference external" href="ttps://stackoverflow.com/questions/64777703/azure-pipelines-using-yaml-for-multiple-environments-stages-with-different-var">this</a>.</p>
 <p style="text-align: center;">
-  <img width="600px" src="../../_images/pipelines_test_1.png">
+  <img width="600px" src="../../_images/pipelines_test_1.PNG">
 <p><blockquote>
 <div><ul class="simple">
 <li>Azure-pipelines.yaml is the main file.</li>
@@ -529,14 +529,14 @@ In this way, there will be a main pipeline that will use as templates those of t
 </ul>
 </div></blockquote>
 <p style="text-align: center;">
-  <img width="600px" src="../../_images/pipelines_test_2.png">
+  <img width="600px" src="../../_images/pipelines_test_2.PNG">
 <p><blockquote>
 <div><ul class="simple">
 <li>Folder manifests contains the manifests for each component (deployment and service).</li>
 </ul>
 </div></blockquote>
 <p style="text-align: center;">
-  <img width="600px" src="../../_images/pipelines_test_3.png">
+  <img width="600px" src="../../_images/pipelines_test_3.PNG">
 <p><p>For each component, the repository where the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/multi-repo-checkout?view=azure-devops">source code is located will be accessed</a>.
 Each of the files that appear in Templates and manifest are copies of the development environment files for each component, although the content will be slightly modified for the test environment.
 With all this:</p>

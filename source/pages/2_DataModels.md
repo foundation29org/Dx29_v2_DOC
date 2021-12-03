@@ -76,7 +76,7 @@ Each Medical history case will contain:
     "sharedWith": [
     	{
             "userId": <user_id_who_sharedWith>,
-            "status": <sharing_status>,
+            "status": <sharing_with_status>,
             "lastUpdate": <last_sharingAction_update_date>
         }
     ],
@@ -84,7 +84,7 @@ Each Medical history case will contain:
     	{	
             "userId": <user_id_who_sharedBy>,
             "caseId": <main_mh>,
-            "status": <sharing_status>,
+            "status": <sharing_by_status>,
             "lastUpdate": <last_sharingAction_update_date>
         }
      ],
@@ -102,7 +102,7 @@ Each Medical history case will contain:
 >- A list of the resource groups associated with the case. Each resource group will be an object in this list with:
 >- Key equal to the resource group identifier.
 >- Value, an object with:
->>- The type of resource: Phenotype, Gene, Report,....
+>>- The type of resource group: Phenotype, Gene, Report,....
 >>- The name associated to this resource group. This is used to differentiate for example between manual symptoms and symptoms extracted from a report.
 >>- The creation and update dates of the resource group.
 >- If applicable, a list of users with whom the case has been shared (shared with):
@@ -115,9 +115,39 @@ Each Medical history case will contain:
 >>- The status of the sharing: Shared, pending, rejected or revoked.
 >>- The date of update of the actions on the sharing of the case.
 
-TODO: 
->- List of mh posible status
->- List of posible sharing status
+**List of posible Medical History status:**
+>- Private: The case has been created by a user and is not shared by the user
+>- Shared: The case was shared with me by another user
+>- Sharing: The case is shared with another user
+>- PendingShared: The sharing of the case is pending approval by the case owner.
+>- StopShared: The case is no longer shared
+>- Deleted: The case has been deleted
+
+**List of posible sharing status:**
+>- If the case is shared from owner to another user (SharedWith):
+>>- Shared: The case was shared with me by another user
+>>- Pending: The sharing of the case is pending approval by the case owner.
+>>- Revoked: The sharing of this case is revoked.
+>- If the case is shared with this user form another user (SharedBy):
+>- Pending: The sharing of the case is pending approval by the case owner.
+>- Accepted: The case owner has accepted the sharing.
+>- Rejected: The case owner has rejected the sharing.
+>- Revoked: The case owner has revoked the sharing.
+
+**List of resource group types**
+>- Reports: For medical reports of the medical case.
+>- Phenotype: For phenotype or symptoms of the medical case.
+>- Genotype: For genotype reports of the medical case.
+>- Analysis: Suggested diseases results of Dx29 algorithm on the patient case
+>- Notes: Notes of the medical case
+>- TimeLine: Symptoms chronology data of the medical case.
+
+**List of resource group names**
+>- Medical: Medical report.
+>- Genetic: Genotype report.
+>- Manual: Phenotype or Genotype selected by the user.
+>- Analysis: Suggested diseases results of Dx29 algorithm on the patient case
+>- Notes: Notes of the medical case
 
 ## 2.3. Resources grouped by type - ResourceGroups
 
@@ -142,7 +172,7 @@ TODO:
     "updatedOn": <resource_group_updatedOn_date>,
 }
 ```
-Each ressource group will contain:
+Each resource group will contain:
 >- An identifier or id.
 >- The encrypted identifier of the SQL database that contains the credentials of the users registered in the application.
 >- The creation and update dates of the resource group.
@@ -153,14 +183,20 @@ Each ressource group will contain:
 >- Key equal to the resource identifier.
 >- Value, an object with:
 >>- The identifier of the resource
->>- The name of the resource
->>- The status of the resource
+>>- The name of the resource: the file name, the symptom name, etc. which will be display on Dx29 application.
+>>- The status of the resource: undefined, selected, unselected
 >>- The creation and update dates of the resource.
->>- An object with the properties of the resource: this will be different for each type or resource.
-
-TODO: 
->- List of resource group types
->- List of resource group names
->- List of resource status
->- List of resource names
->- List of properties for each type of resource
+>>- An object with the properties of the resource: It is a dictionary with string as key and string as value.  This will be different for each type or resource:
+>>>- For symptom: no properties.
+>>>- For gene: ```Properties = {"Score":<string_Score_value>, "Diseases":<string_diseasesList>}```
+>>>- For report: ```Properties = {"Size":<fileSize_string>}```
+>>>- Analysis: 
+```
+Properties = {
+    "Symptoms":<symptomsList_string>, 
+    "Genes":<genesList_string>, 
+    "GenotypeIds":<genotypeReportsList_string>, 
+    "Diseases":<diseasesList>_string>
+}
+```
+>>>- Notes: no properties.

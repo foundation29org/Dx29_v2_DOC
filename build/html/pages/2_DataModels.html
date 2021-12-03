@@ -269,7 +269,7 @@
     &quot;sharedWith&quot;: [
     	{
             &quot;userId&quot;: &lt;user_id_who_sharedWith&gt;,
-            &quot;status&quot;: &lt;sharing_status&gt;,
+            &quot;status&quot;: &lt;sharing_with_status&gt;,
             &quot;lastUpdate&quot;: &lt;last_sharingAction_update_date&gt;
         }
     ],
@@ -277,7 +277,7 @@
     	{	
             &quot;userId&quot;: &lt;user_id_who_sharedBy&gt;,
             &quot;caseId&quot;: &lt;main_mh&gt;,
-            &quot;status&quot;: &lt;sharing_status&gt;,
+            &quot;status&quot;: &lt;sharing_by_status&gt;,
             &quot;lastUpdate&quot;: &lt;last_sharingAction_update_date&gt;
         }
      ],
@@ -301,7 +301,7 @@
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>The type of resource: Phenotype, Gene, Report,….</li>
+<li>The type of resource group: Phenotype, Gene, Report,….</li>
 <li>The name associated to this resource group. This is used to differentiate for example between manual symptoms and symptoms extracted from a report.</li>
 <li>The creation and update dates of the resource group.</li>
 </ul>
@@ -328,11 +328,56 @@
 </ul>
 </div></blockquote>
 </div></blockquote>
-<p>TODO:</p>
+<p><strong>List of posible Medical History status:</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>List of mh posible status</li>
-<li>List of posible sharing status</li>
+<li>Private: The case has been created by a user and is not shared by the user</li>
+<li>Shared: The case was shared with me by another user</li>
+<li>Sharing: The case is shared with another user</li>
+<li>PendingShared: The sharing of the case is pending approval by the case owner.</li>
+<li>StopShared: The case is no longer shared</li>
+<li>Deleted: The case has been deleted</li>
+</ul>
+</div></blockquote>
+<p><strong>List of posible sharing status:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>If the case is shared from owner to another user (SharedWith):</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Shared: The case was shared with me by another user</li>
+<li>Pending: The sharing of the case is pending approval by the case owner.</li>
+<li>Revoked: The sharing of this case is revoked.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>If the case is shared with this user form another user (SharedBy):</li>
+<li>Pending: The sharing of the case is pending approval by the case owner.</li>
+<li>Accepted: The case owner has accepted the sharing.</li>
+<li>Rejected: The case owner has rejected the sharing.</li>
+<li>Revoked: The case owner has revoked the sharing.</li>
+</ul>
+</div></blockquote>
+<p><strong>List of resource group types</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Reports: For medical reports of the medical case.</li>
+<li>Phenotype: For phenotype or symptoms of the medical case.</li>
+<li>Genotype: For genotype reports of the medical case.</li>
+<li>Analysis: Suggested diseases results of Dx29 algorithm on the patient case</li>
+<li>Notes: Notes of the medical case</li>
+<li>TimeLine: Symptoms chronology data of the medical case.</li>
+</ul>
+</div></blockquote>
+<p><strong>List of resource group names</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Medical: Medical report.</li>
+<li>Genetic: Genotype report.</li>
+<li>Manual: Phenotype or Genotype selected by the user.</li>
+<li>Analysis: Suggested diseases results of Dx29 algorithm on the patient case</li>
+<li>Notes: Notes of the medical case</li>
 </ul>
 </div></blockquote>
 </div>
@@ -359,7 +404,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Each ressource group will contain:</p>
+<p>Each resource group will contain:</p>
 <blockquote>
 <div><ul class="simple">
 <li>An identifier or id.</li>
@@ -378,22 +423,37 @@
 <blockquote>
 <div><ul class="simple">
 <li>The identifier of the resource</li>
-<li>The name of the resource</li>
-<li>The status of the resource</li>
+<li>The name of the resource: the file name, the symptom name, etc. which will be display on Dx29 application.</li>
+<li>The status of the resource: undefined, selected, unselected</li>
 <li>The creation and update dates of the resource.</li>
-<li>An object with the properties of the resource: this will be different for each type or resource.</li>
+<li>An object with the properties of the resource: It is a dictionary with string as key and string as value.  This will be different for each type or resource:</li>
 </ul>
-</div></blockquote>
-</div></blockquote>
-<p>TODO:</p>
 <blockquote>
 <div><ul class="simple">
-<li>List of resource group types</li>
-<li>List of resource group names</li>
-<li>List of resource status</li>
-<li>List of resource names</li>
-<li>List of properties for each type of resource</li>
+<li>For symptom: no properties.</li>
+<li>For gene: <code class="docutils literal notranslate"><span class="pre">Properties</span> <span class="pre">=</span> <span class="pre">{&quot;Score&quot;:&lt;string_Score_value&gt;,</span> <span class="pre">&quot;Diseases&quot;:&lt;string_diseasesList&gt;}</span></code></li>
+<li>For report: <code class="docutils literal notranslate"><span class="pre">Properties</span> <span class="pre">=</span> <span class="pre">{&quot;Size&quot;:&lt;fileSize_string&gt;}</span></code></li>
+<li>Analysis:</li>
 </ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Properties</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Symptoms&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">symptomsList_string</span><span class="o">&gt;</span><span class="p">,</span> 
+    <span class="s2">&quot;Genes&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">genesList_string</span><span class="o">&gt;</span><span class="p">,</span> 
+    <span class="s2">&quot;GenotypeIds&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">genotypeReportsList_string</span><span class="o">&gt;</span><span class="p">,</span> 
+    <span class="s2">&quot;Diseases&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">diseasesList</span><span class="o">&gt;</span><span class="n">_string</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li>Notes: no properties.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
 </div></blockquote>
 </div>
 </div>
