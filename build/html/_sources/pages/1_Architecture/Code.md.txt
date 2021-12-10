@@ -59,7 +59,7 @@ In addition, this project accesses the user database (SQL) and the blob that ope
 |  Key                 | Value               |		                                                                                |
 |----------------------|---------------------|--------------------------------------------------------------------------------------|
 | ConnectionStrings    | IdentityConnection  |SQL database endpoint and credentials                                                 |
-| ConnectionStrings    | OpenDataBlobStorage |OpenDx29 blob endpoint and credentials                                                         |
+| ConnectionStrings    | OpenDataBlobStorage |OpenDx29 blob endpoint and credentials                                                |
 | SignalR              | ConnectionString    |SignalR connection string & credentials                                               |
 | SignalR              | HubName             |SignalR Hub HubName                                                                   |
 | AppInsights          | Key                 |Secret key for connecting with AppInsights                                            |
@@ -412,7 +412,6 @@ This project doesn't need any dependency but it accesses the blob. In addition, 
 |  Key                 | Value               |		                                                                                |
 |----------------------|---------------------|--------------------------------------------------------------------------------------|
 | ConnectionStrings    | BlobStorage         |Blob endpoint and credentials                                                         |
-| ConnectionStrings    | BlobStorage         |Blob endpoint and credentials                                                         |
 | CognitiveServices    | Endpoint            |Endpoint Azure cognitive service configured                                           |
 | CognitiveServices    | Authorization       |Authorization key                                                                     |
 | CognitiveServices    | Region              |Azure cognitive service region configured                                             |
@@ -631,8 +630,8 @@ api/v1/Resources/<userId>/<caseId>?groupType=<group type>&groupName=<group name>
 It is programmed in C#, and a Docker image will result from this project.
  
 The structure of the project is as follows:
->- **Dx29.Localization.Web.API**. In this project is the implementation of the controllers that expose the aforementioned methods.
->- **Dx29.Localization**. It is this project that contains the logic to perform the relevant operations.
+>- **Dx29.MedicalHistory.Web.API**. In this project is the implementation of the controllers that expose the aforementioned methods.
+>- **Dx29.MedicalHistory**. It is this project that contains the logic to perform the relevant operations.
 >- **Dx29** and **Dx29.Azure**. Used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.
 
 This project doesn't need any dependency but it accesses the data bases. Therefore, in order to run it, the file appsettings.secrets.json must be added to the secrets folder with the following information:

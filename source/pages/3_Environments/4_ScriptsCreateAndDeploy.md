@@ -2,7 +2,8 @@
 
 ## 3.4. Scripts for create and deploy environments
 
-To create and configure the different environments, a list of scripts has been implemented in the Dx29.Environments project.
+To create and configure the different environments, a list of scripts has been implemented in the Dx29.Environments project and an open source version has been uploaded as an example to github: [Dx29.Environments](https://github.com/foundation29org/Dx29.Environments)
+.
 In it you can find the different steps necessary to deploy from scratch each of the environments, and also how to add the file with the values or secret keys required by the different components of the application in a secure way.
 
 In general, these scripts contain the kubectl commands necessary for the deployment of the environment and the association of the components included in it. So, for each of the environments, these are the steps that will be followed:

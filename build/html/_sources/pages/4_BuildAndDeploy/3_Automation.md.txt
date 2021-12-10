@@ -224,7 +224,7 @@ It does not have version control.
 
 ### 4.3.5.2.  Test Dx29 pipelines
 
-In this case, a repository has been created in Azure Repos: Dx29.Test, where the YAML of the test pipeline and the manifest files needed to deploy the environment will be located.
+In this case, a repository has been created in Azure Repos: Dx29.Test (and an open source version has been uploaded as an example to github: [Dx29.Pipelines_all](https://github.com/foundation29org/Dx29.Pipelines_all)) where the YAML of the test pipeline and the manifest files needed to deploy the environment will be located.
 
 There will be a single YAML that has access to the different repositories of the Dx29 component projects (web and microservices) and uses templates to build the images of each of them and deploy them in the test environment.
 In this way, there will be a main pipeline that will use as templates those of the different components of the application according to [this](ttps://stackoverflow.com/questions/64777703/azure-pipelines-using-yaml-for-multiple-environments-stages-with-different-var).
@@ -287,7 +287,8 @@ Be careful with this option because when uploading to production you have to cho
 ### 4.3.5.3.  Production Dx29 pipelines
 
 It will be the same as the test pipeline but only with the deploy stages. In this case only the selected images will be accessed with the input parameter tag/version and deployed to the production cluster.
-The pipelines can be found in the repository Dx29.Prod.
+The pipelines can be found in the repository Dx29.Prod, and an open source version has been uploaded as an example to github: [Dx29.Pipelines_only_deploy](https://github.com/foundation29org/Dx29.Pipelines_only_deploy)
+
 This pipeline will also not be executed automatically but must be launched manually.
 
 For version control there is a variables yaml file with the tags of all images that the pipeline deploy on Dx29 production environment.
