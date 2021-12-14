@@ -61,6 +61,6 @@ Finally, as mentioned above, in order to simplify the architecture, implementati
 All of them will be accessed using [REST](https://restfulapi.net/).
 
 The list of these is as follows:
->- [Exomiser](https://github.com/exomiser/Exomiser). Foundation29 has also implemented its own Kubernetes cluster to manage this resource, therefore, the Dx29 application accesses this which in turn runs Exomiser and performs a management and administration of this job, allowing it to be used asynchronously.
->- [F29API](https://f29api.northeurope.cloudapp.azure.com/index.html). It exposes different functionalities, in particular the Dx29 application uses the methods of the Documents driver to prepare and configure the inputs to the services for extracting information from the user's documents.
+>- [Exomiser](https://github.com/exomiser/Exomiser). Foundation29 has also implemented its own Kubernetes cluster to manage this resource, therefore, the Dx29 application accesses this which in turn runs Exomiser and performs a management and administration of this job, allowing it to be used asynchronously. [Exomiser F29](https://github.com/foundation29org/Dx29.Exomiser)
+>- [F29API](https://github.com/foundation29org/Dx29.F29Api). It exposes different functionalities, in particular the Dx29 application uses the methods of the Documents driver to prepare and configure the inputs to the services for extracting information from the user's documents.
 >- [Azure Microsoft translator](https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview).

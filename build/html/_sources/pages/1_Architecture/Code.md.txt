@@ -170,8 +170,6 @@ The structure of the project is as follows:
 >- **Dx29.APIGateway**. Where the controllers and methods exposed by this API are implemented. In addition, it will contain the necessary functionality to connect the API controllers and methods to the corresponding microservice.
 >- It also includes the generic projects or considered as a library, as it is programmed in C#: **Dx29** and **Dx29.Data**.
 
-It is important to mention that for now this project includes the code of two microservices that are no longer used (and therefore not necessary): Dx29.Bioenties and Dx29.TASearch. These functionalities have already been migrated to other microservices in use.
-
 This project doesn't have any dependency and doesn't need any secret value.
 
 #### 1.4.2.3. Dx29.Bioentity
@@ -232,7 +230,14 @@ The structure of the project is as follows:
 >- **Dx29.Bioentity**. It is this project that contains the logic to perform the relevant operations.
 >- **Dx29**. Used as library to add the common or more general functionalities used in Dx29 projects programmed in C#.
 
-Please note that it uses Orphanet, Mondo, Omim and HPO files as sources of information. Please note the updates of these files for this project.
+This project uses:
+>- The Human Phenotype Ontology. Find out more at [http://www.human-phenotype-ontology.org](http://www.human-phenotype-ontology.org)
+>- MONDO. Find out more at [https://github.com/monarch-initiative/mondo](https://github.com/monarch-initiative/mondo)
+>- ORPHANET. Find out more at: [http://www.orphadata.org/cgi-bin/index.php](http://www.orphadata.org/cgi-bin/index.php)
+>- OMIM. Find out more at: [https://www.omim.org/](https://www.omim.org/)
+
+Please note the updates of these files for this project. 
+
 This project doesn't need any secret value.
 
 
@@ -290,7 +295,15 @@ The structure of the project is as follows:
 >- **Dx29**. Used as library to add the common or more general functionalities used in Dx29 projects programmed in C#.
 >- **Dx29.Bioentity**. It uses its own implementation of bioentity methods.
 
-This project doesn't have any dependency and doesn't need any secret value.
+This project uses:
+>- The Human Phenotype Ontology. Find out more at [http://www.human-phenotype-ontology.org](http://www.human-phenotype-ontology.org)
+>- MONDO. Find out more at [https://github.com/monarch-initiative/mondo](https://github.com/monarch-initiative/mondo)
+>- ORPHANET. Find out more at: [http://www.orphadata.org/cgi-bin/index.php](http://www.orphadata.org/cgi-bin/index.php)
+>- OMIM. Find out more at: [https://www.omim.org/](https://www.omim.org/)
+
+Please note the updates of these files for this project. 
+
+This project doesn't need any secret value.
 
 
 #### 1.4.2.5. Dx29.Documents
@@ -683,9 +696,9 @@ The structure of the project is as follows:
 
 This project deppends on Dx29.Bioentity, so in config file we must include:
 
-|  Key                 | Value                                             |		                                                                              |  
-|----------------------|---------------------------------------------------|--------------------------------------------------------------------------------------|
-| f29bio               | http://dx29-bioentity                             | API for get symptoms information (predecessors method)                               |
+|  Key                 | Value                                             |		                                                       |  
+|----------------------|---------------------------------------------------|---------------------------------------------------------------|
+| f29bio               | http://dx29-bioentity                             | Microsevice for get symptoms information (predecessors method)|
 
 
 This project doesn't need any secret value.
@@ -706,7 +719,11 @@ The structure of the project is as follows:
 >- **WebAPI** folder: With the files to expose the method funcionality.
 >- **Lib** folfer: with the files to tah contains the logic to perform the relevant operations.
 
-This project doesn't have any dependency and doesn't need any secret value.
+This project use Python projects:
+>- [NLTK (Natural Language Toolkit)](https://www.nltk.org/)
+>- [FLASK](https://flask.palletsprojects.com/en/2.0.x/) 
+
+It doesn't need any secret value.
 
 #### 1.4.2.12. Dx29.TermSearch2
 This microservice allows the searches described in the Dx29 application to be carried out: both for symptoms and diseases. That is, it will be the one called by the search boxes.
@@ -728,7 +745,12 @@ The structure of the project is as follows:
 
 
 Please note that it uses diseases-terms-lang.json and symptom-terms-lang.json files as sources of information. Please note the updates of these files for this project.
-This project doesn't need any secret value.
+
+This project use Python projects:
+>- [Sentence-transformers](https://www.sbert.net/)
+>- [huggingface](https://github.com/huggingface/transformers) 
+
+It doesn't need any secret value.
 
 
 #### 1.4.2.13. Dx29.WebManagement
@@ -989,7 +1011,27 @@ In addition, this project accesses the user database (SQL) and the blob that ope
 
 
 ### 1.4.3. External containers
-In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires [Exomiser](https://github.com/exomiser/Exomiser), [Microsoft translator](https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview) and [F29API](https://f29api.northeurope.cloudapp.azure.com/index.html).
+In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires
+>- [Exomiser](https://github.com/foundation29org/Dx29.Exomiser)
+> This project is a wrapped infrastructure to execute [Exomiser](https://github.com/exomiser/Exomiser), a tool to annotate and prioritize exome variants.
+
+> Dx29 Exomiser is a microservice used in [Dx29 Application](https://dx29.ai/) to extract exome variants from .vcf files. Since the process of extracting such variants is a time consuming task, this microservice enable the execution of Exomiser asyncroniously, based on a message queue infrastructure.
+
+> It is programmed in C#, and the structure of the project is as follows:
+
+>>- src folder: This is made up of multiple folders which contains the source code of the project.
+>>>- **Dx29.Exomiser.WebAPI**. This project expose the web API methods to process .vcf files.
+>>>- **Dx29.Exomiser**. This project contains the core logic to prepare input data and invoke Exomiser to extract the variants.
+>>>- **Dx29.Exomiser.Worker**. This project manages the Dispatcher required for the asynchronous functionalities. The administration and communication with the ServiceBus is carried out in this project.
+>>>- **Dx29**, **Dx29.Azure** and **Dx29.Jobs** used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.
+>>- .gitignore file
+>>- README.md file
+>>- manifests folder: with the YAML configuration files for deploy in Azure Container Registry and Azure Kubernetes Service.
+>>- pipeline sample YAML file. For automatizate the tasks of build and deploy on Azure.
+
+>- [F29API](https://github.com/foundation29org/Dx29.F29Api). Consult the methods in this [link](https://f29api.northeurope.cloudapp.azure.com/index.html).
+>- [Microsoft translator](https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview)
+
 
 The documentation of each of these projects is not the subject of this manual. It is only necessary to understand that they expose APIs, with the endpoints that have been indicated here, and that their methods will be used, so you only need to understand the type of request, the input and output of each one.
 

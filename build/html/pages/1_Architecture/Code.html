@@ -617,7 +617,6 @@ The APIs that he explains can be consulted in this <a class="reference external"
 <li>It also includes the generic projects or considered as a library, as it is programmed in C#: <strong>Dx29</strong> and <strong>Dx29.Data</strong>.</li>
 </ul>
 </div></blockquote>
-<p>It is important to mention that for now this project includes the code of two microservices that are no longer used (and therefore not necessary): Dx29.Bioenties and Dx29.TASearch. These functionalities have already been migrated to other microservices in use.</p>
 <p>This project doesn’t have any dependency and doesn’t need any secret value.</p>
 </div>
 <div class="section" id="dx29-bioentity">
@@ -731,8 +730,17 @@ The APIs that he explains can be consulted in this <a class="reference external"
 <li><strong>Dx29</strong>. Used as library to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
 </ul>
 </div></blockquote>
-<p>Please note that it uses Orphanet, Mondo, Omim and HPO files as sources of information. Please note the updates of these files for this project.
-This project doesn’t need any secret value.</p>
+<p>This project uses:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The Human Phenotype Ontology. Find out more at <a class="reference external" href="http://www.human-phenotype-ontology.org">http://www.human-phenotype-ontology.org</a></li>
+<li>MONDO. Find out more at <a class="reference external" href="https://github.com/monarch-initiative/mondo">https://github.com/monarch-initiative/mondo</a></li>
+<li>ORPHANET. Find out more at: <a class="reference external" href="http://www.orphadata.org/cgi-bin/index.php">http://www.orphadata.org/cgi-bin/index.php</a></li>
+<li>OMIM. Find out more at: <a class="reference external" href="https://www.omim.org/">https://www.omim.org/</a></li>
+</ul>
+</div></blockquote>
+<p>Please note the updates of these files for this project.</p>
+<p>This project doesn’t need any secret value.</p>
 </div>
 <div class="section" id="dx29-bionet">
 <h3>1.4.2.4. Dx29.BioNET<a class="headerlink" href="#dx29-bionet" title="Permalink to this headline">¶</a></h3>
@@ -843,7 +851,17 @@ This project doesn’t need any secret value.</p>
 <li><strong>Dx29.Bioentity</strong>. It uses its own implementation of bioentity methods.</li>
 </ul>
 </div></blockquote>
-<p>This project doesn’t have any dependency and doesn’t need any secret value.</p>
+<p>This project uses:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The Human Phenotype Ontology. Find out more at <a class="reference external" href="http://www.human-phenotype-ontology.org">http://www.human-phenotype-ontology.org</a></li>
+<li>MONDO. Find out more at <a class="reference external" href="https://github.com/monarch-initiative/mondo">https://github.com/monarch-initiative/mondo</a></li>
+<li>ORPHANET. Find out more at: <a class="reference external" href="http://www.orphadata.org/cgi-bin/index.php">http://www.orphadata.org/cgi-bin/index.php</a></li>
+<li>OMIM. Find out more at: <a class="reference external" href="https://www.omim.org/">https://www.omim.org/</a></li>
+</ul>
+</div></blockquote>
+<p>Please note the updates of these files for this project.</p>
+<p>This project doesn’t need any secret value.</p>
 </div>
 <div class="section" id="dx29-documents">
 <h3>1.4.2.5. Dx29.Documents<a class="headerlink" href="#dx29-documents" title="Permalink to this headline">¶</a></h3>
@@ -1749,7 +1767,7 @@ The structure of the project is as follows:</p>
 <tr>
 <td>f29bio</td>
 <td>http://dx29-bioentity</td>
-<td>API for get symptoms information (predecessors method)</td>
+<td>Microsevice for get symptoms information (predecessors method)</td>
 </tr>
 </tbody>
 </table><p>This project doesn’t need any secret value.</p>
@@ -1780,7 +1798,14 @@ The structure of the project is as follows:</p>
 <li><strong>Lib</strong> folfer: with the files to tah contains the logic to perform the relevant operations.</li>
 </ul>
 </div></blockquote>
-<p>This project doesn’t have any dependency and doesn’t need any secret value.</p>
+<p>This project use Python projects:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://www.nltk.org/">NLTK (Natural Language Toolkit)</a></li>
+<li><a class="reference external" href="https://flask.palletsprojects.com/en/2.0.x/">FLASK</a></li>
+</ul>
+</div></blockquote>
+<p>It doesn’t need any secret value.</p>
 </div>
 <div class="section" id="dx29-termsearch2">
 <h3>1.4.2.12. Dx29.TermSearch2<a class="headerlink" href="#dx29-termsearch2" title="Permalink to this headline">¶</a></h3>
@@ -1815,8 +1840,15 @@ The structure of the project is as follows:</p>
 <li><strong>Lib</strong> folfer: with the files to tah contains the logic to perform the relevant operations.</li>
 </ul>
 </div></blockquote>
-<p>Please note that it uses diseases-terms-lang.json and symptom-terms-lang.json files as sources of information. Please note the updates of these files for this project.
-This project doesn’t need any secret value.</p>
+<p>Please note that it uses diseases-terms-lang.json and symptom-terms-lang.json files as sources of information. Please note the updates of these files for this project.</p>
+<p>This project use Python projects:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://www.sbert.net/">Sentence-transformers</a></li>
+<li><a class="reference external" href="https://github.com/huggingface/transformers">huggingface</a></li>
+</ul>
+</div></blockquote>
+<p>It doesn’t need any secret value.</p>
 </div>
 <div class="section" id="dx29-webmanagement">
 <h3>1.4.2.13. Dx29.WebManagement<a class="headerlink" href="#dx29-webmanagement" title="Permalink to this headline">¶</a></h3>
@@ -2527,7 +2559,44 @@ As it has been programmed with C#, the project must include a configuration file
 </div>
 <div class="section" id="external-containers">
 <h2>1.4.3. External containers<a class="headerlink" href="#external-containers" title="Permalink to this headline">¶</a></h2>
-<p>In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires <a class="reference external" href="https://github.com/exomiser/Exomiser">Exomiser</a>, <a class="reference external" href="https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview">Microsoft translator</a> and <a class="reference external" href="https://f29api.northeurope.cloudapp.azure.com/index.html">F29API</a>.</p>
+<p>In the previous subsections it has been indicated when a project had external dependencies and which were these. In summary, Dx29 requires</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://github.com/foundation29org/Dx29.Exomiser">Exomiser</a>
+This project is a wrapped infrastructure to execute <a class="reference external" href="https://github.com/exomiser/Exomiser">Exomiser</a>, a tool to annotate and prioritize exome variants.</li>
+</ul>
+</div></blockquote>
+<blockquote>
+<div>Dx29 Exomiser is a microservice used in <a class="reference external" href="https://dx29.ai/">Dx29 Application</a> to extract exome variants from .vcf files. Since the process of extracting such variants is a time consuming task, this microservice enable the execution of Exomiser asyncroniously, based on a message queue infrastructure.</div></blockquote>
+<blockquote>
+<div>It is programmed in C#, and the structure of the project is as follows:</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li>src folder: This is made up of multiple folders which contains the source code of the project.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Dx29.Exomiser.WebAPI</strong>. This project expose the web API methods to process .vcf files.</li>
+<li><strong>Dx29.Exomiser</strong>. This project contains the core logic to prepare input data and invoke Exomiser to extract the variants.</li>
+<li><strong>Dx29.Exomiser.Worker</strong>. This project manages the Dispatcher required for the asynchronous functionalities. The administration and communication with the ServiceBus is carried out in this project.</li>
+<li><strong>Dx29</strong>, <strong>Dx29.Azure</strong> and <strong>Dx29.Jobs</strong> used as libraries to add the common or more general functionalities used in Dx29 projects programmed in C#.</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>.gitignore file</li>
+<li>README.md file</li>
+<li>manifests folder: with the YAML configuration files for deploy in Azure Container Registry and Azure Kubernetes Service.</li>
+<li>pipeline sample YAML file. For automatizate the tasks of build and deploy on Azure.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://github.com/foundation29org/Dx29.F29Api">F29API</a>. Consult the methods in this <a class="reference external" href="https://f29api.northeurope.cloudapp.azure.com/index.html">link</a>.</li>
+<li><a class="reference external" href="https://docs.microsoft.com/en-GB/azure/cognitive-services/translator/translator-overview">Microsoft translator</a></li>
+</ul>
+</div></blockquote>
 <p>The documentation of each of these projects is not the subject of this manual. It is only necessary to understand that they expose APIs, with the endpoints that have been indicated here, and that their methods will be used, so you only need to understand the type of request, the input and output of each one.</p>
 </div>
 <div class="section" id="operation-containers">
