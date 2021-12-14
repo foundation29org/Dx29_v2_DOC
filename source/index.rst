@@ -133,3 +133,4 @@ This document presents a technical description of the Dx29 software architecture
    pages/4_BuildAndDeploy/4_Locally
    pages/4_BuildAndDeploy/5_CurrentStatus
    pages/5_CodeGuidelines
+   pages/6_GithubRepositories
