@@ -102,10 +102,6 @@ We create technologies that allow a radical change in your capabilities as users
 
 The activism of patients, their families and associations are at our core. We put special focus on rare diseases. They are in our origin and in our name: February 29, world day of rare diseases.
 
-Visit our `website`_.
-
-.. _website: http://cnn.com/
-
 
 **This document**
 
